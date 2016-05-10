@@ -36,7 +36,7 @@
 
 
 
-    <div id="wrapper">
+    <div class="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -222,9 +222,6 @@
                         </li>
                         <li>
                             <a href="cad_pizza.php"><i class="fa fa-edit fa-fw"></i> Cadastro produtos(pizza)</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastro produtos(bebidas)</a>
                         </li>
 
             </div>
