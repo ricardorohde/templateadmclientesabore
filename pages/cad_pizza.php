@@ -15,29 +15,29 @@
                         <div class="row">
 
                                 <div class="col-lg-6">
-			                        <div class="form-group" style="width: 100%; float: center;"><br>
-									    <select class="form-control">
-									    <option>Selecione a categoria</option>
-									    <option>Pizzas</option>
-									    <option>Bebidas</option>
-									    <option>Doces</option>
-									    <option>Salgados</option>
-									    </select>
-								    </div> 
                                     <form role="form">
+                                    	<div class="form-group">
+										    <select class="form-control" required="required">
+											<option value="" style="display:none">Escolha uma categoria</option>
+											<option value="Pizza">Pizza</option>
+											<option value="Bebida">Bebida</option>
+											<option value="Doces">Doces</option>
+										    </select>
+									    </div> 
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Nome Produto">
+
+                                            <input class="form-control" placeholder="Nome Produto" required>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Descreva esse produto"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Descreva esse produto" required></textarea>
                                         </div>
                                         <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Valor desse produto (EX :58.40)"> 
+	                                            <input type="text" class="form-control" placeholder="Valor desse produto (EX :58.40) " required> 
 	                                    </div>
 	                                    <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)">
+	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" required>
 	                                    </div>
 	                                	<div class="form-group">
 	                                        <label>Destaque?</label>

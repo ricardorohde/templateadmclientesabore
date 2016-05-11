@@ -215,13 +215,13 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> alguma coisa</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> alguma coisa</a>
-                        </li>
-                        <li>
                             <a href="cad_categoria.php"><i class="fa fa-edit fa-fw"></i> Cadastro categoria</a>
                         </li>
                         <li>
-                            <a href="cad_pizza.php"><i class="fa fa-edit fa-fw"></i> Cadastro produtos(pizza)</a>
+                            <a href="cad_pizza.php"><i class="fa fa-edit fa-fw"></i> Cadastro produtos</a>
+                        </li>
+                        <li>
+                            <a href="textos.php"><i class="fa fa-edit fa-fw"></i> Cadastro de informações </a>
                         </li>
 
             </div>
