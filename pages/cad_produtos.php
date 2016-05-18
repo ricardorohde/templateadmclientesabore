@@ -1,8 +1,8 @@
 <?php require_once('header.php'); ?>
 
 <div id="page-wrapper"><br>
-    <h1 class="page-header">Cadastrar Produtos
-	    
+    <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Cadastrar Produtos
+	    	    <a href="produtos.php"><span class="pull-right text-muted small"><button class="btn btn-success"> Exibir Produtos</button></a>
     </h1>
       	<div class="row">
             <div class="col-lg-12">

@@ -209,19 +209,22 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="index.php"><i class="fa  fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> alguma coisa</a>
+                            <a href="categorias.php"><i class="fa fa-list-ul fa-fw"></i> Categorias</a>
                         </li>
                         <li>
-                            <a href="cad_categoria.php"><i class="fa fa-edit fa-fw"></i> Cadastro categoria</a>
+                            <a href="produtos.php"><i class="fa fa-edit fa-fw"></i> Produtos</a>
                         </li>
                         <li>
-                            <a href="cad_pizza.php"><i class="fa fa-edit fa-fw"></i> Cadastro produtos</a>
+                            <a href="textos.php"><i class="fa fa-font fa-fw"></i> Textos </a>
                         </li>
                         <li>
-                            <a href="textos.php"><i class="fa fa-edit fa-fw"></i> Cadastro de informações </a>
+                            <a href="usuarios.php"><i class="fa fa-user fa-fw"></i> Usuarios </a>
+                        </li>
+                        <li>
+                            <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>
                         </li>
 
             </div>

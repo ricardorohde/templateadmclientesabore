@@ -1,9 +1,9 @@
 <?php require_once('header.php'); ?>
-<script type="text/javascript" src="../js/validatequemsomos.js"></script>
 
 
 <div id="page-wrapper"><br>
-    <h1 class="page-header">Cadastro de informações</h1>
+    <h1 class="page-header"><i class="fa fa-font fa-fw"></i> Textos</h1>
+
 	    <div class="row">
 	        <div class="col-lg-12">
 	            <div class="panel panel-default">
@@ -14,7 +14,7 @@
 	                <div class="panel-body">
 	                    <div class="row">
 	                        <div class="col-lg-6">
-	                        <form role="form" method="post" name="formquemsomos">
+	                        <form role="form" method="post">
 			                    <div class="form-group">
 			                    	<label for="nome"><i class="fa fa-question-circle fa-fw"></i> Quem somos</label>
 			                   		<textarea class="form-control" rows="3" placeholder="Digite aqui..." name="quem_somos" required></textarea>
@@ -43,10 +43,15 @@
 			                        <label><i class="fa fa-calendar fa-fw"></i> Horário de funcionamento :</label>
 			                        <textarea class="form-control" rows="5" placeholder="Insira aqui, os dias a horarios de funcionamento de sua pizzaria" name="horario" id="horario" required></textarea>
 			                    </div>
+			                    <br>
+			                    <div class="form-group">
+                                            <label>Coloque uma imagem para a página quem somos</label>
+                                            <input type="file" required>
+                                </div>
 			                <br><br>
 			                    <diV align="center">
 			                        <button type="submit" class="btn btn-success" >Cadastrar informações</button>
-		                            <button type="reset" class="btn btn-danger">Limpar campos</button>
+		                            <button type="reset" class="btn btn-danger">Limpar campos acima. </button>
 		                        </diV>
 	                        </form>
 	                   		</div>
