@@ -1,10 +1,28 @@
 <?php require_once('header.php'); ?>
-
+<script src="../js/busca.js"></script>
 <div id="page-wrapper"><br>
 <h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Usuários
          <a href="cad_usuarios.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo usuário</button></a>
     </h1>
       	<div class="row">
+
+                        <div class="col-lg-3"> 
+                             <div class="form-group">
+                                <select class="form-control" required="required" id="usuarios_busca">
+                                <option value="" style="display:none">Escolha um Método de busca</option>
+                                <option value="nome" id="nome">Nome</option>
+                                <option value="email" id="email">Email</option>
+                                <option value="cpf" id="cpf">Cpf</option>
+                                </select>
+                             </div> 
+                        </div>
+                        <div class="col-lg-3">
+                            <input class="form-control" placeholder="Nome" id="inputusername" style="display:none">
+                            <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
+                            <input class="form-control" placeholder="Cpf cliente, apenas numeros" id="inputcpf" style="display:none">
+                        </div>  
+
+                        <br>
             <div class="col-lg-12">
                	<div class="panel-body">
                     <div class="table-responsive">

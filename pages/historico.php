@@ -1,18 +1,5 @@
 <?php require_once('header.php'); ?>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    
-    $("#busca").change(function(){
-        alert("The text has been changed.");
-    });
-});
-
-
-
-</script>
-
-
+<script src="../js/busca.js"></script>
 
         <div id="page-wrapper">
             <div class="row">
