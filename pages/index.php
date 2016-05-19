@@ -43,14 +43,14 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Compras</div>
-                                    <div>Ultimas compras feitas</div>
+                                    <div class="huge">Vendas</div>
+                                    <div>Vendas bem sucedidas</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">Veja detalhes</span>
+                                <span class="pull-left">Clique para visualizar</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -73,7 +73,7 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">Veja detalhes</span>
+                                <span class="pull-left">Veja seus créditos</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -114,27 +114,23 @@
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Vendas da semana - Janeiro
                         </div>
-
                         <div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                            <div class="flot-chart"><br><br>
+                                <div id="morris-area-chart"></div>
                             </div>
                         </div>
-
-
-
                     </div>
+
                     <!-- /.panel -->
 
                     <!--Segundo Gráfico-->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Vendas pelo site e pelo SMS
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Vendas da semana [ Sms / Site / Loja virtual ]
                         </div>
-
-							<div class="panel-body">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                        <div class="panel-body">
+                            <div class="panel-body">
+                                <div id="morris-donut-chart"></div>
                             </div>
                         </div>
                     </div>
@@ -213,7 +209,7 @@
                                 </p>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">Veja todos os pedidos esperando confirmação</a>
+                            <a href="#" class="btn btn-default btn-block">Pedidos esperando confirmação</a>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -247,10 +243,21 @@
                                 </p>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">Veja todos os pedidos em andamento</a>
+                            <a href="#" class="btn btn-default btn-block">Todos pedidos em andamento</a>
                         </div>
-                        <!-- /.panel-body -->
+                        <!-- /.panel-body -->   
 				</div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-image fa-fw"></i> Imagens sugeridas
+                        </div>
+
+                        <div class="panel-body" align="center">
+                        	<a href="..\download\banco_imagens.zip">Clique aqui para baixar o banco de imagens que oferecemos para você.</a>
+                        </div>
+                        <!-- /.list-group -->
+                    </div>
                 <!-- /.panel -->
 
 

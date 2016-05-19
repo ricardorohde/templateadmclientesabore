@@ -10,13 +10,13 @@
 
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <thead>
+                           
                                 <tr>
                                     <th>Categoria</th>
                                     <th>Editar</th>
                                 </tr>
-                            </thead>
-                            <tbody align="center">
+                            
+                           
                                 <tr>
                                     <td>Pizza</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
@@ -34,7 +34,7 @@
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
 
-                            </tbody>
+                          
                         </table>
                     </div>
                 </div>

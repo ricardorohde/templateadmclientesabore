@@ -16,14 +16,23 @@
 
                                 <div class="col-lg-6">
                                     <form role="form">
-	                                    <div class="form-group">
+	                                    
+                                      
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Titulo que será exibido em seu banner." required><br>
+                                            <input class="form-control" placeholder="Subtitulo que será exibido em seu banner." required><br>
+                                            <input class="form-control" placeholder="Botão que será exibido em seu banner." required><br>
+                                            <input class="form-control" placeholder="Link do botão." required><br>
+
+                                       
                                             <label> Imagem para : Banner </label>
                                             <input type="file" required>
-                                       	</div>
-                                       		<br>
-                                       	<div>
-                                        <button type="submit" class="btn btn-success">Cadastrar Banners</button>
-	                                    <button type="reset" class="btn btn-danger">Limpar files</button>
+                                        </div>
+                                       	
+                                        <br>
+                                      <div>
+                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+	                                      <button type="reset" class="btn btn-danger">Limpar</button>
 	                                    </div>
 										
                                		</form>
