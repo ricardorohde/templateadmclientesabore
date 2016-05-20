@@ -10,6 +10,7 @@
 
             <div class="row">
                 <div class="col-lg-3 col-md-6">
+                <a href="#" data-toggle="modal" data-target="#myModal">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -22,17 +23,19 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" data-toggle="modal" data-target="#myModal">
+                        
                             <div class="panel-footer">
                                 <span class="pull-left" >Veja detalhes</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
+                    <a href="#">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -45,17 +48,19 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        
                             <div class="panel-footer">
                                 <span class="pull-left">Clique para visualizar</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
+                    <a href="#">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
@@ -68,18 +73,20 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        
                             <div class="panel-footer">
                                 <span class="pull-left">Veja seus créditos</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
-                    </div>
+                       
+                    </div> 
+                    </a>
                 </div>
 
                 <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
-                    <div class="panel panel-red">
+                    <div class="panel panel-red"> 
+                    <a   id="vendas_habilitar" href="#">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
@@ -91,17 +98,19 @@
                                 </div>
                             </div>
                         </div>
-                        <a   id="vendas_habilitar">
+                       
                             <div class="panel-footer">
                                 <span class="pull-left">Clique para habilitar (off)</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-3 col-md-6" style="display: none " id="vendas_habilitado">
+                <a href="#"  id="vendas_desabilitar">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -114,14 +123,15 @@
                                 </div>
                             </div>
                         </div>
-                        <a  id="vendas_desabilitar">
+                        
                             <div class="panel-footer">
                                 <span class="pull-left">Clique para desabilitar (on)</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        
                     </div>
+                    </a>
                 </div>
 
             </div>
@@ -292,7 +302,7 @@
                                                   
                                                  Apt 423, bloco 1<br><br>
                                                  </div>
-                                                        <tr>
+                                                        <tr style="background-color: #2c3e50; color: white;">
                                                             <th>Tipo</th>
                                                             <th>Produto</th>
                                                             <th>Valor</th>

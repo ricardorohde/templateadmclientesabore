@@ -3,7 +3,7 @@
 <div id="page-wrapper"><br>
 <h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Usuários
          <a href="cad_usuarios.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo usuário</button></a>
-    </h1>
+    </h1><br>
       	<div class="row">
 
                         <div class="col-lg-3"> 
@@ -29,26 +29,31 @@
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Nome</th>
                                     <th>Email</th>
+                                    <th>Cpf</th>
                                     <th>Editar</th>
                                 </tr>
                                 <tr>
                                     <td>Lucas</td>
                                     <td>lelo245@hotmail.com</td>
+                                    <td>321932523</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                	</tr>
                                 <tr>
                                     <td>Lucas</td>
                                     <td>lelo245@hotmail.com</td>
+                                    <td>321932523</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Lucas </td>
                                     <td>lelo245@hotmail.com</td>
+                                    <td>321932523</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Lucas </td>
                                     <td>lelo245@hotmail.com</td>
+                                    <td>321932523</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
 

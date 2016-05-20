@@ -4,14 +4,8 @@
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Produtos
 	     <a href="cad_produtos.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo produto</button></span></a>
-    </h1>
+    </h1><br>
       	<div class="row">
-             
-                        
-             
-            
-
-               	<div class="panel-body">
                     <div class="table-responsive">
                         <div class="col-lg-3"> 
                                  <div class="form-group">
@@ -31,15 +25,14 @@
 
                             <br>
                         <table class="table table-striped table-bordered table-hover">
-                            <thead>
+                            
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Cat.</th>
                                     <th>Produto</th>
                                     <th>Valor</th>
                                     <th>Edit</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                            
                                 <tr>
                                     <td>Pizzas</td>
                                     <td>Frango catupiry</td>
@@ -71,10 +64,9 @@
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
 
-                            </tbody>
+                            
                         </table>
                 </div>
-            </div>
         </div>
         
 </div>

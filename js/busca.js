@@ -69,7 +69,11 @@ $(document).ready(function() {
   });
 
 
+
+
   //Aqui vai o busca de produtos
+
+
       $('#inputcategoria').hide();
   $('#produto_busca').change(function() {
     if ($('#produto_busca').val() == 'categoria') {
@@ -92,6 +96,47 @@ $(document).ready(function() {
       $('#inputvalor').show();
     } else {
       $('#inputvalor').hide();
+    }
+  });
+// aqui vai a busca no acompanhamento pedidos
+  $('#inputnped').hide();
+  $('#acompanhamento').change(function() {
+    if ($('#acompanhamento').val() == 'nped') {
+      $('#inputnped').show();
+    } else {
+      $('#inputnped').hide();
+    }
+  });
+    $('#inputnome').hide();
+  $('#acompanhamento').change(function() {
+    if ($('#acompanhamento').val() == 'nome') {
+      $('#inputnome').show();
+    } else {
+      $('#inputnome').hide();
+    }
+  });
+    $('#inputvalor').hide();
+  $('#acompanhamento').change(function() {
+    if ($('#acompanhamento').val() == 'valor') {
+      $('#inputvalor').show();
+    } else {
+      $('#inputvalor').hide();
+    }
+  });
+    $('#inputemail').hide();
+  $('#acompanhamento').change(function() {
+    if ($('#acompanhamento').val() == 'email') {
+      $('#inputemail').show();
+    } else {
+      $('#inputemail').hide();
+    }
+  });
+    $('#inputstatus').hide();
+  $('#acompanhamento').change(function() {
+    if ($('#acompanhamento').val() == 'status') {
+      $('#inputstatus').show();
+    } else {
+      $('#inputstatus').hide();
     }
   });
 

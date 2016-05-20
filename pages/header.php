@@ -59,7 +59,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Admin Pizzaria Becco</a>
+                <a class="navbar-brand" href="index.php">Admin Pizzaria Becco</a><img src="..\img\banner.png" width="50" height="40" 
+                style=" margin-top: 5px;" class="img img-responsive">
             </div>
             <!-- /.navbar-header -->
 
@@ -226,6 +227,9 @@
                         </li>
                         <li>
                             <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>
+                        </li>
+                        <li>
+                            <a href="ped_andamento.php"><i class="fa fa-clock-o fa-fw"></i> Pedidos em andamento</a>
                         </li>
                         <li>
                             <a href="historico.php"><i class="fa fa-history fa-fw"></i> Historico de pedidos</a>
