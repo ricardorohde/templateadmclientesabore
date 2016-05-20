@@ -38,7 +38,7 @@
                                 <table class="table table-striped">
                                    
                                         <tr  style="background-color: #2c3e50; color: white;">
-                                            <th>Nº Ped</th>
+                                            <th></th>
                                             <th>Nome</th>
                                             <th>Email</th>
                                             <th>Status</th>
@@ -48,36 +48,36 @@
                                    
 
                                         <tr>
-                                            <td>123123</td>
+                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="ped_detalhes.php">Ver detalhes</a></td>
+                                            <td><a href="#">Atualizar Status</a></td>
                                         </tr>
                                         <tr>
-                                            <td>123123</td>
+                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="ped_detalhes.php">Ver detalhes</a></td>
+                                            <td><a href="#">Atualizar Status</a></td>
                                         </tr>
                                         <tr>
-                                            <td>123123</td>
+                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="ped_detalhes.php">Ver detalhes</a></td>
+                                            <td><a href="#">Atualizar Status</a></td>
                                         </tr>
                                         <tr>
-                                            <td>123123</td>
+                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="ped_detalhes.php">Ver detalhes</a></td>
+                                            <td><a href="#">Atualizar Status</a></td>
                                         </tr>
 
                                     

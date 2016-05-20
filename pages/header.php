@@ -190,9 +190,9 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                        <li><a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Configurações</a>
+                        <li><a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="http://localhost/templateadmclientesabore/login.html"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>

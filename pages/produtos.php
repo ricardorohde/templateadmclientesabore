@@ -2,12 +2,14 @@
 <script src="../js/busca.js"></script>
 
 <div id="page-wrapper"><br>
-    <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Produtos
-	     <a href="cad_produtos.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo produto</button></span></a>
-    </h1><br>
+            <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Produtos
+        	     <a href="cad_produtos.php"><span class="pull-right text-muted small">
+                 <button class="btn btn-success">Cadastrar novo produto</button></span></a>
+            </h1><br>
       	<div class="row">
                     <div class="table-responsive">
-                        <div class="col-lg-3"> 
+
+                            <div class="col-lg-3"> 
                                  <div class="form-group">
                                     <select class="form-control" required="required" id="produto_busca">
                                     <option value="" style="display:none">Escolha um Método de busca</option>
@@ -22,6 +24,7 @@
                                 <input class="form-control" placeholder="Produto" id="inputproduto" style="display:none">
                                 <input class="form-control" placeholder="Digite o valor desse produto (números)" id="inputvalor" style="display:none">
                             </div>  
+
 
                             <br>
                         <table class="table table-striped table-bordered table-hover">
