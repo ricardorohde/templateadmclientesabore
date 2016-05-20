@@ -10,7 +10,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                            
-                                <tr>
+                                <tr style="background-color: #2c3e50; color: white;">
                                     <th>Banners</th>
                                     <th>Título :</th>
                                     <th>Editar</th>

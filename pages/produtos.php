@@ -32,7 +32,7 @@
                             <br>
                         <table class="table table-striped table-bordered table-hover">
                             <thead>
-                                <tr>
+                                <tr style="background-color: #2c3e50; color: white;">
                                     <th>Cat.</th>
                                     <th>Produto</th>
                                     <th>Valor</th>

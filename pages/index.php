@@ -1,9 +1,6 @@
 <?php require_once('header.php'); ?>
-<script type="text/javascript">
-	$(document).ready(function() {
-   $('#myModal').modal('show');
-});
-</script>
+<script src="../js/index.js"></script>
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -63,7 +60,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-credit-card fa-5x"></i>
+                                    <i class="fa fa-home fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Crédito</div>
@@ -81,28 +78,52 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-home fa-5x"></i>
+                                    <i class="fa fa-credit-card fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Site</div>
-                                    <div>Clique para visitar seu site</div>
+                                    <div class="huge">Vendas</div>
+                                    <div>Habilite vendas no site</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="http://www.templatesiteclientesabore.com.br/">
+                        <a   id="vendas_habilitar">
                             <div class="panel-footer">
-                                <span class="pull-left">Visitar site</span>
+                                <span class="pull-left">Clique para habilitar (off)</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6" style="display: none " id="vendas_habilitado">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-credit-card fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">Vendas</div>
+                                    <div>Desabilite vendas no site</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a  id="vendas_desabilitar">
+                            <div class="panel-footer">
+                                <span class="pull-left">Clique para desabilitar (on)</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
 
@@ -140,23 +161,14 @@
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-question-circle fa-fw"></i> Vendas no site 
+                            <i class="fa fa-question-circle fa-fw"></i> Visitar Site
                         </div>
 
-                        <div class="panel-body">
-                        <form id="#">
-                           <div class="form-group" align="center">
-								<label>Deseja abrir seu site para vendas?</label><br>
-	                            <label class="radio-inline">
-	                   	        <input type="radio" name="destaque" id="destaque" value="destaquesim" >Sim
-	                   	        </label>
-	                   	        <label class="radio-inline">
-	                   	        <input type="radio" name="destaque" id="destaque" value="destaquenao" checked>Não
-	                   	        </label>
-	                   	        <br><br>
-                       	   		<button type="submit" class="btn btn-success">Enviar </button>
-                       	   	</div>
-                       	</form>
+                        <div class="panel-body" align="center">
+								<label>Clique para Visitar seu site</label><br>
+	                   	       <a href="http://www.templatesiteclientesabore.com.br/">
+                       	   		<button type="submit" class="btn btn-success">Visitar  </button>
+                                </a>
                         </div>
                         <!-- /.list-group -->
                     </div>
@@ -270,10 +282,63 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel">Pedido 625235</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Pedido 36333 - Lucas Barbosa de Alencar</h4>
                                         </div>
                                         <div class="modal-body">
-                                            pedido aqui doido e talz ta aqui maluco
+                                           <div class="table-responsive">
+                                                <table class="table table-striped table-bordered table-hover">
+                                                 <div align="center">
+                                                 Benjamim rodrigues, 139, Eldorado <br>
+                                                  
+                                                 Apt 423, bloco 1<br><br>
+                                                 </div>
+                                                        <tr>
+                                                            <th>Tipo</th>
+                                                            <th>Produto</th>
+                                                            <th>Valor</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox" checked disabled>Meia</input><br>
+                                                                <input type="checkbox" checked disabled>Broto</input>
+                                                            </td>
+                                                            <td>Calabresa</td>
+                                                            <td>R$15.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox" checked disabled>Meia</input><br>
+                                                                <input type="checkbox" checked disabled>Broto</input>
+                                                            </td>
+                                                            <td>Calabresa</td>
+                                                            <td>R$15.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox" checked disabled>Meia</input><br>
+                                                                <input type="checkbox" checked disabled>Broto</input>
+                                                            </td>
+                                                            <td>Calabresa</td>
+                                                            <td>R$15.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="checkbox" checked disabled>Meia</input><br>
+                                                                <input type="checkbox" checked disabled>Broto</input>
+                                                            </td>
+                                                            <td>Calabresa</td>
+                                                            <td>R$15.00</td>
+                                                        </tr>
+                                                        <tr style="background-color: #2c3e50; color: white;">
+                                                            <td>
+                                                                <input type="checkbox" checked disabled>Borda recheada</input>
+                                                            </td>
+                                                            <td>Pagamento : Dinheiro - Troco : </td>
+                                                            <td>Total  : R$40.00</td>
+                                                        </tr>
+
+                                                </table>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Rejeitar</button>

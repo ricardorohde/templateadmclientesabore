@@ -24,10 +24,9 @@
 
                         <br>
             <div class="col-lg-12">
-               	<div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                                <tr>
+                                <tr style="background-color: #2c3e50; color: white;">
                                     <th>Nome</th>
                                     <th>Email</th>
                                     <th>Editar</th>
@@ -55,7 +54,6 @@
 
                         </table>
                     </div>
-                </div>
             </div>
         </div>
         

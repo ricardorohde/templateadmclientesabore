@@ -6,12 +6,11 @@
     </h1>
       	<div class="row">
             <div class="col-lg-6">
-               	<div class="panel-body">
 
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover">
                            
-                                <tr>
+                                <tr style="background-color: #2c3e50; color: white;">
                                     <th>Categoria</th>
                                     <th>Editar</th>
                                 </tr>
@@ -37,7 +36,6 @@
                           
                         </table>
                     </div>
-                </div>
             </div>
         </div>
         
