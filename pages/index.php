@@ -40,11 +40,11 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                    <i class="fa fa-history fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Vendas</div>
-                                    <div>Vendas bem sucedidas</div>
+                                    <div class="huge">Histórico</div>
+                                    <div>Histórico de vendas</div>
                                 </div>
                             </div>
                         </div>
@@ -65,10 +65,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-home fa-5x"></i>
+                                    <i class="fa fa-money fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Crédito</div>
+                                    <div class="huge">Créditos</div>
                                     <div>Confira seus créditos</div>
                                 </div>
                             </div>

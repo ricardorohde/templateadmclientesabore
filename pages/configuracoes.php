@@ -15,30 +15,16 @@
 
                                 <div class="col-lg-6">
                                     <form role="form">
-                                         <div class="form-group">
-                                            <select class="form-control">
-                                            <option value="" style="display:none">Tipo de documento</option>
-                                            <option value="">Cnpj</option>
-                                            <option value="" >Cnpj</option>
-                                            <option value="" >Sei lá outro</option>
-                                            </select>
-                                         </div> 
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Documento" required id="documento">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Razão social ( Nome empresa ) " required id="razao_social">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Nome Titular" required id="nome_titular">
-                                        </div>
-                                       <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Km de entrega Máxima" required id="km_max">
-                                        </div>
-                                        <div class="form-group input-group">
-                                                <span class="input-group-addon">R$</span>
-                                                <input type="text" class="form-control" placeholder="Valor Cobrado por KM (EX :58.40) " required> 
-                                        </div>    
+			                                <select class="form-control" required="required" id="busca">
+			                                <option value="" style="display:none">Escolha a cor de seu site</option>
+			                                <option value="" id="">Vermelho</option>
+			                                <option value="" id="">Padrão</option>
+			                                <option value="" id="">Rosa</option>
+			                                <option value="" id="">Azul Escuro</option>
+			                                <option value="" id="">Roxo</option>
+			                                </select>
+			                             </div><br>
 
                                         <div class="form-group">
                                             <label>Sistema de SMS ?</label>
@@ -51,7 +37,7 @@
                                         </div> 
                                         
                                         <div class="form-group">
-                                            <label>Banco de dados compartilhado?</label>
+                                            <label>Dados compartilhado?</label>
                                             <label class="radio-inline">
                                                 <input type="radio" value="bd_sim" name="bd">Sim
                                             </label>
@@ -61,7 +47,7 @@
                                         </div>             
 
                                         <div class="form-group">
-                                        <label> Toda vez que abrir Admin, abrir site? </label>
+                                        <label> Exibir site, ao inicializar ? </label>
                                             <label class="radio-inline">
                                                 <input type="radio" value="site_sim" name="site">Sim
                                             </label>
@@ -70,10 +56,7 @@
                                             </label>
                                         </div>
 
-                                        <div class="form-group">
-                                        <label> Escolha a cor de seu site : </label>
-                                            <input type="color" required></input>
-                                        </div>
+                                        
                                         
 
 	                                	
