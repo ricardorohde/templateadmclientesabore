@@ -11,7 +11,7 @@
                                 <option value="" style="display:none">Escolha um Método de busca</option>
                                 <option value="nome" id="nome">Nome</option>
                                 <option value="email" id="email">Email</option>
-                                <option value="cpf" id="cpf">Cpf</option>
+                                <option value="cpf" id="cpf">Data de cadastro</option>
                                 <option value="telefone" id="telefone">Telefone</option>
                                 <option value="pedidos" id="pedidos">Número de pedidos</option>
                                 </select>
@@ -20,7 +20,7 @@
                         <div class="col-lg-3">
                             <input class="form-control" placeholder="Nome" id="inputusername" style="display:none">
                             <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
-                            <input class="form-control" placeholder="Cpf cliente, apenas numeros" id="inputcpf" style="display:none">
+                            <input class="form-control" placeholder="Data de cadastro" id="inputcpf" style="display:none">
                             <input class="form-control" placeholder="Telefone do Cliente (numeros)" id="inputnumber" style="display:none">
                             <input class="form-control" placeholder="Numero de pedidos" id="n_pedidos" style="display:none">
                         </div>  
@@ -31,57 +31,97 @@
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Nome</th>
                                     <th>Email</th>
-                                    <th>Cpf</th>
                                     <th>Telefone</th>
                                     <th>Nº de pedidos</th>
-                                    <th>Editar</th>
+                                    <th>Data Cadastro</th>
+                                    <th>Delete</th>
                                 </tr>
                                 <tr>
                                     <td>Lucas Barbosa de Alencar</td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
                                     <td>11-1111-1111</td>
                                     <td>23</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td>20/05/2010</td>
+                                    <td>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    </td>
                                	</tr>
                                 <tr>
-                                    <td>Lucas</td>
+                                    <td>Lucas Barbosa de Alencar</td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
                                     <td>11-1111-1111</td>
                                     <td>23</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td>20/05/2010</td>
+                                    <td>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Lucas</td>
+                                    <td>Lucas Barbosa de Alencar</td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
                                     <td>11-1111-1111</td>
                                     <td>23</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td>20/05/2010</td>
+                                    <td>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Lucas</td>
+                                    <td>Lucas Barbosa de Alencar</td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
                                     <td>11-1111-1111</td>
                                     <td>23</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Lucas</td>
-                                    <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
-                                    <td>11-1111-1111</td>
-                                    <td>23</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td>20/05/2010</td>
+                                    <td>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    </td>
                                 </tr>
 
                         </table>
                     </div>
             </div>
+        </div>  
+
+
+        <div class="modal fade" id="user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #2c3e50; color: white;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel" align="center">Lucas Barbosa de Alencar</h4>
+                    </div>
+                    <div class="modal-body">
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                           <div align="center">
+                               Tipo Documento : F <br>
+                               Documento : 12432414 <br>
+                               Email : lelo245@hotmail.com<br>
+                               Senha : xxxxxxxxx <br>
+                               CEP : 07312-000 <br>
+                               Estado : São Paulo <br>
+                               Cidade : São Paulo <br>
+                               Endereço : Rua Almeda santos <br>
+                               Bairro : Eldorado <br>
+                               Número : 124 <br>
+                               Complemento : Vazio <br>
+                               Telefone : 4657-5015 <br>
+                               Celular : 21940124 <br>
+                               
+                           </div>
+                        </table>
+                     </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+
+
 </div>
 
 

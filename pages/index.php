@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <a href="#">
+                    <a href="historico.php">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                             <div class="row">
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Histórico</div>
-                                    <div>Histórico de vendas</div>
+                                    <div>Histórico de pedidos</div>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                                     <span class="pull-center text-muted small"><em>R$30.00</em></span>
                                     <span class="pull-right text-muted small">
                                     <a href="#"><i class="fa fa-check fa-fw"></i></a>
-                                    <a href="#"><i class="fa fa-comment fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
                                     </span>
                                 </p>
                                <p href="#" class="list-group-item">
@@ -210,7 +210,7 @@
                                     <span class="pull-center text-muted small"><em>R$30.00</em></span>
                                     <span class="pull-right text-muted small">
                                     <a href="#"><i class="fa fa-check fa-fw"></i></a>
-                                    <a href="#"><i class="fa fa-comment fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
                                     </span>
                                 </p>                            
                                 <p href="#" class="list-group-item">
@@ -218,7 +218,7 @@
                                     <span class="pull-center text-muted small"><em>R$30.00</em></span>
                                     <span class="pull-right text-muted small">
                                     <a href="#"><i class="fa fa-check fa-fw"></i></a>
-                                    <a href="#"><i class="fa fa-comment fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
                                     </span>
                                 </p>
                                 <p href="#" class="list-group-item">
@@ -226,7 +226,7 @@
                                     <span class="pull-center text-muted small"><em>R$30.00</em></span>
                                     <span class="pull-right text-muted small">
                                     <a href="#"><i class="fa fa-check fa-fw"></i></a>
-                                    <a href="#"><i class="fa fa-comment fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
                                     </span>
                                 </p>
                             </div>

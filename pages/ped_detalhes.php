@@ -19,12 +19,14 @@
                      Apt 423, bloco 1<br>
                     
                     <br>
-                    <button class="btn btn-default">Atualizar Status</button><br><br>
+                    <button class="btn btn-default">Em Desenvolvimento</button><br>
+
                     <button class="btn btn-danger" style="display: none">Atualizar Status</button>
                     <button class="btn btn-warning" style="display: none">Atualizar Status</button>
                     <button class="btn btn-info" style="display: none">Atualizar Status</button>
                     <button class="btn btn-primary" style="display: none">Atualizar Status</button>
                     <button class="btn btn-success" style="display: none">Atualizar Status</button>
+					<em>Clique para passar para próximo status</em><br><br>
                  </div>
 
 
