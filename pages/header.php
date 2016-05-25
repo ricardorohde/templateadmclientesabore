@@ -226,6 +226,9 @@
                             <a href="usuarios.php"><i class="fa fa-user fa-fw"></i> Usuarios </a>
                         </li>
                         <li>
+                            <a href="clientes.php"><i class="fa fa-user fa-fw"></i> Clientes </a>
+                        </li>
+                        <li>
                             <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>
                         </li>
                         <li>
@@ -234,7 +237,12 @@
                         <li>
                             <a href="historico.php"><i class="fa fa-history fa-fw"></i> Historico de pedidos</a>
                         </li>
-
+                        <li>
+                            <a href="rankings.php"><i class="fa fa-bar-chart-o fa-fw"></i> Rankings</a>
+                        </li>
+                        <li>
+                            <a href="despesa.php"><i class="fa fa-money fa-fw"></i> Despesas</a>
+                        </li>
             </div>
       
             <!-- /.navbar-static-side -->

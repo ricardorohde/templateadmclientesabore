@@ -143,7 +143,7 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Vendas da semana - Janeiro
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Vendas mês de Abril
                         </div>
                         <div class="panel-body">
                             <div class="flot-chart"><br><br>

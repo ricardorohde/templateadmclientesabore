@@ -50,13 +50,21 @@
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Fax" required id="fax">
                                         </div>
+                                        
                                        <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Km de entrega Máxima" required id="km_max">
+                                                <input type="number" class="form-control" placeholder="Km de entrega Máxima" >
+                                                <!-- Aqui só da required se a opção de taxa fixa estiver como Não -->
                                         </div>
                                         <div class="form-group input-group">
                                                 <span class="input-group-addon">R$</span>
-                                                <input type="text" class="form-control" placeholder="Valor Cobrado por KM (EX :58.40) " required> 
+                                                <input type="text" class="form-control" placeholder="Valor Cobrado por KM (EX :58.40) ">
+                                                 <!-- Aqui só da required se a opção de taxa fixa estiver como Não -->
                                         </div>    
+                                        <div class="form-group input-group">
+                                                <span class="input-group-addon">R$</span>
+                                                <input type="text" class="form-control" placeholder="Valor taxa Fixa (EX :10.00) ">
+                                                <!-- Aqui só da required se a opção de taxa fixa estiver como Sim --> 
+                                        </div>   
 
                            
 

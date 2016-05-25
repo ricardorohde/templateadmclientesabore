@@ -56,6 +56,16 @@
                                             </label>
                                         </div>
 
+                                        <div class="form-group">
+                                        <label>Taxa de entrega fixa ?</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" value="tx_fixa1" name="taxa_fixa">Sim
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="taxa_fixa" value="tx_fixa2" checked>Não
+                                            </label>
+                                        </div>
+
                                         
                                         
 

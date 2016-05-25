@@ -56,7 +56,7 @@ $(document).ready(function() {
     if ($('#usuarios_busca').val() == 'cpf') {
       $('#inputcpf').show();
     } else {
-      $('#inputdata').hide();
+      $('#inputcpf').hide();
     }
   });
       $('#inputemail').hide();
@@ -139,6 +139,52 @@ $(document).ready(function() {
       $('#inputstatus').hide();
     }
   });
+
+
+//Aqui é do clientes
+    $('#inputusername').hide();
+  $('#clientes_busca').change(function() {
+    if ($('#clientes_busca').val() == 'nome') {
+      $('#inputusername').show();
+    } else {
+      $('#inputusername').hide();
+    }
+  });
+      $('#inputcpf').hide();
+  $('#clientes_busca').change(function() {
+    if ($('#clientes_busca').val() == 'cpf') {
+      $('#inputcpf').show();
+    } else {
+      $('#inputcpf').hide();
+    }
+  });
+      $('#inputemail').hide();
+  $('#clientes_busca').change(function() {
+    if ($('#clientes_busca').val() == 'email') {
+      $('#inputemail').show();
+    } else {
+      $('#inputemail').hide();
+    }
+  });
+
+   $('#inputnumber').hide();
+  $('#clientes_busca').change(function() {
+    if ($('#clientes_busca').val() == 'telefone') {
+      $('#inputnumber').show();
+    } else {
+      $('#inputnumber').hide();
+    }
+  });
+  $('#input_pedidos').hide();
+  $('#clientes_busca').change(function() {
+    if ($('#clientes_busca').val() == 'pedidos') {
+      $('#n_pedidos').show();
+    } else {
+      $('#n_pedidos').hide();
+    }
+  });
+
+
 
 
 });

@@ -47,98 +47,42 @@
                                    
 
                                         <tr>
-                                            <td>1239</td>
+                                            <td><a href="detalhes_historico.php">1239</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>38142194120</td>
                                             <td>31/04/2016</td>
                                         </tr>
                                         <tr>
-                                            <td>1239</td>
+                                            <td><a href="detalhes_historico.php">1239</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>38142194120</td>
                                             <td>31/04/2016</td>
                                         </tr>
                                         <tr>
-                                            <td>1239</td>
+                                            <td><a href="detalhes_historico.php">1239</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>38142194120</td>
                                             <td>31/04/2016</td>
                                         </tr>
                                         <tr>
-                                            <td>1239</td>
+                                            <td><a href="detalhes_historico.php">1239</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>38142194120</td>
                                             <td>31/04/2016</td>
                                         </tr>
                                         <tr>
-                                            <td>1239</td>
+                                            <td><a href="detalhes_historico.php">1239</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>38142194120</td>
                                             <td>31/04/2016</td>
                                         </tr>
                                         <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>38142194120</td>
-                                            <td>31/04/2016</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1239</td>
+                                            <td><a href="detalhes_historico.php">1239</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>38142194120</td>

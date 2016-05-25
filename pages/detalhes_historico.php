@@ -13,19 +13,14 @@
             
                 
                  <div align="center">
+                    <b> 24/03/2016 </b><br>
                      Lucas Barbosa de Alencar <br>
                      Lelo245@hotmail.com<br>
                      Benjamim rodrigues, 139, Eldorado <br>
-                     Apt 423, bloco 1<br>
-                    
+                     Apt 423, bloco 1<br><br>
+                     <h4><b>Entregue</b></h4>
                     <br>
-                    <button class="btn btn-default">Atualizar Status</button><br><br>
-                    <button class="btn btn-danger" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-warning" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-info" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-primary" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-success" style="display: none">Atualizar Status</button>
-                 </div>
+
 
 
             <div class="table-responsive">
@@ -77,29 +72,13 @@
                 </table>
             </div>   
              
-                    <div align="center">
-                    <form>
-                    <textarea class="form-control" rows="3" placeholder="Observações..." name="observacoes" required style="width: 50%;"></textarea>
-                    <a href="ped_andamento.php"><br>
-                    <button class="btn btn-success" >Cadastrar observação</button>
-                     </a><br><br>
-                    </form>
-                    </div>
+                    
         </div>
     </div>
     <div align="center">
-        <a href="ped_andamento.php">
-            <button class="btn btn-success" >Retornar a acompanhamento</button>
-        </a>
-                    
-        <br><br><br>
-                   <h4> Botão de status (Cores) </h4><br>
-                    <label>Desenvolvimento <button class="btn btn-default"></button></label> <br>
-                    <label>Aguardando Confirmação <button class="btn btn-danger"></button></label><br> 
-                    <label>Confirmado <button class="btn btn-warning"></button></label> <br>
-                    <label>Sendo Feito <button class="btn btn-info"></button></label> <br>
-                    <label>Saiu para Entrega <button class="btn btn-primary"></button></label><br> 
-                    <label>Entregue <button class="btn btn-success"></button></label> <br>
+        <a href="historico.php">
+            <button class="btn btn-success" >Retornar a Histórico</button><br><br>
+        </a>        
     </div>  
         
 </div>
