@@ -53,7 +53,7 @@
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="#">Atualizar Status</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
                                         </tr>
                                         <tr>
                                             <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
@@ -61,7 +61,7 @@
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="#">Atualizar Status</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
                                         </tr>
                                         <tr>
                                             <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
@@ -69,7 +69,7 @@
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="#">Atualizar Status</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
                                         </tr>
                                         <tr>
                                             <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
@@ -77,7 +77,7 @@
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
                                             <td>R$45.00</td>
-                                            <td><a href="#">Atualizar Status</a></td>
+                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
                                         </tr>
 
                                     
@@ -89,7 +89,36 @@
                     </div>
                 </div>
             </div>
-         </div>
+
+
+            <div class="modal fade" id="status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #2c3e50; color: white;">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel" align="center">Atualizando Status</h4>
+                        </div>
+                        <div class="modal-body">
+                            <label> Selecione o status atual do pedido</label>
+                            <form>
+                             <div class="form-group">
+                                <select class="form-control" name="status">
+                                    <option value="" style="display:none">Status</option>
+                                    <option value="" >Em desenvolvimento</option>
+                                    <option value="" >Aguardando Confirmação</option>
+                                    <option value="" >Confirmado</option>
+                                    <option value="" >Sendo Feito</option>
+                                    <option value="" >Saiu para Entrega</option>
+                                    <option value="" >Entregue</option>
+                                </select>
+                            </div>
+                            <div align="right"><button class="btn btn-success"> Atualizar </button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 

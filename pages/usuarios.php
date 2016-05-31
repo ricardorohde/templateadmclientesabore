@@ -12,14 +12,14 @@
                                 <option value="" style="display:none">Escolha um Método de busca</option>
                                 <option value="nome" id="nome">Nome</option>
                                 <option value="email" id="email">Email</option>
-                                <option value="cpf" id="cpf">Cpf</option>
+                                <option value="cpf" id="cpf">Data Cadastro</option>
                                 </select>
                              </div> 
                         </div>
                         <div class="col-lg-3">
                             <input class="form-control" placeholder="Nome" id="inputusername" style="display:none">
                             <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
-                            <input class="form-control" placeholder="Cpf cliente, apenas numeros" id="inputcpf" style="display:none">
+                            <input class="form-control" placeholder="Data Cadastro" id="inputcpf" style="display:none">
                         </div>  
 
                         <br>
@@ -29,31 +29,31 @@
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Nome</th>
                                     <th>Email</th>
-                                    <th>Cpf</th>
+                                    <th>Data Cadastro</th>
                                     <th>Editar</th>
                                 </tr>
                                 <tr>
                                     <td>Lucas</td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
+                                    <td>20/05/2000</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                	</tr>
                                 <tr>
                                     <td>Lucas</td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
+                                    <td>20/05/2000</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Lucas </td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
+                                    <td>20/05/2000</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Lucas </td>
                                     <td>lelo245@hotmail.com</td>
-                                    <td>321932523</td>
+                                    <td>20/05/2000</td>
                                     <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
                                 </tr>
 

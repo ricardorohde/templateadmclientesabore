@@ -1,3 +1,4 @@
+<?php require_once('controller/textos_controller.php'); ?>
 <?php require_once('header.php'); ?>
 
 
@@ -8,13 +9,49 @@
 	        <div class="col-lg-12">
 	            <div class="panel panel-default">
 	                <div class="panel-heading">
-	                 Complete todos os campos para completar o cadastro de suas informações  
-					</div>
+                          Preencha os campos abaixo
+                   </div>
+
+                    <?PHP if($error){ ?>
+                    <div class="alert alert-danger">
+                        	<?PHP echo $mensagem; ?>
+    				        </div>
+                    <?PHP } ?>
+
+                    <?PHP if($success){ ?>
+                      <div class="alert alert-success">
+                          <?PHP echo $mensagem; ?>
+                      </div>
+                    <?PHP } ?>
 
 	                <div class="panel-body">
 	                    <div class="row">
 	                        <div class="col-lg-6">
-	                        <form role="form" method="post">
+	                        <form role="form" method="post" action="textos.php" method="post">
+			                    <div class="form-group">
+		                            <label><i class="fa fa-globe fa-fw"></i> CEP</label>
+		                            <input class="form-control" placeholder="Digite aqui o CEP" name="cep" id="cep"required >
+		                        </div>
+			                    <div class="form-group">
+		                            <label><i class="fa fa-flag-o fa-fw"></i> Estado</label>
+		                            <input class="form-control" placeholder="Digite aqui o Estado" name="estado" id="estado"required >
+		                        </div>
+			                    <div class="form-group">
+		                            <label><i class="fa fa-home fa-fw"></i> Cidade</label>
+		                            <input class="form-control" placeholder="Digite aqui a Cidade" name="cidade" id="cidade"required >
+		                        </div>
+			                    <div class="form-group">
+		                            <label><i class="fa fa-thumb-tack fa-fw"></i> Bairro</label>
+		                            <input class="form-control" placeholder="Digite aqui o Bairro" name="bairro" id="bairro"required >
+		                        </div>
+		                        <div class="form-group">
+		                            <label><i class="fa fa-thumb-tack fa-fw"></i> Endereço</label>
+		                            <input class="form-control" placeholder="Digite aqui o Endereço (Rua)" name="endereco" id="endereco" required>
+		                        </div>
+		                        <div class="form-group">
+		                            <label><i class="fa fa-slack fa-fw"></i> Número</label>
+		                            <input class="form-control" placeholder="Digite aqui o Número" name="numero" id="numero" type="number" required >
+		                        </div>
 			                    <div class="form-group">
 			                    	<label for="nome"><i class="fa fa-question-circle fa-fw"></i> Quem somos</label>
 			                   		<textarea class="form-control" rows="3" placeholder="Digite aqui..." name="quem_somos" required></textarea>
@@ -36,21 +73,21 @@
 			                        <textarea class="form-control" rows="3" placeholder="Digite sobre o seu delivery" name="delivery" id="delivery" required></textarea>
 			                    </div>
 			                    <div class="form-group">
-			                        <label><i class="fa fa-home fa-fw"></i> Endereço da pizzaria :</label>
-			                        <textarea class="form-control" rows="3" placeholder="Digite o endereço da pizzaria" name="endereco" id="endereco" required></textarea>
-			                    </div>
-			                    <div class="form-group">
-			                        <label><i class="fa fa-calendar fa-fw"></i> Horário de funcionamento :</label>
-			                        <textarea class="form-control" rows="5" placeholder="Insira aqui, os dias a horarios de funcionamento de sua pizzaria" name="horario" id="horario" required></textarea>
-			                    </div>
+		                            <label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 1</label>
+		                            <input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required>
+		                        </div>
+		                        <div class="form-group">
+		                            <label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 2</label>
+		                            <input class="form-control" placeholder="Digite aqui outro horário de funcionamento" name="funcionamento1" id="funcionamento1" required >
+		                        </div>
 			                    <br>
 			                    <div class="form-group">
                                             <label>Coloque uma imagem para a página quem somos</label>
-                                            <input type="file" required>
+                                            <input type="file" required name="img">
                                 </div>
 			                <br><br>
 			                    <diV align="center">
-			                        <button type="submit" class="btn btn-success" >Cadastrar informações</button>
+			                        <button type="submit" class="btn btn-success" name="btn_cadastrar_textos" value="cadastrar" >Cadastrar informações</button>
 		                            <button type="reset" class="btn btn-danger">Limpar campos acima. </button>
 		                        </diV>
 	                        </form>

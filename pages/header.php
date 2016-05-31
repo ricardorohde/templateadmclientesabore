@@ -226,7 +226,7 @@
                             <a href="usuarios.php"><i class="fa fa-user fa-fw"></i> Usuarios </a>
                         </li>
                         <li>
-                            <a href="clientes.php"><i class="fa fa-user fa-fw"></i> Clientes </a>
+                            <a href="clientes.php"><i class="fa fa-group fa-fw"></i> Clientes </a>
                         </li>
                         <li>
                             <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>

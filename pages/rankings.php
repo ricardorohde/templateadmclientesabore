@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 <script src="../js/busca.js"></script>
 <div id="page-wrapper"><br>
-<h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Top 5 Compradores
+<h1 class="page-header"> <i class="fa fa-group fa-fw"></i> Top 5 Compradores
     </h1>
       	<div class="row">
 

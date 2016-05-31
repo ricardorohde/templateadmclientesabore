@@ -44,7 +44,7 @@
                                     <td>20/05/2010</td>
                                     <td>
                                     <a href="#"><i class="fa fa-times fa-fw"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                	</tr>
                                 <tr>
@@ -55,7 +55,7 @@
                                     <td>20/05/2010</td>
                                     <td>
                                     <a href="#"><i class="fa fa-times fa-fw"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -66,7 +66,7 @@
                                     <td>20/05/2010</td>
                                     <td>
                                     <a href="#"><i class="fa fa-times fa-fw"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -77,7 +77,7 @@
                                     <td>20/05/2010</td>
                                     <td>
                                     <a href="#"><i class="fa fa-times fa-fw"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-user fa-fw"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                 </tr>
 
