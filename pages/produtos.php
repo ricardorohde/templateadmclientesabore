@@ -33,38 +33,38 @@
                                     <th>Cat.</th>
                                     <th>Produto</th>
                                     <th>Valor</th>
-                                    <th>Edit</th>
+                                    <th>Edição</th>
                                 </tr>
                             
                                 <tr>
                                     <td>Pizzas</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                	</tr>
                                	<tr>
                                     <td>Pizzas</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Pizzas</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Pizzas</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>Pizzas</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
 
                             

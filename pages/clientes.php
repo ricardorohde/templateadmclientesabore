@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 <script src="../js/busca.js"></script>
 <div id="page-wrapper"><br>
-<h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Clientes
+<h1 class="page-header"> <i class="fa fa-group fa-fw"></i> Clientes
     </h1>
       	<div class="row">
 
@@ -43,7 +43,7 @@
                                     <td>23</td>
                                     <td>20/05/2010</td>
                                     <td>
-                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o fa-fw"></i></a>
                                     <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                	</tr>
@@ -54,7 +54,7 @@
                                     <td>23</td>
                                     <td>20/05/2010</td>
                                     <td>
-                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o fa-fw"></i></a>
                                     <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                 </tr>
@@ -65,7 +65,7 @@
                                     <td>23</td>
                                     <td>20/05/2010</td>
                                     <td>
-                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o fa-fw"></i></a>
                                     <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                 </tr>
@@ -76,7 +76,7 @@
                                     <td>23</td>
                                     <td>20/05/2010</td>
                                     <td>
-                                    <a href="#"><i class="fa fa-times fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o fa-fw"></i></a>
                                     <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
                                     </td>
                                 </tr>

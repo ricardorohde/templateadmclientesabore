@@ -13,29 +13,29 @@
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Banners</th>
                                     <th>Título :</th>
-                                    <th>Editar</th>
+                                    <th>Edição</th>
                                 </tr>
                             
                            
                                 <tr>
                                     <td>1</td>
                                     <td>Pizzaria hotspace</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Pizzaria loucura</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Promoção loucura</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Pizzas maravilhosas</td>
-                                    <td><a href="#"><i class="fa fa-edit fa-fw"></i></a><a href="#"><i class="fa fa-times fa-fw"></i></a></td>
+                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
 
                           
