@@ -3,7 +3,7 @@
     $error = false;
     $success= false;
     $mensagem = '';
-
+    $data_registro = date ("Y-m-d H:i:s");
     //echo "<pre>";print_r($_POST);exit;
 
     ##recebe o post
@@ -23,12 +23,22 @@
                             'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                             'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                             'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
-                            'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$_POST['img']);
+                            'valor_mini_metade'=>$_POST['valor_mini_metade'],'situacao_id'=>$_POST['situacao_id'],//'img'=>$_POST['img'], 
+                            'data_cadastro'=>$data_registro);
             //Testar array
-            echo "<pre>"; print_r($arrayDados); exit;    
             //echo "chamar API aqui";exit;  
-            $success = true; 
-            $mensagem = "Agora só falta chamar a API para realizar o cadastro";          
+             $insert = GoCURL($arrayDados, 'produtos/cadastrar');    
+                  if(!$insert['success'])
+                    {
+                        $mensagem = $insert['message'];
+                        $mensagemArray = $insert['message_array'];
+                        $insertError = true;
+                    }   
+                else{
+                        $mensagem = $insert['message'];
+                        $mensagemArray = $insert['message_array'];
+                        $success = true;
+                    }          
         }
         
     }    

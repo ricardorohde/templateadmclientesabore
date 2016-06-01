@@ -35,12 +35,22 @@
                                 <div class="col-lg-6">
                                     <form role="form" action="cad_categorias.php" method="post">
                                         <div class="form-group">
+                                        <label>Situação:</label>
+                                          <select class="form-control" required="required" name="situacao_id">
+                                            <option value="1" id="1" selected>Ativo</option>
+                                            <option value="2" id="2">Bloqueado</option>
+                                            <option value="3" id="3">Cancelado</option>
+                                            <option value="4" id="4">Aguardando Confirmação</option>
+                                          </select>
+                                        </div>
+
+                                        <div class="form-group">
                                             <input class="form-control" placeholder="Nome Categoria" name="nome" required>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Descreva essa categoria" name="descricao"  required></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Descreva essa categoria" name="descricao" required></textarea>
                                         </div>
-                                        
+
 	                                	    <div class="form-group">
 	                                        <label> Principal ? </label>
 	                                        <label class="radio-inline">

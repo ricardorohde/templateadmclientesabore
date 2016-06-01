@@ -33,14 +33,24 @@
                                 <div class="col-lg-6">
                                     <form role="form" action="cad_produtos.php" method="post">
                                     	<div class="form-group">
+                                        <label>Situação:</label>
+                                          <select class="form-control" required="required" name="situacao_id">
+                                            <option value="1" id="1" selected>Ativo</option>
+                                            <option value="2" id="2">Bloqueado</option>
+                                            <option value="3" id="3">Cancelado</option>
+                                            <option value="4" id="4">Aguardando Confirmação</option>
+                                          </select>
+                                        </div>
+                                        
+                                        <div class="form-group">
 										    <select class="form-control" required="required" name="categoria_id">
-											<option value="" style="display:none">Escolha uma categoria</option>
+											<option value="" style="display:none">Categoria deste produto</option>
 											<option value="1" id="1">Pizza</option>
 											<option value="2" id="2">Bebida</option>
 											<option value="3" id="3">Doces</option>
 										    </select>
 									    </div> 
-
+									    
 
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Nome Produto" name="nome" required>
