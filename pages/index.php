@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <a href="#">
+                    <a href="creditos.php">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">

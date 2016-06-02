@@ -98,6 +98,34 @@ $(document).ready(function() {
       $('#inputvalor').hide();
     }
   });
+
+    //Aqui vai o busca de créditos
+
+
+      $('#inputdata').hide();
+  $('#credito_buscar').change(function() {
+    if ($('#credito_buscar').val() == 'data_pedido') {
+      $('#inputdata').show();
+    } else {
+      $('#inputdata').hide();
+    }
+  });
+      $('#inputemail').hide();
+  $('#credito_buscar').change(function() {
+    if ($('#credito_buscar').val() == 'email') {
+      $('#inputemail').show();
+    } else {
+      $('#inputemail').hide();
+    }
+  });
+      $('#inputcodigo').hide();
+  $('#credito_buscar').change(function() {
+    if ($('#credito_buscar').val() == 'cod_pedido') {
+      $('#inputcodigo').show();
+    } else {
+      $('#inputcodigo').hide();
+    }
+  });
 // aqui vai a busca no acompanhamento pedidos
   $('#inputnped').hide();
   $('#acompanhamento').change(function() {
