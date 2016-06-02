@@ -3,7 +3,8 @@
     $error = false;
     $success= false;
     $mensagem = '';
-
+    $data_cadastro = date ("Y-m-d H:i:s");
+    $cliente_id = '1';
     //echo "<pre>";print_r($_POST);exit;
 
     ##recebe o post
@@ -20,12 +21,26 @@
         {
             $arrayDados = array('nome'=>$_POST['nome'], 'login'=>$_POST['login'],
                             'senha'=>$_POST['senha'],'email'=>$_POST['email'],
-                            'funcao'=>$_POST['funcao']);// 'permissao'=>$_POST['permissao']
+                            'permissao'=>$_POST['permissao'], 'funcao'=>$_POST['funcao'],
+                            'data_cadastro'=>$data_cadastro, 'cliente_id'=>$cliente_id);// 
             //Testar array
             echo "<pre>"; print_r($arrayDados); exit;    
-            //echo "chamar API aqui";exit;  
-            $success = true; 
-            $mensagem = "Agora só falta chamar a API para realizar o cadastro";          
+            
+
+            /*  ###### AQUI ESTÁ O ARRAY ENVIANDO P BANCO DE DADOS ##########            
+            $insert = GoCURL($arrayDados, 'PERGUNTAR PARA JUNIOR');    
+                  if(!$insert['success'])
+                    {
+                        $mensagem = $insert['message'];
+                        $mensagemArray = $insert['message_array'];
+                        $insertError = true;
+                    }   
+                else{
+                        $mensagem = $insert['message'];
+                        $mensagemArray = $insert['message_array'];
+                        $success = true;
+                    }      
+            */    
         }
         
     }    

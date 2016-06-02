@@ -34,6 +34,8 @@
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Titulo que será exibido em seu banner." name="titulo" required><br>
                                             <input class="form-control" placeholder="Subtitulo que será exibido em seu banner." name="subtitulo" required><br>
+                                            <input class="form-control" placeholder="Palavra em Negrito." name="palavra_negrito" required><br>
+                                            <input class="form-control" placeholder="Palavra em Vermelho." name="palavra_vermelho" required><br>
                                             <input class="form-control" placeholder="Botão que será exibido em seu banner." name="botao" required><br>
                                             <input class="form-control" placeholder="Link do botão." name="link_botao" required><br>
 
