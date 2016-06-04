@@ -246,6 +246,9 @@
                         <li>
                             <a href="creditos.php"><i class="fa fa-credit-card fa-fw"></i> Créditos</a>
                         </li>
+                        <li>
+                            <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
+                        </li>
             </div>
       
             <!-- /.navbar-static-side -->

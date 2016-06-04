@@ -17,7 +17,7 @@
                             
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Data</th>
-                                    <th>Métodos</th>
+                                    <th>Nº de Métodos</th>
                                     <th>Produto</th>
                                     <th>Valor</th>
                                     <th>Editar</th>
@@ -25,28 +25,28 @@
                             
                                 <tr>
                                     <td><a href="sms_detalhes.php">20/04/2016</a></td>
-                                    <td>Entre 20 e 30 anos</td>
+                                    <td>15</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
                                     <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                	</tr>
                                	<tr>
-                                    <td>20/04/2016</td>
-                                    <td>Entre 20 e 30 anos</td>
+                                    <td><a href="sms_detalhes.php">20/04/2016</a></td>
+                                    <td>15</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
                                     <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
-                                    <td>20/04/2016</td>
-                                    <td>Entre 20 e 30 anos</td>
+                                    <td><a href="sms_detalhes.php">20/04/2016</a></td>
+                                    <td>15</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
                                     <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
                                 </tr>
                                 <tr>
-                                    <td>20/04/2016</td>
-                                    <td>Entre 20 e 30 anos</td>
+                                    <td><a href="sms_detalhes.php">20/04/2016</a></td>
+                                    <td>15</td>
                                     <td>Frango catupiry</td>
                                     <td>R$40.00</td>
                                     <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
