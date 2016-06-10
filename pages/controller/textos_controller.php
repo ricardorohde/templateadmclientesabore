@@ -12,7 +12,7 @@
     {
         ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
         ## || = OR  && = AND
-        if(empty($_POST['cep']) || empty($_POST['cidade'] || empty($_POST['bairro'])|| empty($_POST['estado'])))
+        if(empty($_POST['cep']) || empty($_POST['cidade']) || empty($_POST['bairro'])|| empty($_POST['estado']))
         {
             $error = true;
             $mensagem = 'Informar campos obrigatorios';
