@@ -51,6 +51,16 @@
 										    </select>
 									    </div> 
 									    
+									    <!--	
+									    <select class="cardapio_rapido">
+					                      <option>CÁRDAPIO RÁPIDO</option>
+					                    <?PHP foreach($_SESSION['menu'] as $menu){ ?>
+										<option value="<?PHP echo $host."/categoria/".$menu['Categorias']['placeholder']; ?>">
+					                          <?PHP echo $menu['Categorias']['nome']; ?>
+					                        </option>            
+					                    <?PHP } ?>
+					                  </select> 
+					              -->
 
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Nome Produto" name="nome" required>

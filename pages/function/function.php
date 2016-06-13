@@ -1,6 +1,15 @@
 <?PHP 
 ##PLUGIN DE FUNCOES PARA CONEXAO COM API
 
+function RetornaURL()
+{
+    $scriptURL = $_SERVER['SCRIPT_NAME'];
+    $array = explode('/', $scriptURL);
+    $arquivo = end($array);
+    $arquivo = str_replace('.php', '', $arquivo);    
+    return $arquivo;
+}
+
 ##ENVIA REQUISICAO PARA API 
 function GoCURL($campos, $url)
 {
