@@ -82,15 +82,15 @@
                                         </div>
 
                                         <div class="form-group">
-                                        
-										    <select class="form-control" required="required" name="categoria_id">
-											<option value="" style="display:none">Categoria deste produto</option>
-											<option value="1" id="1">Pizza</option>
-											<option value="2" id="2">Bebida</option>
-											<option value="3" id="3">Doces</option>
-										    </select>
+                                      
+                										    <select class="form-control" required="required" name="categoria_id">
+                											<option value="" style="display:none">Categoria deste produto</option>
+                											<option value="1" id="1">Pizza</option>
+                											<option value="2" id="2">Bebida</option>
+                											<option value="3" id="3">Doces</option>
+                										    </select>
 										
-									    </div> 
+								                        </div>
 
 									    
 									   
@@ -123,9 +123,10 @@
 
 	                                    <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" name="desconto" required <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $produtos['dados']['Produto']['desconto']; ?>"
-                                                <?PHP } ?>>
+	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" name="desconto" required value= <?PHP if($editar){ ?>
+                                                  "<?PHP echo $produtos['dados']['Produto']['desconto']; ?>"
+                                                <?PHP } else {echo "00.00";}  ?> >
+                                                
 	                                    </div>
 
 
@@ -133,10 +134,29 @@
 	                                	<div class="form-group">
 	                                        <label>Destaque?</label>
 	                                        <label class="radio-inline">
-	                                            <input type="radio" name="destaque" id="destaque" value="S" >Sim
+	                                            <input type="radio" name="destaque" id="destaque" value="S" 
+                                              <?PHP 
+                                                if($editar)
+                                                { 
+                                                    if($produtos['dados']['Produto']['destaque'] == 'S') 
+                                                      echo "checked"; 
+                                                }                                                  
+                                                ?>
+                                               >Sim
 	                                        </label>
 	                                        <label class="radio-inline">
-	                                        <input type="radio" name="destaque" id="destaque" value="N" checked>Não
+	                                        <input type="radio" name="destaque" id="destaque" value="N" 
+                                              <?PHP 
+                                                if($editar)
+                                                { 
+                                                    if($produtos['dados']['Produto']['destaque'] == 'N') 
+                                                      echo "checked"; 
+                                                }  
+                                                else{
+                                                  echo "checked";
+                                                }                                                
+                                                ?>
+                                               >Não
 	                                        </label>
                                        	</div>
 
@@ -145,18 +165,40 @@
 	                                    <div class="form-group">
 	                                        <label>Broto?</label>
 	                                        <label class="radio-inline">
-	                                             <input type="radio" name="mini" id="broto_produto" value="S" >Sim
+	                                             <input type="radio" name="mini" id="broto_produto" value="S"
+                                               <?PHP 
+                                                if($editar)
+                                                { 
+                                                    if($produtos['dados']['Produto']['mini'] == 'S') 
+                                                      echo "checked"; 
+                                                }                                                  
+                                                ?>>Sim
+                                               
 	                                        </label>
 	                                        <label class="radio-inline">
-	                                            <input type="radio" name="mini" id="broto1_produto" value="N" checked>Não
+	                                            <input type="radio" name="mini" id="broto1_produto" value="N" 
+                                              <?PHP 
+                                                if($editar)
+                                                { 
+                                                if($produtos['dados']['Produto']['mini'] == 'N') 
+                                                  echo "checked"; 
+                                                }     
+                                                else
+                                                {
+                                                  echo "checked";
+                                                }                                             
+                                                ?>>Não
 	                                        </label>
                                         </div>
 
 
 
-	                                   	<div class="form-group input-group" style="display: none;" id="input_valor_broto_produto">
+	                                   	<div class="form-group input-group" style="display: <?PHP echo $style; ?>" id="input_valor_broto_produto">
 	                                        <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_mini" value="00.00">
+	                                        <input type="text" class="form-control" name="valor_mini" value =
+                                                <?PHP if($editar){ ?>
+                                                  <?PHP echo  $produtos["dados"]["Produto"]["valor_mini"]; ?>
+                                                <?PHP } else {echo " 00.00 ";} ?>>
 	                                    </div>
 
 
@@ -164,33 +206,69 @@
 	                                    <div class="form-group">
 	                                        <label>Metade?</label>
 	                                        <label class="radio-inline">
-	                                            <input type="radio" name="metade" id="metade_produto" value="S" >Sim
+	                                            <input type="radio" name="metade" id="metade_produto" value="S" 
+                                              <?PHP 
+                                                if($editar)
+                                                { 
+                                                    if($produtos['dados']['Produto']['metade'] == 'S') 
+                                                      echo "checked"; 
+                                                }                                                  
+                                                ?>
+                                               >Sim
 	                                        </label>
 	                                      	<label class="radio-inline">
-	                                            <input type="radio" name="metade" id="metade1_produto" value="N" checked>Não
+	                                            <input type="radio" name="metade" id="metade1_produto" value="N" 
+                                              <?PHP 
+                                                if($editar)
+                                                { 
+                                                    if($produtos['dados']['Produto']['metade'] == 'N') 
+                                                      echo "checked"; 
+                                                }              
+                                                else {
+                                                  echo "checked";
+                                                }                                    
+                                                ?>>Não
 	                                        </label>
                                        	</div>
 
 
 
-	                                    <div class="form-group input-group" id="input_valor_metade_produto" style="display: none;">
+	                                    <div class="form-group input-group" id="input_valor_metade_produto" style="display: <?PHP echo $style; ?>">
 	                                        <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_metade" value="00.00">
+	                                        <input type="text" class="form-control" name="valor_metade" value =
+                                                <?PHP if($editar){ ?>
+                                                  <?PHP echo  $produtos["dados"]["Produto"]["valor_metade"]; ?>
+                                                <?PHP } else {echo " 00.00 ";} ?>>
 	                                    </div>
+
+
+                                      <!--
 
 	                                    <div class="form-group">
 	                                        <label>Meia no broto?</label>
 	                                        <label class="radio-inline">
-	                                            <input type="radio" name="meiabroto" id="metade_broto_produto" value="S" >Sim
-	                                        </label>
+	                                           <input type="radio" name="meiabroto" id="metade_produto" value="S" 
+                                              <?PHP 
+                                                if($editar)
+                                                { 
+                                                    if($produtos['dados']['Produto']['metadebroto'] == 'S') 
+                                                      echo "checked"; 
+                                                }              
+                                                else {
+                                                  echo "checked";
+                                                }                                    
+                                                ?>Sim
+                                          </label>
 	                                        <label class="radio-inline">
 	                                            <input type="radio" name="meiabroto" id="metade1_broto_produto" value="N" checked>Não
 	                                        </label>
                                        	</div> 
-	                                    <div class="form-group input-group" id="input_valor_metade_broto_produto" style="display: none;">
+	                                    <div class="form-group input-group" id="input_valor_metade_broto_produto" style="display: <?PHP echo $style; ?>">
 	                                       <span class="input-group-addon">R$</span>
 	                                        <input type="text" class="form-control" name="valor_mini_metade" value="00.00" >
 	                                    </div>
+
+                                      -->
 	                                    <br>
 
 	                                    <div class="form-group">
@@ -198,6 +276,11 @@
                                             <input type="file" name="img">
                                        	</div>
 
+                                        <?PHP if($editar){ ?>
+                                            <input type="hidden" name="editar" value="editar">
+                                            <input type="hidden" name="id" 
+                                              value="<?PHP echo $produtos['dados']['Produto']['id'];?>">
+                                          <?PHP } ?>
 
                                        	<div align="center">
 	                                    	<br><br>

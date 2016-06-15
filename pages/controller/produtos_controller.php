@@ -9,6 +9,7 @@
     $produtos = array();
     $listaProdutos = array();
     $editar = false;
+    $style = 'none';
     //echo "<pre>";print_r($_POST);exit;
 
 
@@ -36,12 +37,11 @@
                                 'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                                 'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                 'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
-                                'valor_mini_metade'=>$_POST['valor_mini_metade'],'situacao_id'=>$_POST['situacao_id'],//'img'=>$_POST['img'], 
+                                'situacao_id'=>$_POST['situacao_id'], 'cliente_id'=>$cliente_id, 'id'=>$_POST['id'],//'img'=>$_POST['img'], 'valor_mini_metade'=>$_POST['valor_mini_metade'],
                                 'data_cadastro'=>$data_registro, 'placeholder'=>$placeholder);
                                           
             $EditarProduto = GoCURL($arrayDados, 'produtos/editar');                                         
             $_POST['produtoID'] = $_POST['id'];
-
             if(!$EditarProduto['success'])
               {            
                 $mensagem = $EditarProduto['message'];                    
@@ -75,7 +75,7 @@
                                 'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                                 'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                 'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
-                                'valor_mini_metade'=>$_POST['valor_mini_metade'],'situacao_id'=>$_POST['situacao_id'],//'img'=>$_POST['img'], 
+                                'situacao_id'=>$_POST['situacao_id'],//'img'=>$_POST['img'], $_POST['valor_mini_metade'],
                                 'data_cadastro'=>$data_registro, 'placeholder'=>$placeholder);
                 //Testar array
                 //echo "chamar API aqui";exit;  
@@ -92,13 +92,27 @@
                             $success = true;
                         }          
             }
-
         }
         if(!empty($_POST['produtoID'])){
-                $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['produtoID']);
-                $produtos = GoCURL($arrayDados, 'produtos/search');
-                $editar = true;    
-            }
-}
+                    $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['produtoID']);
+                    $produtos = GoCURL($arrayDados, 'produtos/search');
+                    $editar = true;    
+                
+            if($produtos['dados']['Produto']['mini'] == 'S')
+                {   
+                    $style = 'block';
+                }     
+            if($produtos['dados']['Produto']['metade'] == 'S')
+                {   
+                    $style = 'block';
+                } 
+           } /*
+            if($produtos['dados']['Produto']['meiabroto'] == 'S')
+                {   
+                    $style = 'block';
+                } 
+            */
+}       
+
        
 ?>
