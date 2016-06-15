@@ -1,6 +1,25 @@
+<?php require_once('controller/produtos_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <script src="../js/busca.js"></script>
+<script>
+    function jsExcluir(produto)
+    {             
+        
+        document.formProdutoListar.action = "produtos.php";
+        document.getElementById("produtoID").value = produto;
+        document.getElementById("formProdutoListar").submit();
+        
+    }
 
+    function jsEditar(produto)
+    {           
+        document.formProdutoListar.action = "cad_produtos.php";
+        document.getElementById("produtoID").value = produto;
+        document.getElementById("formProdutoListar").submit();
+   
+    }
+
+</script>
 <div id="page-wrapper"><br>
             <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Produtos
         	     <a href="cad_produtos.php"><span class="pull-right text-muted small">
@@ -35,39 +54,23 @@
                                     <th>Valor</th>
                                     <th>Edição</th>
                                 </tr>
-                            
-                                <tr>
-                                    <td>Pizzas</td>
-                                    <td>Frango catupiry</td>
-                                    <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
-                               	</tr>
-                               	<tr>
-                                    <td>Pizzas</td>
-                                    <td>Frango catupiry</td>
-                                    <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Pizzas</td>
-                                    <td>Frango catupiry</td>
-                                    <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Pizzas</td>
-                                    <td>Frango catupiry</td>
-                                    <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Pizzas</td>
-                                    <td>Frango catupiry</td>
-                                    <td>R$40.00</td>
-                                    <td><a href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a href="#"><i class="fa fa-pencil fa-fw"></i></a></td>
-                                </tr>
-
-                            
+                                <form id="formProdutoListar" name="formProdutoListar" action="produtos.php" method="post">
+                                    <?PHP foreach($listaProdutos['dados'] as $produtos){?>
+                                    <tr>
+                                        <td><?PHP echo $produtos['Categoria']['nome']; ?></td>
+                                        <td><?PHP echo $produtos['Produto']['nome']; ?></td>
+                                        <td><?PHP echo $produtos['Produto']['valor']; ?></td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="jsExcluir('<?PHP echo $produtos['Produto']['id'] ?>');">
+                                                <i class="fa fa-trash-o fa-fw"></i>
+                                            </a> 
+                                            <a href="javascript:void(0);" onclick="jsEditar('<?PHP echo $produtos['Produto']['id'] ?>');">
+                                                <i class="fa fa-pencil fa-fw"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                   <?PHP } ?>  
+                              <input type="hidden" name="produtoID" value="" id="produtoID">
                         </table>
                 </div>
         </div>

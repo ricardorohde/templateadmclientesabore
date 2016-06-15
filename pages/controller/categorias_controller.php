@@ -8,7 +8,7 @@
     $listaCategorias = array();    
     $categoria = array();
     $pagina = RetornaURL();
-    $editar = false;
+    $editar = false; 
     $style = 'none';
 
     if($pagina == 'categorias')
@@ -20,8 +20,7 @@
         }                     
 
         $arrayDados = array('cliente_id'=>$cliente_id);
-        $listaCategorias = GoCURL($arrayDados, 'categoria/listar');    
-        
+        $listaCategorias = GoCURL($arrayDados, 'categoria/listar');
     }
 
     if($pagina == 'cad_categorias')

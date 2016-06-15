@@ -1,6 +1,6 @@
-<?php require_once('controller/categorias_controller.php'); ?>
+<?php require_once('controller/categorias_controller.php'); ?> 
 <?php require_once('header.php'); ?>
-<script src="../js/cad_campos.js"></script>
+<script src="../js/cad_campos.js"></script> 
 
 <div id="page-wrapper"><br>
     <h1 class="page-header"><i class="fa fa-list-ul fa-fw"></i> Cadastro de categorias

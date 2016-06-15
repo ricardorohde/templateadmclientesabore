@@ -1,6 +1,6 @@
 <?php require_once('controller/produtos_controller.php'); ?>
 <?php require_once('header.php'); ?>
-<script src="../js/cad_campos.js"></script>
+<script src="../js/cad_campos.js"></script> 
 
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Cadastrar Produtos
@@ -35,54 +35,97 @@
                                     	<div class="form-group">
                                         <label>Situação:</label>
                                           <select class="form-control" required="required" name="situacao_id">
-                                            <option value="1" id="1" selected>Ativo</option>
-                                            <option value="2" id="2">Bloqueado</option>
-                                            <option value="3" id="3">Cancelado</option>
-                                            <option value="4" id="4">Aguardando Confirmação</option>
+                                            <option value="1" id="1" 
+                                              <?PHP 
+                                                  if($editar)
+                                                  {
+                                                    if($produtos['dados']['Produto']['situacao_id'] == 1) 
+                                                      echo "selected"; 
+                                                  }
+                                                  else
+                                                  {
+                                                    echo "selected";
+                                                  }
+                                                ?>
+                                              >Ativo</option>
+                                            <option value="2" id="2" 
+                                              <?PHP 
+                                                if($editar)
+                                                {
+                                                   if($produtos['dados']['Produto']['situacao_id'] == 2) 
+                                                      echo "selected";
+
+                                                }
+                                              ?>
+                                            >Bloqueado</option>
+                                            <option value="3" id="3"
+                                            <?PHP 
+                                                if($editar)
+                                                {
+                                                   if($produtos['dados']['Produto']['situacao_id'] == 3) 
+                                                      echo "selected";
+
+                                                }
+                                              ?>
+                                            >Cancelado</option>
+                                            <option value="4" id="4"
+                                            <?PHP 
+                                                if($editar)
+                                                {
+                                                   if($produtos['dados']['Produto']['situacao_id'] == 4) 
+                                                      echo "selected";
+
+                                                }
+                                              ?>
+                                            >Aguardando Confirmação</option>
                                           </select>
                                         </div>
-                                        
+
                                         <div class="form-group">
+                                        
 										    <select class="form-control" required="required" name="categoria_id">
 											<option value="" style="display:none">Categoria deste produto</option>
 											<option value="1" id="1">Pizza</option>
 											<option value="2" id="2">Bebida</option>
 											<option value="3" id="3">Doces</option>
 										    </select>
+										
 									    </div> 
-									    
-									    <!--	
-									    <select class="cardapio_rapido">
-					                      <option>CÁRDAPIO RÁPIDO</option>
-					                    <?PHP foreach($_SESSION['menu'] as $menu){ ?>
-										<option value="<?PHP echo $host."/categoria/".$menu['Categorias']['placeholder']; ?>">
-					                          <?PHP echo $menu['Categorias']['nome']; ?>
-					                        </option>            
-					                    <?PHP } ?>
-					                  </select> 
-					              -->
 
+									    
+									   
+					              	
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Nome Produto" name="nome" required>
+                                            <input class="form-control" placeholder="Nome Produto" name="nome" required  <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $produtos['dados']['Produto']['nome']; ?>"
+                                                <?PHP } ?>>
                                         </div>
 
 
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Descreva esse produto" name="descricao" required></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Descreva esse produto" name="descricao" required>
+                                            	<?PHP if($editar){?>
+                                                  <?PHP echo $produtos['dados']['Produto']['descricao']; ?>
+                                                <?PHP } ?>
+                                            </textarea>
                                         </div>
 
 
 
                                         <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Valor desse produto (EX :58.40) " name="valor" required> 
+	                                            <input type="text" class="form-control" placeholder="Valor desse produto (EX :58.40) " name="valor" required <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $produtos['dados']['Produto']['valor']; ?>"
+                                                <?PHP } ?>>
 	                                    </div>
 
 
 
 	                                    <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" name="desconto" required>
+	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" name="desconto" required <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $produtos['dados']['Produto']['desconto']; ?>"
+                                                <?PHP } ?>>
 	                                    </div>
 
 
