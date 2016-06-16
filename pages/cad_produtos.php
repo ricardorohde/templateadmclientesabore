@@ -85,11 +85,11 @@
                                       
                 										    <select class="form-control" required="required" name="categoria_id">
                 											<option value="" style="display:none">Categoria deste produto</option>
-                											<option value="1" id="1">Pizza</option>
-                											<option value="2" id="2">Bebida</option>
-                											<option value="3" id="3">Doces</option>
+                                      <?PHP foreach($listaProdutos['dados'] as $produtos){?>
+                											<option value=""><?PHP echo $produtos['Categoria']['nome']; ?></option>
+                                      <?PHP } ?>  
                 										    </select>
-										
+										    
 								                        </div>
 
 									    
