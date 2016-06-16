@@ -86,7 +86,7 @@
                 										    <select class="form-control" required="required" name="categoria_id">
                 											<option value="" style="display:none">Categoria deste produto</option>
                                       <?PHP foreach($listaProdutos['dados'] as $produtos){?>
-                											<option value=""><?PHP echo $produtos['Categoria']['nome']; ?></option>
+                											<option value="<?PHP echo $produtos['Categoria']['nome']; ?>"><?PHP echo $produtos['Categoria']['nome']; ?></option>
                                       <?PHP } ?>  
                 										    </select>
 										    
