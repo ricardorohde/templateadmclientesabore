@@ -28,76 +28,145 @@
 	                    <div class="row">
 	                        <div class="col-lg-6">
 	                        <form role="form" method="post" action="textos.php" method="post">
-	                        	<div class="form-group">
-                                        <label>Situação:</label>
-                                          <select class="form-control" required="required" name="situacao_id">
-                                            <option value="1" id="1" selected>Ativo</option>
-                                            <option value="2" id="2">Bloqueado</option>
-                                            <option value="3" id="3">Cancelado</option>
-                                            <option value="4" id="4">Aguardando Confirmação</option>
-                                          </select>
-                                        </div>
 			                    <div class="form-group">
 		                            <label><i class="fa fa-globe fa-fw"></i> CEP</label>
-		                            <input class="form-control" placeholder="Digite aqui o CEP" name="cep" id="cep"required >
+		                            <input class="form-control" placeholder="Digite aqui o CEP" name="cep" id="cep"required value =
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo  $clientes["dados"]["Cliente"]["cep"]; ?>
+                                        <?PHP } ?> >
 		                        </div>
 			                    <div class="form-group">
 		                            <label><i class="fa fa-flag-o fa-fw"></i> Estado</label>
-		                            <input class="form-control" placeholder="Digite aqui o Estado" name="estado" id="estado"required >
+		                            <input class="form-control" placeholder="Digite aqui o Estado" name="estado" id="estado"required value =
+                                                <?PHP if($editar){ ?>
+                                                  <?PHP echo  $clientes["dados"]["Cliente"]["estado"]; ?>
+                                                <?PHP } ?>>
 		                        </div>
 			                    <div class="form-group">
 		                            <label><i class="fa fa-home fa-fw"></i> Cidade</label>
-		                            <input class="form-control" placeholder="Digite aqui a Cidade" name="cidade" id="cidade"required >
+		                            <input class="form-control" placeholder="Digite aqui a Cidade" name="cidade" id="cidade"required value =
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo  $clientes["dados"]["Cliente"]["cidade"]; ?>
+                                        <?PHP } ?>>
 		                        </div>
 			                    <div class="form-group">
 		                            <label><i class="fa fa-thumb-tack fa-fw"></i> Bairro</label>
-		                            <input class="form-control" placeholder="Digite aqui o Bairro" name="bairro" id="bairro"required >
+		                            <input class="form-control" placeholder="Digite aqui o Bairro" name="bairro" id="bairro"required value =
+	                                    <?PHP if($editar){ ?>
+	                                      <?PHP echo  $clientes["dados"]["Cliente"]["bairro"]; ?>
+	                                    <?PHP } ?> >
 		                        </div>
 		                        <div class="form-group">
 		                            <label><i class="fa fa-thumb-tack fa-fw"></i> Endereço</label>
-		                            <input class="form-control" placeholder="Digite aqui o Endereço (Rua)" name="endereco" id="endereco" required>
+		                            <input class="form-control" placeholder="Digite aqui o Endereço (Rua)" name="endereco" id="endereco" required value =
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo  $clientes["dados"]["Cliente"]["endereco"]; ?>
+                                        <?PHP } ?>>
 		                        </div>
 		                        <div class="form-group">
 		                            <label><i class="fa fa-slack fa-fw"></i> Número</label>
-		                            <input class="form-control" placeholder="Digite aqui o Número" name="numero" id="numero" type="number" required >
+		                            <input class="form-control" placeholder="Digite aqui o Número" name="numero" id="numero" type="number" required value =
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo  $clientes["dados"]["Cliente"]["numero"]; ?>
+                                        <?PHP } ?>>
 		                        </div>
 			                    <div class="form-group">
 			                    	<label for="nome"><i class="fa fa-question-circle fa-fw"></i> Quem somos</label>
-			                   		<textarea class="form-control" rows="3" placeholder="Digite aqui..." name="quem_somos" required></textarea>
+			                   		<textarea class="form-control" rows="3" placeholder="Digite aqui..." name="quem_somos" required>
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo  $clientes["dados"]["Cliente"]["quem_somos"]; ?>
+                                        <?PHP } ?></textarea>
 			                    </div>
 		                        <div class="form-group">
 		                            <label><i class="fa fa-facebook-square fa-fw"></i> Link Facebook</label>
 		                            <input class="form-control" placeholder="Digite aqui o Facebook" name="facebook" >
+		                            <!-- 
+		                            value =		<?PHP if($editar){ ?>
+                                                  <?PHP echo  $clientes["dados"]["Cliente"]["facebook"]; ?>
+                                                <?PHP } ?>
+									-->
+                                                
 		                        </div>
 	                            <div class="form-group">
 		                            <label><i class="fa fa-twitter-square fa-fw"></i> Link twitter</label>
 		                            <input class="form-control" placeholder="Digite aqui o Twitter" name="twitter" id="twitter" >
+		                            <!-- 
+		                            value =		<?PHP if($editar){ ?>
+                                                  <?PHP echo  $clientes["dados"]["Cliente"]["twitter"]; ?>
+                                                <?PHP } ?>
+									-->
 		                        </div>
 		                        <div class="form-group">
 		                            <label><i class="fa fa-camera fa-fw"></i> Link Instagram</label>
 		                            <input class="form-control" placeholder="Digite aqui o Instagram" name="instagram" id="instagram" >
+		                            <!-- 
+		                            value =		<?PHP if($editar){ ?>
+                                                  <?PHP echo  $clientes["dados"]["Cliente"]["instagram"]; ?>
+                                                <?PHP } ?>
+									-->
 		                        </div>
 		                        <div class="form-group">
 			                        <label><i class="fa fa-automobile fa-fw"></i> Delivery</label>
-			                        <textarea class="form-control" rows="3" placeholder="Digite sobre o seu delivery" name="delivery" id="delivery" required></textarea>
+			                        <textarea class="form-control" rows="3" placeholder="Digite sobre o seu delivery" name="delivery" id="delivery" ></textarea>
+			                        <!--
+                                                <?PHP if($editar){ ?>
+                                                  <?PHP echo  $clientes["dados"]["Cliente"]["delivery"]; ?>
+                                                <?PHP } ?>
+                                    -->
 			                    </div>
+
+
+			                    <?PHP if($editar = false){ ?>
 			                    <div class="form-group">
 		                            <label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 1</label>
 		                            <input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required>
 		                        </div>
+
 		                        <div class="form-group">
 		                            <label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 2</label>
 		                            <input class="form-control" placeholder="Digite aqui outro horário de funcionamento" name="funcionamento1" id="funcionamento1" required >
 		                        </div>
-			                    <br>
+		                        <?PHP } ?>
+
+
+
+								<?PHP if($editar = true){ ?>
+			                    <div class="form-group">
+		                            <label><i class="fa fa-calendar fa-fw"></i> Horário de Funcionamento</label>
+		                            <input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required value =
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo  $clientes["dados"]["Cliente"]["funcionamento"]; ?>
+                                        <?PHP } ?>>
+		                        </div>
+		                        <?PHP } ?>
+
+
+		                        <?PHP if($editar){ ?>
+                                            <input type="hidden" name="editar" value="editar">
+                                            <input type="hidden" name="id" 
+                                              value="<?PHP echo $clientes['dados']['Cliente']['id'];?>">
+                                <?PHP } ?>
+
+
+		                        <?PHP if($editar){ ?>
+                                            <input type="hidden" name="editar" value="editar">
+                                            <input type="hidden" name="id" 
+                                              value="<?PHP echo $clientes['dados']['Cliente']['id'];?>">
+                                <?PHP } ?>
+
+
+			                    <!--
 			                    <div class="form-group">
                                             <label>Coloque uma imagem para a página quem somos</label>
                                             <input type="file" required name="img">
                                 </div>
+                                -->
 			                <br><br>
 			                    <diV align="center">
-			                        <button type="submit" class="btn btn-success" name="btn_cadastrar_textos" value="cadastrar" >Cadastrar informações</button>
-		                            <button type="reset" class="btn btn-danger">Limpar campos acima. </button>
+			                        <button type="submit" class="btn btn-success" name="btn_cadastrar_textos" value="cadastrar" ><?PHP if($editar){ ?>
+                                                  <?PHP echo 'Editar'; ?>
+                                                <?PHP } else { echo 'Cadastrar' ; } ?></button>
+		                            <button type="reset" class="btn btn-danger">Limpar</button>
 		                        </diV>
 	                        </form>
 	                   		</div>
