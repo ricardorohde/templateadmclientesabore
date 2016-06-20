@@ -100,11 +100,11 @@
                 
             if($produtos['dados']['Produto']['mini'] == 'S')
                 {   
-                    $style = 'block';
+                    $style = 'table';
                 }     
             if($produtos['dados']['Produto']['metade'] == 'S')
                 {   
-                    $style = 'block';
+                    $style = 'table';
                 } 
            } /*
             if($produtos['dados']['Produto']['meiabroto'] == 'S')

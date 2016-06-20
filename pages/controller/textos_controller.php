@@ -5,10 +5,23 @@
     $mensagem = '';
     $usuario_id = '1';
     $data_registro = date ("Y-m-d H:i:s");
+    $cliente_id = '4';
+    $id = '4';
+    $clientes = array();
+    $editar = false;
     //echo "<pre>";print_r($_POST);exit;
-
     ##recebe o post
-    if (!empty($_POST['btn_cadastrar_textos']))
+
+
+    ###PERGUNTAR COMO PEGAR ID ASSIM QUE ENTRA NA PÀGINA ####
+    if(!empty($id)){
+                    $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
+                    $clientes = GoCURL($arrayDados, 'cliente/find_first');
+                    $editar = true;    
+           }
+
+if ($editar = false) {
+	if (!empty($_POST['btn_cadastrar_textos']))
     {
         ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
         ## || = OR  && = AND
@@ -26,30 +39,78 @@
                             'endereco'=>$_POST['endereco'], 'numero'=>$_POST['numero'],
                             'quem_somos'=>$_POST['quem_somos'], 'facebook'=>$_POST['facebook'],
                             'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
-                            'delivery'=>$_POST['delivery'],'horario_funcionamento'=>$funcionamento, 
-                            'usuario_id'=>$usuario_id, 'situacao_id'=>$_POST['situacao_id'],
-                            'data_cadastro'=>$data_registro);
-            //Testar array
-            echo "<pre>"; print_r($arrayDados); exit;    
-            //echo "chamar API aqui";exit;  
+                            'funcionamento'=>$funcionamento, 
+                            'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
+                            'cliente_id'=>$cliente_id);
+				            //'delivery'=>$_POST['delivery'],
+				            //Testar array
+				            //echo "<pre>"; print_r($arrayDados); exit;    
+				            //echo "chamar API aqui";exit;  
 
 
-            /*  ###### AQUI ESTÁ O ARRAY ENVIANDO P BANCO DE DADOS ##########            
-             $insert = GoCURL($arrayDados, 'Perguntar para junior');    
+             $insert = GoCURL($arrayDados, 'cliente/cadastrar');    
                   if(!$insert['success'])
                     {
                         $mensagem = $insert['message'];
                         $mensagemArray = $insert['message_array'];
-                        $insertError = true;
+                        $error = true;
                     }   
                 else{
                         $mensagem = $insert['message'];
                         $mensagemArray = $insert['message_array'];
                         $success = true;
                     }
-            */
 
         }
+
         
-    }    
+    }
+}
+if ($editar = true){
+	if (!empty($_POST['btn_cadastrar_textos']))
+    {
+        ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
+        ## || = OR  && = AND
+        if(empty($_POST['cep']) || empty($_POST['cidade']) || empty($_POST['bairro'])|| empty($_POST['estado']))
+        {
+            $error = true;
+            $mensagem = 'Informar campos obrigatorios';
+        }
+        else
+        {
+           
+        	$funcionamento = $_POST['funcionamento'];
+            $arrayDados = array('cep'=>$_POST['cep'], 'estado'=>$_POST['estado'],
+                            'cidade'=>$_POST['cidade'],'bairro'=>$_POST['bairro'],
+                            'endereco'=>$_POST['endereco'], 'numero'=>$_POST['numero'],
+                            'quem_somos'=>$_POST['quem_somos'], 'facebook'=>$_POST['facebook'],
+                            'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
+                            'funcionamento'=>$funcionamento, 
+                            'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
+                            'cliente_id'=>$cliente_id, 'id'=>$id);
+				            //'delivery'=>$_POST['delivery'],
+				            //Testar array
+				            //echo "<pre>"; print_r($arrayDados); exit;    
+				            //echo "chamar API aqui";exit;  
+
+
+             $insert = GoCURL($arrayDados, 'cliente/editar');    
+                  if(!$insert['success'])
+                    {
+                        $mensagem = $insert['message'];
+                        $mensagemArray = $insert['message_array'];
+                        $error = true;
+                    }   
+                else{
+                        $mensagem = $insert['message'];
+                        $mensagemArray = $insert['message_array'];
+                        $success = true;
+                    }
+
+        }
+
+        
+    }
+}
+        
 ?>
