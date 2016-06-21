@@ -41,6 +41,11 @@
                                 <input class="form-control" <?PHP if($editar){ ?> value="<?PHP echo $banner['dados']['ClienteBanner']['botao']; ?>" <?PHP } ?> placeholder="Botão que será exibido em seu banner." name="botao" required><br>
                                 
                                 <input class="form-control" <?PHP if($editar){ ?> value="<?PHP echo $banner['dados']['ClienteBanner']['link_botao']; ?>" <?PHP } ?>placeholder="Link do botão." name="link_botao" required><br>
+
+                                <?PHP if($editar){ ?>
+                                    <input type="hidden" name="editar" value="editar"> 
+                                    <input type="hidden" name="id" value="<?PHP echo $banner['dados']['ClienteBanner']['id']; ?>"> 
+                                <?PHP } ?>
                                        
                                   <!-- <label> Imagem para : Banner </label>
                                   <input type="file" required name="banner1"> -->

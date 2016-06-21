@@ -22,8 +22,6 @@
 
         $arrayDados = array('cliente_id'=>$cliente_id);
         $listaBanners = GoCURL($arrayDados, 'cliente/banner-listar');
-
-        //echo '<pre>'; print_r($listaBanners); exit;
     
     }
 
@@ -43,8 +41,7 @@
                 'link_botao'=>$_POST['link_botao'],
                 'id_cliente'=>$cliente_id,
                 'id'=>$_POST['id']
-            );
-
+            );            
                                           
             $EditarBanner = GoCURL($arrayDados, 'cliente/banner-editar');
 
@@ -52,15 +49,16 @@
 
             if(!$EditarBanner['success']){
 
-                $mensagem = $$EditarBanner['message'];                    
+                $mensagem = $EditarBanner['message'];                    
                 $error = true;
             
             }else{
                 
-                $mensagem = $$EditarBanner['message'];                    
+                $mensagem = $EditarBanner['message'];                    
                 $success = true;
             }
         }
+
         else if(!empty($_POST['btn_cadastrar_banner']))
         {
 
