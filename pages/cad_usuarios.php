@@ -31,21 +31,48 @@
                                     <form role="form" action="cad_usuarios.php" method="post">
                                     	
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Nome completo" name="nome" required id="nome">
+                                            <input class="form-control" placeholder="Nome completo" name="nome" required id="nome" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['nome']; ?>"
+                                                <?PHP } ?>>
                                         </div>
                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Login do funcionario" name="login" required id="login">
+                                            <input class="form-control" placeholder="Login do funcionario" name="login" required id="login" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['login']; ?>"
+                                                <?PHP } ?>>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="password" placeholder="Senha do usuario" name="senha" required id="senha">
+                                            <input class="form-control" type="password" placeholder="Senha do usuario" name="senha" required id="senha" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['senha']; ?>"
+                                                <?PHP } ?>>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Email do funcionário" name="email" required id="email">
+                                            <input class="form-control" placeholder="Email do funcionário" name="email"  id="email">
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Funções desse usuário" name="funcao" ></textarea>
+                                            <input class="form-control" placeholder="Tipo Documento" name="tipo_documento" required id="tipo_documento" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['tipo_documento']; ?>"
+                                                <?PHP } ?>>
                                         </div>
-	                                	<div class="form-group">
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Documento" name="documento" required id="documento" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['documento']; ?>"
+                                                <?PHP } ?>>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="Salário" name="salario" required id="salario" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['salario']; ?>"
+                                                <?PHP } ?>>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="3" placeholder="Funções desse usuário" name="funcao" >
+                                                <?PHP if($editar){ ?>
+                                                  <?PHP echo $usuariosabore['dados']['UsuarioSabore']['funcao']; ?>
+                                                <?PHP }?>
+                                            </textarea>
+                                        </div>
+
+	                                	<!--
+                                        <div class="form-group">
                                             <label><i class="fa fa-lock fa-fw"></i> Permissões do usuário</label>
                                             <div class="checkbox">
                                                 <label>
@@ -93,10 +120,18 @@
                                                 </label>
                                             </div>
                                         </div>
-	                                    
+	                                    -->
+                                        <?PHP if($editar){ ?>
+                                            <input type="hidden" name="editar" value="editar">
+                                            <input type="hidden" name="id" 
+                                              value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['id'];?>">
+                                          <?PHP } ?>
                                        	<div align="center">
 	                                    	<br><br>
-                                        <button type="submit" class="btn btn-success" name="btn_cadastrar_usuarios" value="cadastrar">Registrar</button>
+                                        <button type="submit" class="btn btn-success" name="btn_cadastrar_usuarios" value="cadastrar">
+                                        <?PHP if($editar){ ?>
+                                          <?PHP echo 'Editar'; ?>
+                                        <?PHP } else { echo 'Registrar';} ?></button>
 	                                    <button type="reset" class="btn btn-danger">Limpar  </button>
 	                                    </div>
 										
