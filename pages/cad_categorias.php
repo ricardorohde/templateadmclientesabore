@@ -1,4 +1,4 @@
-<?php require_once('controller/categorias_controller.php'); ?> 
+<?php require_once('controller/categorias_controller.php'); ?>  
 <?php require_once('header.php'); ?>
 <script src="../js/cad_campos.js"></script> 
 
@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                          Preencha os campos abaixo
+                          Preencha os campos abaixo 
                    </div>
 
                     <?PHP if($error){ ?>

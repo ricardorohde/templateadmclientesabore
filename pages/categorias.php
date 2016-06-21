@@ -12,7 +12,7 @@
     {           
         document.formCategoriaListar.action = "cad_categorias.php";
         document.getElementById("categoriaID").value = categoria;
-        document.getElementById("formCategoriaListar").submit();
+        document.getElementById("formCategoriaListar").submit(); 
     }
 </script>
 <div id="page-wrapper"><br>

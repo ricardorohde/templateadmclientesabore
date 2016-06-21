@@ -1,5 +1,5 @@
 <?php
-    require_once('function\function.php');
+    require_once('function\function.php'); 
     $error = false;
     $success= false;
     $mensagem = '';
@@ -26,8 +26,7 @@
     if($pagina == 'cad_categorias')
     {        
     
-        if(!empty($_POST['editar']) && !empty($_POST['id']))
-        {
+        if(!empty($_POST['editar']) && !empty($_POST['id'])){
             ##realizar placeholder aqui - chamar funcao para retirar acentos e trocar espacos por _ com str_replace
             $placeholder = $_POST['nome'];
             $placeholder = str_replace(" ", "_", $placeholder);
