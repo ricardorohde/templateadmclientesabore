@@ -1,33 +1,32 @@
+<?php require_once('controller/historico_controller.php'); ?>
 <?php require_once('header.php'); ?>
 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><i class="fa fa-clock-o fa-fw"></i> Detalhes do pedido 36333</h1>
+            <h1 class="page-header">
+                <i class="fa fa-clock-o fa-fw"></i> 
+                    Detalhes do pedido <?php echo $listaPedidos['dados']['Pedido']['id']; ?>
+            </h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
     <div class="row"> 
         <div class="col-lg-12">
-            
+
                 
                  <div align="center">
-                     Lucas Barbosa de Alencar <br>
-                     Lelo245@hotmail.com<br>
-                     Benjamim rodrigues, 139, Eldorado <br>
-                     Apt 423, bloco 1<br>
-                    
+                    <b> <?php echo $listaPedidos['dados']['Pedido']['data_pedido']; ?> </b><br>
+                     <?php echo $listaPedidos['dados']['Usuario']['nome']; ?> <br>
+                     <?php echo $listaPedidos['dados']['Usuario']['email']; ?><br>
+                     <?php echo $listaPedidos['dados']['Usuario']['endereco']; ?>, 
+                     <?php echo $listaPedidos['dados']['Usuario']['numero']; ?>, 
+                     <?php echo $listaPedidos['dados']['Usuario']['bairro']; ?> <br>
+                     <?php echo $listaPedidos['dados']['Usuario']['complemento']; ?><br><br>
+                     <h4><b><?php echo $listaPedidos['dados']['SituacaoPedido']['descricao']; ?> </b></h4>
                     <br>
-                    <button class="btn btn-default">Em Desenvolvimento</button><br>
 
-                    <button class="btn btn-danger" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-warning" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-info" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-primary" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-success" style="display: none">Atualizar Status</button>
-					<em>Clique para passar para próximo status</em><br><br>
-                 </div>
 
 
             <div class="table-responsive">
@@ -79,29 +78,13 @@
                 </table>
             </div>   
              
-                    <div align="center">
-                    <form>
-                    <textarea class="form-control" rows="3" placeholder="Observações..." name="observacoes" required style="width: 50%;"></textarea>
-                    <a href="ped_andamento.php"><br>
-                    <button class="btn btn-success" >Cadastrar observação</button>
-                     </a><br><br>
-                    </form>
-                    </div>
+                    
         </div>
     </div>
     <div align="center">
-        <a href="ped_andamento.php">
-            <button class="btn btn-success" >Retornar a acompanhamento</button>
-        </a>
-                    
-        <br><br><br>
-                   <h4> Botão de status (Cores) </h4><br>
-                    <label>Desenvolvimento <button class="btn btn-default"></button></label> <br>
-                    <label>Aguardando Confirmação <button class="btn btn-danger"></button></label><br> 
-                    <label>Confirmado <button class="btn btn-warning"></button></label> <br>
-                    <label>Sendo Feito <button class="btn btn-info"></button></label> <br>
-                    <label>Saiu para Entrega <button class="btn btn-primary"></button></label><br> 
-                    <label>Entregue <button class="btn btn-success"></button></label> <br>
+        <a href="historico.php">
+            <button class="btn btn-success" >Retornar a Histórico</button><br><br>
+        </a>        
     </div>  
         
 </div>

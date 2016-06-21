@@ -48,31 +48,7 @@
                                    
 
                                         <tr>
-                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>Saiu para entrega</td>
-                                            <td>R$45.00</td>
-                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>Saiu para entrega</td>
-                                            <td>R$45.00</td>
-                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>Saiu para entrega</td>
-                                            <td>R$45.00</td>
-                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center"><a href="ped_detalhes.php">Ver detalhes</a></td>
+                                            <td align="center"><a href="ped_detalhes_andamento.php">Ver detalhes</a></td>
                                             <td>Lucas Barbosa</td>
                                             <td>lelo245@hotmail.com</td>
                                             <td>Saiu para entrega</td>
