@@ -14,7 +14,6 @@
     <!-- /.row -->
     <div class="row"> 
         <div class="col-lg-12">
-
                 
                  <div align="center">
                     <b> <?php echo $listaPedidos['dados']['Pedido']['data_pedido']; ?> </b><br>
@@ -27,7 +26,7 @@
                      <h4><b><?php echo $listaPedidos['dados']['SituacaoPedido']['descricao']; ?> </b></h4>
                     <br>
 
-
+                    
 
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">
@@ -36,44 +35,23 @@
                     <th>Produto</th>
                     <th>Valor</th>
                 </tr>
+                <?PHP foreach($listaPedidos['dados']['PedidoProduto'] as $pedidos){?>                                                           
                 <tr>
                     <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
+                        <input type="checkbox"  <?PHP if($pedidos['metade'] == 'S'){ echo "checked"; }?> disabled>Meia</input><br>
+                        <input type="checkbox" <?PHP if($pedidos['mini'] == 'S'){ echo "checked"; }?> disabled>Broto</input>
                     </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
+                    <td><?php echo $pedidos['produto_id']; ?></td>
+                    <td><?php echo $pedidos['valor']; ?></td>
+                </tr>                                       
+                <?PHP } ?>
+
                 <tr style="background-color: #2c3e50; color: white;">
                     <td>
                         <input type="checkbox" checked disabled>Borda recheada</input>
                     </td>
-                    <td>Pagamento : Dinheiro </td>
-                    <td>Total  : R$40.00 <br>  Troco : R$20.00</td>
+                    <td>Pagamento : <?php echo $listaPedidos['dados']['FormaPagamento']['descricao']; ?></td>
+                    <td>Total : R$ <?php echo $listaPedidos['dados']['Pedido']['valor_total']; ?> <br>Troco : R$ <?php echo $listaPedidos['dados']['Pedido']['troco']; ?> </td>
                 </tr>
                 </table>
             </div>   
