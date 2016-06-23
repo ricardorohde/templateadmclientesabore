@@ -82,14 +82,22 @@
                                         </div>
 
                                         <div class="form-group">
-                                      
-                										    <select class="form-control" required="required" name="categoria_id">
-                											<option value="" style="display:none">Categoria deste produto</option>
-                                      <?PHP foreach($listaProdutos['dados'] as $produtos){?>
-                											<option value="<?PHP echo $produtos['Categoria']['nome']; ?>"><?PHP echo $produtos['Categoria']['nome']; ?></option>
-                                      <?PHP } ?>  
-                										    </select>
-										    
+                                          <select class="form-control" required="required" name="categoria_id">
+                                           <option value="" style="display:none">Categoria deste produto</option>
+                                           <?PHP foreach($listaCat['dados'] as $listaCat){?>
+                                           <option value= <?PHP echo $listaCat['Categoria']['id']; ?>     
+                                            <?php if ($editar)
+                                            {
+                                              if ($produtos['dados']['Produto']['categoria_id'] == $listaCat['Categoria']['id'])
+                                              {
+                                                echo "selected";
+
+                                              } ?>>
+                                            <?PHP echo $listaCat['Categoria']['nome']; } ?> 
+                                            </option> 
+                                            <?PHP  echo $listaCat['Categoria']['nome'];}  ?>  
+                                         </select>
+
 								                        </div>
 
 									    
