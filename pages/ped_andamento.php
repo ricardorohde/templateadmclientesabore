@@ -3,7 +3,15 @@
     require_once('header.php');
 ?>
 <script src="../js/busca.js"></script>
+<script>
+    function jsVer(pedido)
+    {        
+        document.formVisualizar.action = "ped_detalhes_andamento.php";
+        document.getElementById("pedidoID").value = pedido;
+        document.getElementById("formVisualizar").submit();
+    }
 
+</script>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -48,17 +56,19 @@
                                             <th>Valor</th>
                                             <th></th>
                                         </tr>
-                                   
-
+                                         <form id="formVisualizar" name="formVisualizar" action="ped_detalhes_andamento.php" method="post">
+                                        <?php foreach($listaPedidos['dados'] as $pedidos){?>
                                         <tr>
-                                            <td align="center"><a href="ped_detalhes_andamento.php">Ver detalhes</a></td>
-                                            <td>Lucas Barbosa</td>
-                                            <td>lelo245@hotmail.com</td>
-                                            <td>Saiu para entrega</td>
-                                            <td>R$45.00</td>
+                                            <td align="center"><a href="javascript:void(0);" onclick="jsVer('<?PHP echo $pedidos['Pedido']['id'] ?>');">Ver detalhes</a></td>
+                                            <td><?php echo $pedidos['Usuario']['nome'];?></td>
+                                            <td><?php echo $pedidos['Usuario']['email'];?></td>
+                                            <td><?php echo $pedidos['SituacaoPedido']['descricao'];?></td>
+                                            <td>R$ <?php echo $pedidos['Pedido']['valor_total'];?></td>
                                             <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
                                         </tr>
-
+                                        <?php } ?>
+                                        <input type="hidden" name="pedidoID" value="" id="pedidoID">  
+        
                                     
                                 </table>
                             </div>

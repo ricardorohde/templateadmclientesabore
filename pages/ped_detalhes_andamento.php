@@ -1,11 +1,14 @@
-<?php require_once('header.php'); ?>
+<?php 
+    require_once('controller/pedidos_controller.php'); 
+    require_once('header.php'); 
+?>
 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
                 <i class="fa fa-clock-o fa-fw"></i> 
-                Detalhes do pedido 1242142134
+                Detalhes do pedido Nº <?php echo $pedidos['dados']['Pedido']['id'];?>
             </h1>
         </div>
         <!-- /.col-lg-12 -->
@@ -16,7 +19,7 @@
             
                 
                  <div align="center">
-                     dados do cliente
+                     Dados do cliente
                     
                     <br>
                     <button class="btn btn-default">Em Desenvolvimento</button><br>
@@ -37,38 +40,19 @@
                     <th>Produto</th>
                     <th>Valor</th>
                 </tr>
+                
+
                 <tr>
                     <td>
                         <input type="checkbox" checked disabled>Meia</input><br>
                         <input type="checkbox" checked disabled>Broto</input>
                     </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
+                    <td>Queijo</td>
+                    <td>R$ 12,00</td>
                 </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Calabresa</td>
-                    <td>R$15.00</td>
-                </tr>
+
+                
+
                 <tr style="background-color: #2c3e50; color: white;">
                     <td>
                         <input type="checkbox" checked disabled>Borda recheada</input>
