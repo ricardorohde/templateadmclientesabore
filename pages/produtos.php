@@ -43,7 +43,6 @@
                                 <input class="form-control" placeholder="Produto" id="inputproduto" style="display:none">
                                 <input class="form-control" placeholder="Digite o valor desse produto (números)" id="inputvalor" style="display:none">
                             </div>  
-
                             <br>
                         <table class="table table-striped table-bordered table-hover">
                             

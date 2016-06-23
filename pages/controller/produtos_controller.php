@@ -9,10 +9,11 @@
     $produtos = array();
     $listaProdutos = array();
     $editar = false;
+    $listaCat = array();
     $style = 'none';
-    //echo "<pre>";print_r($_POST);exit;
-
-
+    $arrayDados = array('cliente_id'=>$cliente_id);
+    
+    $listaCat = GoCURL($arrayDados, 'produtos/find_cat');
     if($pagina == 'produtos')
     {   
         if(!empty($_POST['produtoID']))
@@ -22,6 +23,7 @@
         }               
         $arrayDados = array('cliente_id'=>$cliente_id);
         $listaProdutos = GoCURL($arrayDados, 'produtos/listar'); 
+        
     }
 
     if ($pagina ==  'cad_produtos') {      
