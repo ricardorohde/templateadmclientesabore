@@ -1,6 +1,15 @@
 <?php require_once('controller/clientes_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <script src="../js/busca.js"></script>
+<script>
+    function jsExcluir(cliente)
+    {        
+        document.formClienteListar.action = "clientes.php";
+        document.getElementById("clienteID").value = cliente;
+        document.getElementById("formClienteListar").submit();
+    }
+
+</script>
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-group fa-fw"></i> Clientes 
     </h1>
@@ -11,18 +20,14 @@
                 <option value="" style="display:none">Escolha um Método de busca</option>
                 <option value="nome" id="nome">Nome</option>
                 <option value="email" id="email">Email</option>
-                <option value="cpf" id="cpf">Data de cadastro</option>
                 <option value="telefone" id="telefone">Telefone</option>
-                <option value="pedidos" id="pedidos">Número de pedidos</option>
             </select>
         </div> 
     </div>
     <div class="col-lg-3">
         <input class="form-control" placeholder="Nome" id="inputusername" style="display:none">
         <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
-        <input class="form-control" placeholder="Data de cadastro" id="inputcpf" style="display:none">
         <input class="form-control" placeholder="Telefone do Cliente (numeros)" id="inputnumber" style="display:none">
-        <input class="form-control" placeholder="Numero de pedidos" id="n_pedidos" style="display:none">
     </div>  
     <div class="col-lg-12">
         <div class="table-responsive">
@@ -31,26 +36,32 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
-                    <th>Nº de pedidos</th>
-                    <th>Data Cadastro</th>
-                    <th>Delete</th>
+                    <th>Detalhes</th>
                 </tr>
+               <form id="formClienteListar" name="formClienteListar" action="clientes.php" method="post">
                 <?php foreach($listaClientes['dados'] as $cliente){?>
                     <tr>
                         <td><?php echo $cliente['Usuario']['nome']; ?></td>
                         <td><?php echo $cliente['Usuario']['email']; ?></td>
                         <td><?php echo $cliente['Usuario']['telefone']; ?></td>
-                        <td></td>
-                        <td></td>
                         <td>
+                            <a href="javascript:void(0);" onclick="jsExcluir('<?PHP echo $cliente['Usuario']['id'] ?>');">
+                                <i class="fa fa-trash-o fa-fw"></i>
+                            </a>
                             <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
+
                         </td>
                     </tr>
                 <?php } ?>
+                <input type="hidden" name="clienteID" value="" id="clienteID">
                 </table>
+                
             </div>
         </div>
     </div>  
+
+
+
 
 
     <div class="modal fade" id="user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >

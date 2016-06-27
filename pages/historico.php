@@ -26,7 +26,6 @@
                                 <option value="nped" id="nped">Nº Pedido</option>
                                 <option value="nome" id="nome">Nome</option>
                                 <option value="email" id="email">Email</option>
-                                <option value="cpf" id="cpf">Cpf</option>
                                 <option value="data" id="data">Data (De X até Y)</option>
                                 </select>
                              </div> 
@@ -35,7 +34,6 @@
                             <input class="form-control" placeholder="Nº Pedido" id="inputnped" style="display:none">
                             <input class="form-control" placeholder="Nome" id="inputnome" style="display:none">
                             <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
-                            <input class="form-control" placeholder="Cpf comprador apenas numeros" id="inputcpf" style="display:none">
                             <input class="form-control" placeholder="Do dia 03:01 até 08/01" id="inputdata" style="display:none">            
                         </div>  
 

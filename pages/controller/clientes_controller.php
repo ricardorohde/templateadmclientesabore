@@ -11,7 +11,11 @@ require_once('function\function.php');
 
     
     if($pagina == 'clientes'){
-
+        if(!empty($_POST['clienteID']))
+        {
+            $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['clienteID']);            
+            $excluir = GoCURL($arrayDados, 'clientes/deletando');                            
+        }   
         $arrayDados = array('cliente_id'=>$cliente_id);
         $listaClientes = GoCURL($arrayDados, 'clientes/listar');
 
