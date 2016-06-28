@@ -15,14 +15,14 @@
     </div>
     <!-- /.row -->
     <div class="row"> 
-        <div class="col-lg-12">
+        <div class="col-lg-12"> 
             
                 
                  <div align="center">
                      Dados do cliente
                     
                     <br>
-                    <button class="btn btn-default">Em Desenvolvimento</button><br>
+                    <button class="btn btn-default"><?php echo $pedidos['dados']['SituacaoPedido']['descricao']; ?></button><br>
 
                     <button class="btn btn-danger" style="display: none">Atualizar Status</button>
                     <button class="btn btn-warning" style="display: none">Atualizar Status</button>

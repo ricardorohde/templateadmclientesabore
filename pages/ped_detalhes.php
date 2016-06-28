@@ -1,7 +1,7 @@
 <?php require_once('controller/historico_controller.php'); ?>
 <?php require_once('header.php'); ?>
 
-<div id="page-wrapper">
+<div id="page-wrapper"> 
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
@@ -12,7 +12,7 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
-    <div class="row"> 
+    <div class="row">  
         <div class="col-lg-12">
                 
                  <div align="center">

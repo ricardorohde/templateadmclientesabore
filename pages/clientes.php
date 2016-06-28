@@ -2,6 +2,16 @@
 <?php require_once('header.php'); ?>
 <script src="../js/busca.js"></script>
 <script>
+
+    $(document).ready(function(){
+
+        $(".detalhes").click(function() {        
+            var Modal = '#myModal_' + $(this).attr('data-id');
+            $(Modal).modal();  
+        });     
+    });  
+
+
     function jsExcluir(cliente)
     {        
         document.formClienteListar.action = "clientes.php";
@@ -48,59 +58,38 @@
                             <a href="javascript:void(0);" onclick="jsExcluir('<?PHP echo $cliente['Usuario']['id'] ?>');">
                                 <i class="fa fa-trash-o fa-fw"></i>
                             </a>
-                            <a href="#" data-toggle="modal" data-target="#user"><i class="fa fa-search-plus fa-fw"></i></a>
+                            <a href="javascript:void(0);" class="detalhes" data-id="<?PHP echo $cliente['Usuario']['id']; ?>" ><i class="fa fa-search-plus fa-fw"></i></a>
 
                         </td>
                     </tr>
+
+                    <div class="modal fade" id="myModal_<?PHP echo $cliente['Usuario']['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog modal-confirma-add" role="document">
+                        <div class="modal-content confirmar-add">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
+                          </div>
+                          <div class="modal-body">
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <?PHP echo $cliente['Usuario']['nome']; ?>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                     
+                </div>
+
+                    
+
                 <?php } ?>
+
                 <input type="hidden" name="clienteID" value="" id="clienteID">
                 </table>
                 
             </div>
         </div>
     </div>  
-
-
-
-
-
-    <div class="modal fade" id="user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #2c3e50; color: white;">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel" align="center">Lucas Barbosa de Alencar</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <div align="center">
-                             Tipo Documento : F <br>
-                             Documento : 12432414 <br>
-                             Email : lelo245@hotmail.com<br>
-                             Senha : xxxxxxxxx <br>
-                             CEP : 07312-000 <br>
-                             Estado : São Paulo <br>
-                             Cidade : São Paulo <br>
-                             Endereço : Rua Almeda santos <br>
-                             Bairro : Eldorado <br>
-                             Número : 124 <br>
-                             Complemento : Vazio <br>
-                             Telefone : 4657-5015 <br>
-                             Celular : 21940124 <br>
-
-                        </div>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
+    
 
 <?php require_once('footer.php'); ?>
