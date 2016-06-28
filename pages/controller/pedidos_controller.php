@@ -25,7 +25,7 @@
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['pedidoID']);
             $pedidos = GoCURL($arrayDados, 'pedidos/visualizar'); 
             
-            //echo '<Pre>';print_r($pedidos);exit;
+            echo '<Pre>';print_r($pedidos);exit;
         }    
 
     }    
