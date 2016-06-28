@@ -9,18 +9,41 @@
     $usuariosabore=  array();
     $editar = false;
     $cliente_id= '4';
+    $input_busca = '';
     //echo "<pre>";print_r($_POST);exit;
+
+    /*
+    $permissao = 'CLIENTES;TEXTOS;CATEGORIAS';
+    $permissaoClienteMarcado = strstr($permissao, 'CLIENTES');
+    if(!empty($permissaoClienteMarcado))
+    {
+        echo "checked";
+    }
+    */
 
     ##recebe o post
    if($pagina == 'usuarios')
-    {   
+    {           
+        
         if(!empty($_POST['usuarioID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['usuarioID']);            
             $excluir = GoCURL($arrayDados, 'usuario_sabore/deletar');                            
-        }               
-        $arrayDados = array('cliente_id'=>$cliente_id);
-        $listausuario = GoCURL($arrayDados, 'usuario_sabore/list'); 
+        }   
+
+        if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
+        {                        
+            
+            $arrayDados = array('cliente_id'=>$cliente_id, 'search'=>$_POST['input_busca']);                
+            $listausuario = GoCURL($arrayDados, 'usuario_sabore/list');                
+            $input_busca = $_POST['input_busca'];
+            
+        }
+        else
+        {
+            $arrayDados = array('cliente_id'=>$cliente_id);
+            $listausuario = GoCURL($arrayDados, 'usuario_sabore/list');             
+        }    
     }
     
     if ($pagina == 'cad_usuarios'){

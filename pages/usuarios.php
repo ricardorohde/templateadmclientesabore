@@ -1,5 +1,6 @@
-<?php require_once('header.php'); ?>
 <?php require_once('controller/usuarios_controller.php'); ?>
+<?php require_once('header.php'); ?>
+
 <script src="../js/busca.js"></script>
 <script>
     function jsExcluir(usuario)
@@ -15,6 +16,12 @@
         document.getElementById("usuarioID").value = usuario;
         document.getElementById("formUsuarioListar").submit();
     }
+
+    function jsSubmitBusca()
+    {
+        document.formUsuarioListar.action = "usuarios.php";        
+        document.getElementById("formularioBusca").submit();   
+    }
 </script>
 <div id="page-wrapper"><br>
 <h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Usuários
@@ -23,21 +30,16 @@
       	<div class="row">
 
                         <div class="col-lg-3"> 
-                             <div class="form-group">
-                                <select class="form-control" required="required" id="usuarios_busca">
-                                <option value="" style="display:none">Escolha um Método de busca</option>
-                                <option value="nome" id="nome">Nome</option>
-                                <option value="email" id="email">Login</option>
-                                <option value="cpf" id="cpf">Data Cadastro</option>
-                                </select>
-                             </div> 
+                            <form name="formularioBusca" method="post">
+                                Digite uma busca
                         </div>
-                        <div class="col-lg-3">
-                            <input class="form-control" placeholder="Nome" id="inputusername" style="display:none">
-                            <input class="form-control" placeholder="Login" id="inputemail" style="display:none">
-                            <input class="form-control" placeholder="Data Cadastro" id="inputcpf" style="display:none">
-                        </div>  
-
+                                <div class="col-lg-3">
+                                    <input class="form-control" placeholder="Nome" id="input_busca" name="input_busca" 
+                                        value="<?PHP echo $input_busca; ?>">                                    
+                                    <input type="hidden" name="busca" value="true">
+                                    <button id="buscar" onclick="jsSubmitBusca();">Buscar</button>
+                                </div>  
+                            </form>
                         <br>
                         
             <div class="col-lg-12">

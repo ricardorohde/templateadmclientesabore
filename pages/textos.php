@@ -51,17 +51,18 @@
 		                        </div>
 			                    <div class="form-group">
 		                            <label><i class="fa fa-thumb-tack fa-fw"></i> Bairro</label>
-		                            <input class="form-control" placeholder="Digite aqui o Bairro" name="bairro" id="bairro"required value =
-	                                    <?PHP if($editar){ ?>
-	                                      <?PHP echo  $clientes["dados"]["Cliente"]["bairro"]; ?>
-	                                    <?PHP } ?> >
+		                            <input class="form-control" placeholder="Digite aqui o Bairro" name="bairro" id="bairro" required 
+		                            <?PHP if($editar){ ?>
+		                            	value="<?PHP echo $clientes['dados']['Cliente']['bairro']; ?>">	                                    	                                      	                                   
+	                                     <?PHP } ?>
 		                        </div>
 		                        <div class="form-group">
 		                            <label><i class="fa fa-thumb-tack fa-fw"></i> Endereço</label>
-		                            <input class="form-control" placeholder="Digite aqui o Endereço (Rua)" name="endereco" id="endereco" required value =
-                                        <?PHP if($editar){ ?>
-                                          <?PHP echo  $clientes["dados"]["Cliente"]["endereco"]; ?>
-                                        <?PHP } ?>>
+		                            <input class="form-control" placeholder="Digite aqui o Endereço (Rua)" name="endereco" id="endereco" required 
+		                            <?PHP if($editar){ ?>
+		                            	value = '<?PHP echo  $clientes["dados"]["Cliente"]["endereco"]; ?>'>
+                                                                                                                         
+                                       <?PHP } ?>
 		                        </div>
 		                        <div class="form-group">
 		                            <label><i class="fa fa-slack fa-fw"></i> Número</label>
@@ -176,13 +177,5 @@
 	      </div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
 
 <?php require_once('footer.php'); ?>

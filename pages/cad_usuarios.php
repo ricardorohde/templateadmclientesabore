@@ -1,6 +1,7 @@
 <?php require_once('controller/usuarios_controller.php'); ?>
 <?php require_once('header.php'); ?>
 
+
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Usuarios
 	    <a href="usuarios.php"><span class="pull-right text-muted small"><button class="btn btn-success"> Exibir usuários </button></a>
@@ -71,7 +72,7 @@
                                             </textarea>
                                         </div>
 
-	                                	<!--
+	                                	
                                         <div class="form-group">
                                             <label><i class="fa fa-lock fa-fw"></i> Permissões do usuário</label>
                                             <div class="checkbox">
@@ -120,7 +121,7 @@
                                                 </label>
                                             </div>
                                         </div>
-	                                    -->
+	                                    
                                         <?PHP if($editar){ ?>
                                             <input type="hidden" name="editar" value="editar">
                                             <input type="hidden" name="id" 
