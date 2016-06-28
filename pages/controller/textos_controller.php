@@ -1,116 +1,116 @@
 <?php
-    require_once('function\function.php');
-    $error = false;
-    $success= false;
-    $mensagem = '';
-    $usuario_id = '1';
-    $data_registro = date ("Y-m-d H:i:s");
-    $cliente_id = '4';
-    $id = '4';
-    $clientes = array();
-    $editar = false;
+require_once('function\function.php');
+$error = false;
+$success= false;
+$mensagem = '';
+$usuario_id = '1';
+$data_registro = date ("Y-m-d H:i:s");
+$cliente_id = '4';
+$id = '4';
+$clientes = array();
+$editar = false;
     //echo "<pre>";print_r($_POST);exit;
     ##recebe o post
 
 
     ###PERGUNTAR COMO PEGAR ID ASSIM QUE ENTRA NA PÀGINA ####
-    if(!empty($id)){
-                    $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
-                    $clientes = GoCURL($arrayDados, 'cliente/find_first');
-                    $editar = true;    
-           }
+if(!empty($id)){
+	$arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
+	$clientes = GoCURL($arrayDados, 'cliente/find_first');	
+	$editar = true;    
+}
 
 if ($editar = false) {
 	if (!empty($_POST['btn_cadastrar_textos']))
-    {
+	{
         ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
         ## || = OR  && = AND
-        if(empty($_POST['cep']) || empty($_POST['cidade']) || empty($_POST['bairro'])|| empty($_POST['estado']))
-        {
-            $error = true;
-            $mensagem = 'Informar campos obrigatorios';
-        }
-        else
-        {
-           
-        	$funcionamento = $_POST['funcionamento'].'---'.$_POST['funcionamento1'];
-            $arrayDados = array('cep'=>$_POST['cep'], 'estado'=>$_POST['estado'],
-                            'cidade'=>$_POST['cidade'],'bairro'=>$_POST['bairro'],
-                            'endereco'=>$_POST['endereco'], 'numero'=>$_POST['numero'],
-                            'quem_somos'=>$_POST['quem_somos'], 'facebook'=>$_POST['facebook'],
-                            'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
-                            'funcionamento'=>$funcionamento, 
-                            'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
-                            'cliente_id'=>$cliente_id);
+		if(empty($_POST['cep']) || empty($_POST['cidade']) || empty($_POST['bairro'])|| empty($_POST['estado']))
+		{
+			$error = true;
+			$mensagem = 'Informar campos obrigatorios';
+		}
+		else
+		{
+
+			$funcionamento = $_POST['funcionamento'].'---'.$_POST['funcionamento1'];
+			$arrayDados = array('cep'=>$_POST['cep'], 'estado'=>$_POST['estado'],
+				'cidade'=>$_POST['cidade'],'bairro'=>$_POST['bairro'],
+				'endereco'=>$_POST['endereco'], 'numero'=>$_POST['numero'],
+				'quem_somos'=>$_POST['quem_somos'], 'facebook'=>$_POST['facebook'],
+				'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
+				'funcionamento'=>$funcionamento, 
+				'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
+				'cliente_id'=>$cliente_id);
 				            //'delivery'=>$_POST['delivery'],
 				            //Testar array
 				            //echo "<pre>"; print_r($arrayDados); exit;    
 				            //echo "chamar API aqui";exit;  
 
 
-             $insert = GoCURL($arrayDados, 'cliente/cadastrar');    
-                  if(!$insert['success'])
-                    {
-                        $mensagem = $insert['message'];
-                        $mensagemArray = $insert['message_array'];
-                        $error = true;
-                    }   
-                else{
-                        $mensagem = $insert['message'];
-                        $mensagemArray = $insert['message_array'];
-                        $success = true;
-                    }
+			$insert = GoCURL($arrayDados, 'cliente/cadastrar');    
+			if(!$insert['success'])
+			{
+				$mensagem = $insert['message'];
+				$mensagemArray = $insert['message_array'];
+				$error = true;
+			}   
+			else{
+				$mensagem = $insert['message'];
+				$mensagemArray = $insert['message_array'];
+				$success = true;
+			}
 
-        }
+		}
 
-        
-    }
+
+	}
 }
 if ($editar = true){
 	if (!empty($_POST['btn_cadastrar_textos']))
-    {
+	{
         ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
         ## || = OR  && = AND
-        if(empty($_POST['cep']) || empty($_POST['cidade']) || empty($_POST['bairro'])|| empty($_POST['estado']))
-        {
-            $error = true;
-            $mensagem = 'Informar campos obrigatorios';
-        }
-        else
-        {
-           
-        	$funcionamento = $_POST['funcionamento'];
-            $arrayDados = array('cep'=>$_POST['cep'], 'estado'=>$_POST['estado'],
-                            'cidade'=>$_POST['cidade'],'bairro'=>$_POST['bairro'],
-                            'endereco'=>$_POST['endereco'], 'numero'=>$_POST['numero'],
-                            'quem_somos'=>$_POST['quem_somos'], 'facebook'=>$_POST['facebook'],
-                            'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
-                            'funcionamento'=>$funcionamento, 
-                            'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
-                            'cliente_id'=>$cliente_id, 'id'=>$id);
+		if(empty($_POST['cep']) || empty($_POST['cidade']) || empty($_POST['bairro'])|| empty($_POST['estado']))
+		{
+			$error = true;
+			$mensagem = 'Informar campos obrigatorios';
+		}
+		else
+		{
+
+			$funcionamento = $_POST['funcionamento'];
+			$arrayDados = array('cep'=>$_POST['cep'], 'estado'=>$_POST['estado'],
+				'cidade'=>$_POST['cidade'],'bairro'=>$_POST['bairro'],
+				'endereco'=>$_POST['endereco'], 'numero'=>$_POST['numero'],
+				'quem_somos'=>$_POST['quem_somos'], 'facebook'=>$_POST['facebook'],
+				'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
+				'funcionamento'=>$funcionamento, 
+				'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
+				'cliente_id'=>$cliente_id, 'id'=>$id);
 				            //'delivery'=>$_POST['delivery'],
 				            //Testar array
 				            //echo "<pre>"; print_r($arrayDados); exit;    
 				            //echo "chamar API aqui";exit;  
 
 
-             $insert = GoCURL($arrayDados, 'cliente/editar');    
-                  if(!$insert['success'])
-                    {
-                        $mensagem = $insert['message'];
-                        $mensagemArray = $insert['message_array'];
-                        $error = true;
-                    }   
-                else{
-                        $mensagem = $insert['message'];
-                        $mensagemArray = $insert['message_array'];
-                        $success = true;
-                    }
+			$insert = GoCURL($arrayDados, 'cliente/editar');    
+			if(!$insert['success'])
+			{
+				$mensagem = $insert['message'];
+				$mensagemArray = $insert['message_array'];
+				$error = true;
+			}   
+			else{
+				$mensagem = $insert['message'];
+				$mensagemArray = $insert['message_array'];
+				$success = true;
+			}
 
-        }
+		}
 
-        
-    }
+
+	}
 }
-        
+
 ?>
