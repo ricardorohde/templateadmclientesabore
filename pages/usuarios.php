@@ -28,19 +28,18 @@
          <a href="cad_usuarios.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo usuário</button></a>
     </h1><br>
       	<div class="row">
-
-                        <div class="col-lg-3"> 
-                            <form name="formularioBusca" method="post">
-                                Digite uma busca
-                        </div>
-                                <div class="col-lg-3">
-                                    <input class="form-control" placeholder="Nome" id="input_busca" name="input_busca" 
-                                        value="<?PHP echo $input_busca; ?>">                                    
-                                    <input type="hidden" name="busca" value="true">
-                                    <button id="buscar" onclick="jsSubmitBusca();">Buscar</button>
-                                </div>  
-                            </form>
-                        <br>
+            <form name="formularioBusca" method="post">
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Pesquise Aqui" id="input_busca" name="input_busca" 
+                        value="<?PHP echo $input_busca; ?>">                                    
+                    <input type="hidden" name="busca" value="true">
+                    
+                </div>
+                <div>
+                    <button id="buscar" class="btn btn-error" onclick="jsSubmitBusca();">Buscar</button>
+                </div>  
+            </form>
+        <br>
                         
             <div class="col-lg-12">
                     <div class="table-responsive">
