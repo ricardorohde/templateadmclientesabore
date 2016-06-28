@@ -27,14 +27,6 @@
                         <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form" action="perfil_user.php" method="post">
-                                         <div class="form-group">
-                                            <select class="form-control">
-                                            <option value="" style="display:none">Tipo de documento</option>
-                                            <option value="">Cnpj</option>
-                                            <option value="" >Cnpj</option>
-                                            <option value="" >Sei lá outro</option>
-                                            </select>
-                                         </div> 
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Documento" required name="documento" value= <?PHP if($editar){ ?>
                                                   "<?PHP echo $clientes['dados']['Cliente']['documento']; ?>"
