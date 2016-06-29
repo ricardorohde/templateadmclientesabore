@@ -20,7 +20,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
+            <div class="row"> 
 
                         <div class="col-lg-3"> 
                              <div class="form-group">
@@ -89,16 +89,15 @@
                         </div>
                         <div class="modal-body">
                             <label> Selecione o status atual do pedido</label>
-                            <form>
+                            <form method="post" action="">
                              <div class="form-group">
                                 <select class="form-control" name="status">
-                                    <option value="" style="display:none">Status</option>
-                                    <option value="" >Em desenvolvimento</option>
-                                    <option value="" >Aguardando Confirmação</option>
-                                    <option value="" >Confirmado</option>
-                                    <option value="" >Sendo Feito</option>
-                                    <option value="" >Saiu para Entrega</option>
-                                    <option value="" >Entregue</option>
+                                <?php foreach($situacao['dados'] as $status){?>
+                                    <option value="<?php echo $status['SituacaoPedido']['id'];?>" <?php if ($status['SituacaoPedido']['id'] == 2){ echo "selected";}?>>
+                                    <?php echo $status['SituacaoPedido']['descricao'];?>                                                
+                                    </option>
+                                    <?php echo $status['SituacaoPedido']['descricao'];?>
+                                <?php }?>
                                 </select>
                             </div>
                             <div align="right"><button class="btn btn-success"> Atualizar </button></div>

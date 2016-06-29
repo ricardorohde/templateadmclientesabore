@@ -22,13 +22,25 @@
                      Dados do cliente
                     
                     <br>
-                    <button class="btn btn-default"><?php echo $pedidos['dados']['SituacaoPedido']['descricao']; ?></button><br>
+                    <?php 
+                    $situacao = $pedidos['dados']['SituacaoPedido']['id'];
 
-                    <button class="btn btn-danger" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-warning" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-info" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-primary" style="display: none">Atualizar Status</button>
-                    <button class="btn btn-success" style="display: none">Atualizar Status</button>
+                    if($situacao  == 1){
+                        echo '<button class="btn btn-default">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    }else if($situacao  == 2){
+                        echo '<button class="btn btn-danger">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    }else if($situacao  == 3){
+                        echo '<button class="btn btn-warning">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    }elseif($situacao == 4){
+                        echo '<button class="btn btn-info">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    }elseif($situacao == 5) {
+                        echo '<button class="btn btn-primary">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    }else if($situacao == 6){
+                        echo '<button class="btn btn-success">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    }else{
+                        echo '<button class="btn btn-danger">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
+                    } ?>
+                    
 					<em>Clique para passar para próximo status</em><br><br>
                  </div>
 
@@ -41,36 +53,36 @@
                     <th>Valor</th>
                 </tr>
                 
-
-                <tr>
-                    <td>
-                        <input type="checkbox" checked disabled>Meia</input><br>
-                        <input type="checkbox" checked disabled>Broto</input>
-                    </td>
-                    <td>Queijo</td>
-                    <td>R$ 12,00</td>
-                </tr>
-
+                <?PHP foreach($pedidos['dados']['PedidoProduto'] as $row){ ?>
+                    <tr>
+                        <td>
+                            <input type="checkbox" checked disabled>Meia</input><br>
+                            <input type="checkbox" checked disabled>Broto</input>
+                        </td>
+                        <td><?PHP echo $row['dados_produto']['Produto']['nome']; ?></td>
+                        <td>R$ <?PHP echo number_format($row['valor'], 2, ',', '.'); ?></td>
+                    </tr>
+                <?PHP } ?>
                 
 
                 <tr style="background-color: #2c3e50; color: white;">
                     <td>
                         <input type="checkbox" checked disabled>Borda recheada</input>
                     </td>
-                    <td>Pagamento : Dinheiro </td>
-                    <td>Total  : R$40.00 <br>  Troco : R$20.00</td>
+                    <td>Pagamento : <?php echo $pedidos['dados']['FormaPagamento']['descricao'];?></td>
+                    <td>Total  : R$ <?php echo $pedidos['dados']['Pedido']['valor_total'];?> <br>  Troco : R$<?php echo $pedidos['dados']['Pedido']['troco'];?></td>
                 </tr>
                 </table>
             </div>   
              
-                    <div align="center">
+                   <!--  <div align="center">
                     <form>
                     <textarea class="form-control" rows="3" placeholder="Observações..." name="observacoes" required style="width: 50%;"></textarea>
                     <a href="ped_andamento.php"><br>
                     <button class="btn btn-success" >Cadastrar observação</button>
                      </a><br><br>
                     </form>
-                    </div>
+                    </div> -->
         </div>
     </div>
     <div align="center">

@@ -16,6 +16,9 @@
         $arrayDados = array('cliente_id'=>$cliente_id);
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
 
+        $situacao = GoCURL($arrayDados, 'pedidos/situacao');
+
+        //echo '<pre>';print_r($situacao);exit;
     }
 
     if($pagina == 'ped_detalhes_andamento'){
@@ -23,10 +26,8 @@
     	if(!empty($_POST['pedidoID']))
         {        
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['pedidoID']);
-            $pedidos = GoCURL($arrayDados, 'pedidos/visualizar'); 
-            
-            echo '<Pre>';print_r($pedidos);exit;
-        }    
+            $pedidos = GoCURL($arrayDados, 'pedidos/visualizar');             
+        }
 
     }    
 
