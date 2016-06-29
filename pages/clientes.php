@@ -19,20 +19,26 @@
         document.getElementById("formClienteListar").submit();
     }
 
+    function jsSubmitBusca()
+    {
+        document.formClienteListar.action = "clientes.php";        
+        document.getElementById("formularioBusca").submit();   
+    }
 </script>
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-group fa-fw"></i> Clientes 
     </h1>
     <div class="row">
-     <form name="formularioBusca" method="post">
-                <div class="col-lg-3">
-                    <input class="form-control" placeholder="Pesquise Aqui" id="input_busca" name="input_busca">                    
-                    <input type="hidden" name="busca" value="true">
-                </div>
-                <div>
-                    <button id="buscar" class="btn btn-error" onclick="jsSubmitBusca();">Buscar</button>
-                </div>  
-            </form><br>
+       <form name="formularioBusca" method="post">
+        <div class="col-lg-3">
+            <input class="form-control" placeholder="Pesquise Aqui" id="input_busca" name="input_busca" 
+            value="<?PHP echo $input_busca; ?>">                    
+            <input type="hidden" name="busca" value="true">
+        </div>
+        <div>
+            <button id="buscar" class="btn btn-error" onclick="jsSubmitBusca();">Buscar</button>
+        </div>  
+    </form><br>
     <div class="col-lg-12">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
@@ -42,8 +48,8 @@
                     <th>Telefone</th>
                     <th>Detalhes</th>
                 </tr>
-               <form id="formClienteListar" name="formClienteListar" action="clientes.php" method="post">
-                <?php foreach($listaClientes['dados'] as $cliente){?>
+                <form id="formClienteListar" name="formClienteListar" action="clientes.php" method="post">
+                    <?php foreach($listaClientes['dados'] as $cliente){?>
                     <tr>
                         <td><?php echo $cliente['Usuario']['nome']; ?></td>
                         <td><?php echo $cliente['Usuario']['email']; ?></td>
@@ -62,28 +68,28 @@
                         <div class="modal-content confirmar-add">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
-                          </div>
-                          <div class="modal-body">
-                            
-                          </div>
-                          <div class="modal-footer">
-                            <?PHP echo $cliente['Usuario']['nome']; ?>
-                          </div>
                         </div>
-                      </div>
-                    </div>                     
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <?PHP echo $cliente['Usuario']['nome']; ?>
+                        </div>
+                    </div>
                 </div>
-
-                    
-
-                <?php } ?>
-
-                <input type="hidden" name="clienteID" value="" id="clienteID">
-                </table>
-                
-            </div>
+            </div>                     
         </div>
-    </div>  
+
+        
+
+        <?php } ?>
+
+        <input type="hidden" name="clienteID" value="" id="clienteID">
+    </table>
     
+</div>
+</div>
+</div>  
+
 
 <?php require_once('footer.php'); ?>

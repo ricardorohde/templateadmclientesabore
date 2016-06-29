@@ -99,7 +99,7 @@
                     <label>Saiu para Entrega <button class="btn btn-primary"></button></label><br> 
                     <label>Entregue <button class="btn btn-success"></button></label> <br>
     </div>  
-        
+  
 </div>
 
 

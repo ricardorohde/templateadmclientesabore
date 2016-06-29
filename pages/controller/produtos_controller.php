@@ -12,19 +12,33 @@
     $listaCat = array();
     $style = 'none';
     $arrayDados = array('cliente_id'=>$cliente_id);
-    
     $listaCat = GoCURL($arrayDados, 'produtos/find_cat');
-    if($pagina == 'produtos')
-    {   
+    $input_busca = '';
+
+       if($pagina == 'produtos')
+    {           
+        
         if(!empty($_POST['produtoID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['produtoID']);            
             $excluir = GoCURL($arrayDados, 'produtos/remover');                            
-        }               
-        $arrayDados = array('cliente_id'=>$cliente_id);
-        $listaProdutos = GoCURL($arrayDados, 'produtos/listar'); 
-        
+        }   
+
+        if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
+        {                        
+            
+            $arrayDados = array('cliente_id'=>$cliente_id, 'search'=>$_POST['input_busca']);                
+            $listaProdutos = GoCURL($arrayDados, 'produtos/listar');                
+            $input_busca = $_POST['input_busca'];
+            
+        }
+        else
+        {
+            $arrayDados = array('cliente_id'=>$cliente_id);
+            $listaProdutos = GoCURL($arrayDados, 'produtos/listar');             
+        }    
     }
+
 
     if ($pagina ==  'cad_produtos') {      
         if(!empty($_POST['editar']) && !empty($_POST['id']))

@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-                    <div class="panel-heading" style="background-color: #2c3e50; color: white;">
+				<div class="panel-heading" style="background-color: #2c3e50; color: white;">
 					Preencha os campos abaixo
 				</div>
 
@@ -106,35 +106,35 @@
 								</div>
 
 
-									<?PHP if($editar = false){ ?>
-									<div class="form-group">
-										<label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 1</label>
-										<input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required>
-									</div>
+								<?PHP if($editar = false){ ?>
+								<div class="form-group">
+									<label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 1</label>
+									<input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required>
+								</div>
 
-									<div class="form-group">
-										<label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 2</label>
-										<input class="form-control" placeholder="Digite aqui outro horário de funcionamento" name="funcionamento1" id="funcionamento1" required >
-									</div>
-									<?PHP } ?>
+								<div class="form-group">
+									<label><i class="fa fa-calendar fa-fw"></i> Horário Funcionamento 2</label>
+									<input class="form-control" placeholder="Digite aqui outro horário de funcionamento" name="funcionamento1" id="funcionamento1" required >
+								</div>
+								<?PHP } ?>
 
 
 
-									<?PHP if($editar = true){ ?>
-									<div class="form-group">
-										<label><i class="fa fa-calendar fa-fw"></i> Horário de Funcionamento</label>
-										<input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required 
-										<?PHP if($editar){ ?>
-										value =  '<?PHP echo  $clientes["dados"]["Cliente"]["funcionamento"]; ?>'
-										<?PHP } ?>>
-									</div>
-									<?PHP } ?>
-
+								<?PHP if($editar = true){ ?>
+								<div class="form-group">
+									<label><i class="fa fa-calendar fa-fw"></i> Horário de Funcionamento</label>
+									<input class="form-control" placeholder="Digite aqui o horário de funcionamento" name="funcionamento" id="funcionamento" required 
 									<?PHP if($editar){ ?>
-									<input type="hidden" name="editar" value="editar">
-									<input type="hidden" name="id" 
-									value="<?PHP echo $clientes['dados']['Cliente']['id'];?>">
-									<?PHP } ?>
+									value =  '<?PHP echo  $clientes["dados"]["Cliente"]["funcionamento"]; ?>'
+									<?PHP } ?>>
+								</div>
+								<?PHP } ?>
+
+								<?PHP if($editar){ ?>
+								<input type="hidden" name="editar" value="editar">
+								<input type="hidden" name="id" 
+								value="<?PHP echo $clientes['dados']['Cliente']['id'];?>">
+								<?PHP } ?>
 
 
 			                    <!--

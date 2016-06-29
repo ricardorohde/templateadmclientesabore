@@ -17,19 +17,19 @@
 </script> 
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-camera fa-fw"></i> Textos Banner 
-	    <a href="cad_banners.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo banner</button></a>
-    </h1>
-    <div class="row"><br>
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr style="background-color: #2c3e50; color: white;">
-                            <th>Banners</th>
-                            <th>Título :</th>
-                            <th>Edição</th>
-                        </tr>
-                        <form id="formBannerListar" name="formBannerListar" action="banners.php" method="post">
+       <a href="cad_banners.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo banner</button></a>
+   </h1>
+   <div class="row"><br>
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <tr style="background-color: #2c3e50; color: white;">
+                        <th>Banners</th>
+                        <th>Título :</th>
+                        <th>Edição</th>
+                    </tr>
+                    <form id="formBannerListar" name="formBannerListar" action="banners.php" method="post">
                         <?php foreach($listaBanners['dados'] as $banner){?>
                         <tr>
                             <td><?php echo $banner['ClienteBanner']['id']; ?></td>
@@ -48,7 +48,7 @@
                     </table>
                 </div>
             </div>
-      	</div>
+        </div>
     </div>
 </div>
 
