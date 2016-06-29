@@ -6,7 +6,7 @@
     $data_cadastro = date ("Y-m-d H:i:s");   
     $pagina = RetornaURL();
     $listausuario = array(); 
-    $usuariosabore=  array();
+    $usuariocliente=  array();
     $editar = false;
     $cliente_id= '4';
     $input_busca = '';
@@ -20,42 +20,44 @@
         echo "checked";
     }
     */
+    
 
-    ##recebe o post
    if($pagina == 'usuarios')
     {           
         
         if(!empty($_POST['usuarioID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['usuarioID']);            
-            $excluir = GoCURL($arrayDados, 'usuario_sabore/deletar');                            
+            $excluir = GoCURL($arrayDados, 'usuario_clientes/deletar');                            
         }   
 
         if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
         {                        
             
             $arrayDados = array('cliente_id'=>$cliente_id, 'search'=>$_POST['input_busca']);                
-            $listausuario = GoCURL($arrayDados, 'usuario_sabore/list');                
+            $listausuario = GoCURL($arrayDados, 'usuario_clientes/list');                
             $input_busca = $_POST['input_busca'];
             
         }
         else
         {
             $arrayDados = array('cliente_id'=>$cliente_id);
-            $listausuario = GoCURL($arrayDados, 'usuario_sabore/list');             
+            $listausuario = GoCURL($arrayDados, 'usuario_clientes/list');             
         }    
     }
     
     if ($pagina == 'cad_usuarios'){
         if(!empty($_POST['editar']) && !empty($_POST['id']))
         {
+            $permissao = $_POST['permissao'];
+            $permissao = implode(';', $permissao);
             $arrayDados = array('nome'=>$_POST['nome'], 'login'=>$_POST['login'],
                             'senha'=>$_POST['senha'],'email'=>$_POST['email'],
                             'funcao'=>$_POST['funcao'],'data_cadastro'=>$data_cadastro,
-                            'tipo_documento'=>$_POST['tipo_documento'],'documento'=>$_POST['documento'],
-                            'salario'=>$_POST['salario'], 'cliente_id'=>$cliente_id, 'id'=>$_POST['id']);// 
+                            'permissao'=> $permissao,'cliente_id'=>$cliente_id, 'id'=>$_POST['id'], 
+                            'email'=>$_POST['email'], 'permissao'=> $permissao);// 
                                           
-            $EditarUsuario = GoCURL($arrayDados, 'usuario_sabore/editar');                                         
+            $EditarUsuario = GoCURL($arrayDados, 'usuario_clientes/editar');                                         
             $_POST['usuarioID'] = $_POST['id'];
             if(!$EditarUsuario['success'])
               {            
@@ -68,8 +70,10 @@
                 $success = true;
               }
         }
+
        else if (!empty($_POST['btn_cadastrar_usuarios'])) 
         {
+
             ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
             ## || = OR  && = AND
             if(empty($_POST['nome']) || empty($_POST['login'])|| empty($_POST['senha']))
@@ -79,13 +83,15 @@
             }
             else
             {
+                $permissao = $_POST['permissao'];
+                $permissao = implode(';', $permissao);
                 $arrayDados = array('nome'=>$_POST['nome'], 'login'=>$_POST['login'],
                                 'senha'=>$_POST['senha'],'email'=>$_POST['email'],
                                 'funcao'=>$_POST['funcao'],'data_cadastro'=>$data_cadastro,
-                                'tipo_documento'=>$_POST['tipo_documento'],'documento'=>$_POST['documento'],
-                                'salario'=>$_POST['salario']);// 
+                                'email'=>$_POST['email'],'cliente_id'=>$cliente_id,'permissao'=>$permissao
+                                );// 
               
-                $insert = GoCURL($arrayDados, 'usuario_sabore/cadastrar');    
+                $insert = GoCURL($arrayDados, 'usuario_clientes/cadastrar');    
                       if(!$insert['success'])
                         {
                             $mensagem = $insert['message'];
@@ -103,7 +109,7 @@
         }
         if(!empty($_POST['usuarioID'])){
                 $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['usuarioID']);
-                $usuariosabore = GoCURL($arrayDados, 'usuario_sabore/find_first');
+                $usuariocliente = GoCURL($arrayDados, 'usuario_clientes/find_first');
                 $editar = true;    
                
     }

@@ -18,7 +18,7 @@
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-list-ul fa-fw"></i> Categorias
 	     <a href="cad_categorias.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar nova categoria</button></a>
-    </h1><br>
+    </h1>
       	<div class="row">
             <div class="col-lg-6">
 

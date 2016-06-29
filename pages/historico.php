@@ -18,24 +18,15 @@
             </div>
             <!-- /.row -->
             <div class="row">
-
-                        <div class="col-lg-3"> 
-                             <div class="form-group">
-                                <select class="form-control" required="required" id="busca">
-                                <option value="" style="display:none">Escolha um Método de busca</option>
-                                <option value="nped" id="nped">Nº Pedido</option>
-                                <option value="nome" id="nome">Nome</option>
-                                <option value="email" id="email">Email</option>
-                                <option value="data" id="data">Data (De X até Y)</option>
-                                </select>
-                             </div> 
-                        </div>
-                        <div class="col-lg-3">
-                            <input class="form-control" placeholder="Nº Pedido" id="inputnped" style="display:none">
-                            <input class="form-control" placeholder="Nome" id="inputnome" style="display:none">
-                            <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
-                            <input class="form-control" placeholder="Do dia 03:01 até 08/01" id="inputdata" style="display:none">            
-                        </div>  
+            <form name="formularioBusca" method="post">
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Pesquise Aqui" id="input_busca" name="input_busca">                    
+                    <input type="hidden" name="busca" value="true">
+                </div>
+                <div>
+                    <button id="buscar" class="btn btn-error" onclick="jsSubmitBusca();">Buscar</button>
+                </div>  
+            </form>
 
                         <br>
                 <div class="col-lg-12">

@@ -9,7 +9,7 @@
       	<div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background-color: #2c3e50; color: white;">
                           Cadastro de Produtos
                    </div>
 
@@ -111,11 +111,7 @@
 
 
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Descreva esse produto" name="descricao" required>
-                                            	<?PHP if($editar){?>
-                                                  <?PHP echo $produtos['dados']['Produto']['descricao']; ?>
-                                                <?PHP } ?>
-                                            </textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Descreva esse produto" name="descricao" required><?PHP if($editar){?><?PHP echo $produtos['dados']['Produto']['descricao']; ?><?PHP } ?></textarea>
                                         </div>
 
 

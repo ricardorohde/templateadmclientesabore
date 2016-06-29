@@ -26,7 +26,7 @@
 <div id="page-wrapper"><br>
 <h1 class="page-header"> <i class="fa fa-user fa-fw"></i> Usuários
          <a href="cad_usuarios.php"><span class="pull-right text-muted small"><button class="btn btn-success">Cadastrar novo usuário</button></a>
-    </h1><br>
+    </h1>
       	<div class="row">
             <form name="formularioBusca" method="post">
                 <div class="col-lg-3">
@@ -47,20 +47,20 @@
                                 <tr style="background-color: #2c3e50; color: white;">
                                     <th>Nome</th>
                                     <th>Login</th>
-                                    <th>Data Cadastro</th>
+                                    <th>Documento</th>
                                     <th>Editar</th>
                                 </tr>
                                 <form id="formUsuarioListar" name="formUsuarioListar" method="post">
-                                <?PHP foreach($listausuario['dados'] as $usuariosabore){?>
+                                <?PHP foreach($listausuario['dados'] as $usuariocliente){?>
                                     <tr>
-                                        <td><?PHP echo $usuariosabore['UsuarioSabore']['nome']; ?></td>
-                                        <td><?PHP echo $usuariosabore['UsuarioSabore']['login']; ?></td>
-                                        <td><?PHP echo $usuariosabore['UsuarioSabore']['data_cadastro']; ?></td>
+                                        <td><?PHP echo $usuariocliente['UsuarioCliente']['nome']; ?></td>
+                                        <td><?PHP echo $usuariocliente['UsuarioCliente']['login']; ?></td>
+                                        <td><?PHP echo $usuariocliente['UsuarioCliente']['email']; ?></td>
                                         <td>
-                                            <a href="javascript:void(0);" onclick="jsExcluir('<?PHP echo $usuariosabore['UsuarioSabore']['id'] ?>');">
+                                            <a href="javascript:void(0);" onclick="jsExcluir('<?PHP echo $usuariocliente['UsuarioCliente']['id'] ?>');">
                                                 <i class="fa fa-trash-o fa-fw"></i>
                                             </a> 
-                                            <a href="javascript:void(0);" onclick="jsEditar('<?PHP echo $usuariosabore['UsuarioSabore']['id'] ?>');">
+                                            <a href="javascript:void(0);" onclick="jsEditar('<?PHP echo $usuariocliente['UsuarioCliente']['id'] ?>');">
                                                 <i class="fa fa-pencil fa-fw"></i>
                                             </a>
                                         </td>

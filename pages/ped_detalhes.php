@@ -41,7 +41,7 @@
                         <input type="checkbox"  <?PHP if($pedidos['metade'] == 'S'){ echo "checked"; }?> disabled>Meia</input><br>
                         <input type="checkbox" <?PHP if($pedidos['mini'] == 'S'){ echo "checked"; }?> disabled>Broto</input>
                     </td>
-                    <td><?php echo $pedidos['produto_id']; ?></td>
+                    <td><?php echo $pedidos['dados_produto']['Produto']['nome']; ?></td>
                     <td><?php echo $pedidos['valor']; ?></td>
                 </tr>                                       
                 <?PHP } ?>
