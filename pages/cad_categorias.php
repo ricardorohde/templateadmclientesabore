@@ -9,7 +9,7 @@
       	<div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                    <div class="panel-heading" style="background-color: #2c3e50; color: white;">
                           Preencha os campos abaixo 
                    </div>
 
@@ -86,11 +86,7 @@
                                                 placeholder="Nome Categoria" name="nome" required>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Descreva essa categoria" name="descricao" required>
-                                              <?PHP if($editar){ ?>
-                                                  <?PHP echo $categoria['dados']['Categoria']['descricao']; ?>
-                                                <?PHP } ?> 
-                                            </textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Descreva essa categoria" name="descricao" required><?PHP if($editar){ ?><?PHP echo $categoria['dados']['Categoria']['descricao']; ?><?PHP } ?></textarea>
                                         </div>
 
 	                                	    <div class="form-group">

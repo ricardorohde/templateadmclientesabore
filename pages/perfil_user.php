@@ -7,7 +7,7 @@
       	<div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background-color: #2c3e50; color: white;">
                           Editar os dados do Perfil da Empresa 
                    </div>
 

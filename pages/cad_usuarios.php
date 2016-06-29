@@ -9,7 +9,7 @@
       	<div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background-color: #2c3e50; color: white;">
                           Preencha os campos abaixo para concluir o cadastro
                    </div>
 
@@ -33,91 +33,167 @@
                                     	
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Nome completo" name="nome" required id="nome" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['nome']; ?>"
+                                                  value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['nome']; ?>"
                                                 <?PHP } ?>>
                                         </div>
                                        <div class="form-group">
                                             <input class="form-control" placeholder="Login do funcionario" name="login" required id="login" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['login']; ?>"
+                                                  value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['login']; ?>"
                                                 <?PHP } ?>>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="password" placeholder="Senha do usuario" name="senha" required id="senha" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['senha']; ?>"
+                                            <input class="form-control" placeholder="Senha do usuario" name="senha" required id="senha" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['senha']; ?>"
                                                 <?PHP } ?>>
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Email do funcionário" name="email"  id="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Tipo Documento" name="tipo_documento" required id="tipo_documento" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['tipo_documento']; ?>"
+                                            <input class="form-control" placeholder="Email do funcionário" name="email"  id="email" <?PHP if($editar){ ?>
+                                                  value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['email']; ?>"
                                                 <?PHP } ?>>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Documento" name="documento" required id="documento" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['documento']; ?>"
-                                                <?PHP } ?>>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Salário" name="salario" required id="salario" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['salario']; ?>"
-                                                <?PHP } ?>>
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" rows="3" placeholder="Funções desse usuário" name="funcao" >
-                                                <?PHP if($editar){ ?>
-                                                  <?PHP echo $usuariosabore['dados']['UsuarioSabore']['funcao']; ?>
-                                                <?PHP }?>
-                                            </textarea>
                                         </div>
 
-	                                	
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="3" placeholder="Funções desse usuário" name="funcao"><?PHP if($editar){ ?><?PHP echo $usuariocliente['dados']['UsuarioCliente']['funcao']; ?><?PHP }?></textarea>
+                                        </div>
+                                        
+                                        
+                                        
                                         <div class="form-group">
                                             <label><i class="fa fa-lock fa-fw"></i> Permissões do usuário</label>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="cadastrar_textos" name="permissao"> Cadastrar Textos
+                                                    <input type="checkbox" value="TEXTOS" name="permissao[]"
+                                                    <?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'TEXTOS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Textos
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="cadastrar_usuarios" name="permissao"> Cadastrar Usuários
+                                                    <input type="checkbox" value="USUARIOS" name="permissao[]" <?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'USUARIOS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>>Usuários
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="cadastrar_categorias" name="permissao"> Cadastrar Categorias
+                                                    <input type="checkbox" value="CATEGORIAS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'CATEGORIAS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>>Categorias
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="cadastrar_produtos" name="permissao"> Cadastrar Produtos
+                                                    <input type="checkbox" value="PRODUTOS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'PRODUTOS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>>Produtos
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="cadastrar_banners" name="permissao"> Cadastrar banners
+                                                    <input type="checkbox" value="BANNERS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'BANNERS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>>Banners
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="financeiro" name="permissao"> Acesso a relatórios financeiros
+                                                    <input type="checkbox" value="FINANCEIRO" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'FINANCEIRO');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Financeiro
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="cadastrar_sms" name="permissao"> Acesso a sistema de sms
+                                                    <input type="checkbox" value="SMS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'SMS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>>Campanha SMS
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="acesso_cliente" name="permissao"> Acesso a dados de cliente
+                                                    <input type="checkbox" value="CLIENTES" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'CLIENTES');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Clientes
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" value="historico_compra" name="permissao"> Acesso a histórico de compras
+                                                    <input type="checkbox" value="HISTORICO" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'HISTORICO');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Histórico
                                                 </label>
                                             </div>
                                         </div>
@@ -125,7 +201,7 @@
                                         <?PHP if($editar){ ?>
                                             <input type="hidden" name="editar" value="editar">
                                             <input type="hidden" name="id" 
-                                              value="<?PHP echo $usuariosabore['dados']['UsuarioSabore']['id'];?>">
+                                              value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['id'];?>">
                                           <?PHP } ?>
                                        	<div align="center">
 	                                    	<br><br>

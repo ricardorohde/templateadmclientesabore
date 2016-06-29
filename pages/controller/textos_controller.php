@@ -41,7 +41,8 @@ if ($editar = false) {
 				'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
 				'funcionamento'=>$funcionamento, 
 				'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
-				'cliente_id'=>$cliente_id);
+				'cliente_id'=>$cliente_id,'delivery'=>$_POST['delivery'],'facebook'=>$_POST['facebook'],
+				'instagram'=>$_POST['instagram'],'twitter'=>$_POST['twitter']);
 				            //'delivery'=>$_POST['delivery'],
 				            //Testar array
 				            //echo "<pre>"; print_r($arrayDados); exit;    
@@ -87,11 +88,8 @@ if ($editar = true){
 				'twitter'=>$_POST['twitter'],'instagram'=>$_POST['instagram'], 
 				'funcionamento'=>$funcionamento, 
 				'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
-				'cliente_id'=>$cliente_id, 'id'=>$id);
-				            //'delivery'=>$_POST['delivery'],
-				            //Testar array
-				            //echo "<pre>"; print_r($arrayDados); exit;    
-				            //echo "chamar API aqui";exit;  
+				'cliente_id'=>$cliente_id, 'id'=>$id,'delivery'=>$_POST['delivery'],'facebook'=>$_POST['facebook'],
+				'instagram'=>$_POST['instagram'],'twitter'=>$_POST['twitter']);
 
 
 			$insert = GoCURL($arrayDados, 'cliente/editar');    

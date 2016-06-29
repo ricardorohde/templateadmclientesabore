@@ -24,21 +24,15 @@
     <h1 class="page-header"> <i class="fa fa-group fa-fw"></i> Clientes 
     </h1>
     <div class="row">
-        <div class="col-lg-3"> 
-           <div class="form-group">
-            <select class="form-control" required="required" id="clientes_busca">
-                <option value="" style="display:none">Escolha um Método de busca</option>
-                <option value="nome" id="nome">Nome</option>
-                <option value="email" id="email">Email</option>
-                <option value="telefone" id="telefone">Telefone</option>
-            </select>
-        </div> 
-    </div>
-    <div class="col-lg-3">
-        <input class="form-control" placeholder="Nome" id="inputusername" style="display:none">
-        <input class="form-control" placeholder="Email" id="inputemail" style="display:none">
-        <input class="form-control" placeholder="Telefone do Cliente (numeros)" id="inputnumber" style="display:none">
-    </div>  
+     <form name="formularioBusca" method="post">
+                <div class="col-lg-3">
+                    <input class="form-control" placeholder="Pesquise Aqui" id="input_busca" name="input_busca">                    
+                    <input type="hidden" name="busca" value="true">
+                </div>
+                <div>
+                    <button id="buscar" class="btn btn-error" onclick="jsSubmitBusca();">Buscar</button>
+                </div>  
+            </form><br>
     <div class="col-lg-12">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
