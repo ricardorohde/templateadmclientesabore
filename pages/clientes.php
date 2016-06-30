@@ -54,8 +54,8 @@
                     <div class="modal fade" id="myModal_<?PHP echo $cliente['Usuario']['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog modal-confirma-add" role="document">
                         <div class="modal-content confirmar-add">
-                          <div class="modal-header modal-header-admin">
-                            <h3 class="title-modal">Detalhes do cliente</h3>
+                          <div class="modal-header modal-header-admin" >
+                            <h3 class="title-modal" >Detalhes do cliente</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
                           </div>
                           <div class="modal-body">
