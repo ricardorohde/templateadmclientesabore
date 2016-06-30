@@ -53,7 +53,9 @@
                                 'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                                 'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                 'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
-                                'situacao_id'=>$_POST['situacao_id'], 'cliente_id'=>$cliente_id, 'id'=>$_POST['id'],//'img'=>$_POST['img'], 'valor_mini_metade'=>$_POST['valor_mini_metade'],
+                                'situacao_id'=>$_POST['situacao_id'], 'cliente_id'=>$cliente_id, 'id'=>$_POST['id'],
+                                'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$_POST['img'],'metade_mini'=>$_POST['metade_mini'],
+                                //VALOR METADE MINI E IMAGEM E METADE_MINI = S
                                 'data_cadastro'=>$data_registro, 'placeholder'=>$placeholder);
                                           
             $EditarProduto = GoCURL($arrayDados, 'produtos/editar');                                         
@@ -85,14 +87,14 @@
                 $placeholder = $_POST['nome'];
                 $placeholder = str_replace(" ", "_", $placeholder);
                 $placeholder = preg_replace('/[`^~ \'"]/',null, iconv( 'UTF-8', 'ASCII//TRANSLIT', $placeholder ) );
-
                 $arrayDados = array('nome'=>$_POST['nome'], 'descricao'=>$_POST['descricao'],
                                 'valor'=>$_POST['valor'],'desconto'=>$_POST['desconto'],
                                 'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                                 'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
-                                'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
-                                'situacao_id'=>$_POST['situacao_id'],//'img'=>$_POST['img'], $_POST['valor_mini_metade'],
-                                'data_cadastro'=>$data_registro, 'placeholder'=>$placeholder);
+                                'categoria_id'=>$_POST['categoria_id'],'placeholder'=>$placeholder,
+                                'situacao_id'=>$_POST['situacao_id'],'destaque'=>$_POST['destaque'], 'data_cadastro'=>$data_registro,
+                                'metade_mini'=>$_POST['metade_mini'],'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$_POST['img']);
+                                //VALOR METADE MINI E IMAGEM E METADE_MINI = S
                 //Testar array
                 //echo "chamar API aqui";exit;  
                  $insert = GoCURL($arrayDados, 'produtos/cadastrar');    

@@ -82,26 +82,22 @@
                                         </div>
 
                                         <div class="form-group">
-                                          <select class="form-control" required="required" name="categoria_id">
-                                           <option value="" style="display:none">Categoria deste produto</option>
-                                           <?PHP foreach($listaCat['dados'] as $listaCat){?>
-                                           <option value= <?PHP echo $listaCat['Categoria']['id']; ?>     
-                                            <?php if ($editar)
-                                            {
-                                              if ($produtos['dados']['Produto']['categoria_id'] == $listaCat['Categoria']['id'])
-                                              {
-                                                echo "selected";
+                                        	<select class="form-control" required="required" name="categoria_id">
+                                        		<option value="" style="display:none">Categoria deste produto</option>
+                                        		<?PHP foreach($listaCat['dados'] as $listaCat){?>
+                                        		<option value= <?PHP echo $listaCat['Categoria']['id']; ?>     
+                                        			<?php if ($editar)
+                                        			{
+                                        				if ($produtos['dados']['Produto']['categoria_id'] == $listaCat['Categoria']['id'])
+                                        				{
+                                        					echo "selected";
 
-                                              } ?>>
-                                            <?PHP echo $listaCat['Categoria']['nome']; } ?> 
-                                            </option> 
-                                            <?PHP  echo $listaCat['Categoria']['nome'];}  ?>  
-                                         </select>
-
-								                        </div>
-
-									    
-									   
+                                        				} ?>>
+                                        				<?PHP echo $listaCat['Categoria']['nome']; } ?> 
+                                        			</option> 
+                                        			<?PHP  echo $listaCat['Categoria']['nome'];}  ?>  
+                                        		</select>
+                                        	</div>
 					              	
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Nome Produto" name="nome" required  <?PHP if($editar){ ?>
@@ -246,25 +242,22 @@
 	                                    </div>
 
 
-                                      <!--
+                                      
 
 	                                    <div class="form-group">
 	                                        <label>Meia no broto?</label>
 	                                        <label class="radio-inline">
-	                                           <input type="radio" name="meiabroto" id="metade_produto" value="S" 
+	                                           <input type="radio" name="metade_mini" id="metade_broto_produto" value="S" 
                                               <?PHP 
                                                 if($editar)
                                                 { 
-                                                    if($produtos['dados']['Produto']['metadebroto'] == 'S') 
+                                                    if($produtos['dados']['Produto']['metade_mini'] == 'S') 
                                                       echo "checked"; 
-                                                }              
-                                                else {
-                                                  echo "checked";
-                                                }                                    
-                                                ?>Sim
+                                                }                                          
+                                                ?>>Sim
                                           </label>
 	                                        <label class="radio-inline">
-	                                            <input type="radio" name="meiabroto" id="metade1_broto_produto" value="N" checked>Não
+	                                            <input type="radio" name="metade_mini" id="metade1_broto_produto" value="N" checked>Não
 	                                        </label>
                                        	</div> 
 	                                    <div class="form-group input-group" id="input_valor_metade_broto_produto" style="display: <?PHP echo $style; ?>">
@@ -272,7 +265,7 @@
 	                                        <input type="text" class="form-control" name="valor_mini_metade" value="00.00" >
 	                                    </div>
 
-                                      -->
+                                     
 	                                    <br>
 
 	                                    <div class="form-group">
