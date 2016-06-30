@@ -20,6 +20,7 @@ require_once('function\function.php');
             $listaPedidos = GoCURL($arrayDados, 'pedidos/listar');                
             $input_busca = $_POST['input_busca'];
             
+            
         }
         else
         {

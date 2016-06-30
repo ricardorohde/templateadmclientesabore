@@ -9,17 +9,29 @@
     $pedidos = array();
     $arrayDados = array();    
     $pagina = RetornaURL();
+    $input_busca = '';
 
+     if($pagina == 'ped_andamento')
+    {           
+        
 
-    if($pagina == 'ped_andamento'){                             
-
-        $arrayDados = array('cliente_id'=>$cliente_id);
+        if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
+        {                        
+            
+            $arrayDados = array('cliente_id'=>$cliente_id, 'search'=>$_POST['input_busca']);                
+            $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
+            $situacao = GoCURL($arrayDados, 'pedidos/situacao');              
+            $input_busca = $_POST['input_busca'];
+            
+        }
+        else
+        {
+            $arrayDados = array('cliente_id'=>$cliente_id);
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
-
-        $situacao = GoCURL($arrayDados, 'pedidos/situacao');
-
-        //echo '<pre>';print_r($situacao);exit;
+        $situacao = GoCURL($arrayDados, 'pedidos/situacao');          
+        }    
     }
+
 
     if($pagina == 'ped_detalhes_andamento'){
 
@@ -30,6 +42,11 @@
         }
 
     }    
+
+
+
+
+
 
 ?>
  
