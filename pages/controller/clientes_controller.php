@@ -10,13 +10,7 @@ require_once('function\function.php');
     $input_busca = '';
 
      if($pagina == 'clientes')
-    {           
-        
-        if(!empty($_POST['clienteID']))
-        {
-            $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['clienteID']);            
-            $excluir = GoCURL($arrayDados, 'clientes/deletando');                            
-        }   
+    {            
 
         if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
         {                        
@@ -29,8 +23,9 @@ require_once('function\function.php');
         else
         {
             $arrayDados = array('cliente_id'=>$cliente_id);
-            $listaClientes = GoCURL($arrayDados, 'clientes/listar');             
-        }    
+            $listaClientes = GoCURL($arrayDados, 'clientes/listar');
+
+        }    //echo '<pre>'; print_r($listaClientes); exit;
     }
 
 ?>

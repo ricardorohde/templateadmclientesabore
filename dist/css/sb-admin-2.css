@@ -352,3 +352,35 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.modal-header-admin{
+    background-color: #337ab7 !important;
+    color: #fff; 
+    height: 70px;
+}
+
+.modal-header-admin h3{
+    line-height: 40px;
+    font-size: 20px;
+    float: left;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 20px;
+}
+
+.modal-body ul {
+    list-style: none;
+    margin-left: -20px; 
+}
+
+.modal-body ul li{
+    font-size: 14px;
+    color: #888 !important;
+}
+
+.modal-body ul li span{
+    line-height: 28px !important;
+    width: 115px;
+    display: inline-block;
+    color: #444;  
+}
