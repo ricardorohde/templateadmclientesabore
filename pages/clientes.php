@@ -11,14 +11,6 @@
         });     
     });  
 
-
-    function jsExcluir(cliente)
-    {        
-        document.formClienteListar.action = "clientes.php";
-        document.getElementById("clienteID").value = cliente;
-        document.getElementById("formClienteListar").submit();
-    }
-
     function jsSubmitBusca()
     {
         document.formClienteListar.action = "clientes.php";        
@@ -55,26 +47,31 @@
                         <td><?php echo $cliente['Usuario']['email']; ?></td>
                         <td><?php echo $cliente['Usuario']['telefone']; ?></td>
                         <td>
-                            <a href="javascript:void(0);" onclick="jsExcluir('<?PHP echo $cliente['Usuario']['id'] ?>');">
-                                <i class="fa fa-trash-o fa-fw"></i>
-                            </a>
                             <a href="javascript:void(0);" class="detalhes" data-id="<?PHP echo $cliente['Usuario']['id']; ?>" ><i class="fa fa-search-plus fa-fw"></i></a>
-
                         </td>
                     </tr>
 
                     <div class="modal fade" id="myModal_<?PHP echo $cliente['Usuario']['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                       <div class="modal-dialog modal-confirma-add" role="document">
                         <div class="modal-content confirmar-add">
-                          <div class="modal-header">
+                          <div class="modal-header modal-header-admin">
+                            <h3 class="title-modal">Detalhes do cliente</h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
-                        </div>
-                        <div class="modal-body">
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <?PHP echo $cliente['Usuario']['nome']; ?>
-                        </div>
+                          </div>
+                          <div class="modal-body">
+                            <ul>
+                                <li><span>Nome:</span> <?PHP echo $cliente['Usuario']['nome']; ?>&nbsp;<?PHP echo $cliente['Usuario']['sobrenome']; ?></li>
+                                <li><span>Email:</span> <?PHP echo $cliente['Usuario']['email']; ?></li>
+                                <li><span>Endereço:</span> <?PHP echo $cliente['Usuario']['endereco']; ?>, <?PHP echo $cliente['Usuario']['numero']; ?></li></li>
+                                <li><span>Complemento:</span> <?PHP echo $cliente['Usuario']['complemento']; ?></li>
+                                <li><span>Bairro:</span> <?PHP echo $cliente['Usuario']['bairro']; ?></li>
+                                <li><span>Cidade:</span> <?PHP echo $cliente['Usuario']['cidade']; ?> - <?PHP echo $cliente['Usuario']['estado']; ?></li>
+                                <li><span>CEP:</span> <?PHP echo $cliente['Usuario']['cep']; ?></li>
+                                <li><span>Telefone:</span> <?PHP echo $cliente['Usuario']['telefone']; ?></li>
+                                <li><span>Celular:</span> <?PHP echo $cliente['Usuario']['celular']; ?></li>
+                            </ul>
+                          </div>
+                        
                     </div>
                 </div>
             </div>                     
