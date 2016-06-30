@@ -42,6 +42,11 @@
 
                 <input class="form-control" <?PHP if($editar){ ?> value="<?PHP echo $banner['dados']['ClienteBanner']['link_botao']; ?>" <?PHP } ?>placeholder="Link do botão." name="link_botao" required><br>
 
+                <div class="form-group">
+                <label>Imagem do Banner</label>
+                  <input type="file" name="img">
+                </div>
+
                 <?PHP if($editar){ ?>
                 <input type="hidden" name="editar" value="editar"> 
                 <input type="hidden" name="id" value="<?PHP echo $banner['dados']['ClienteBanner']['id']; ?>"> 
