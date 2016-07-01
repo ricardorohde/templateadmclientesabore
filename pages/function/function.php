@@ -113,5 +113,49 @@ function GenerateToken()
         return $TokenRequest;
     }
 
+function GoUploadImg($FILE, $tipo)
+{
+    $arquivo_tmp = $FILE[ 'tmp_name' ];
+    $nome        = $FILE[ 'name' ];
+    
+    // Pega a extensão
+    $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
+ 
+    // Converte a extensão para minúsculo
+    $extensao = strtolower ( $extensao );
+
+    if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) 
+    {
+        // Cria um nome único para esta imagem
+        // Evita que duplique as imagens no servidor.
+        // Evita nomes com acentos, espaços e caracteres não alfanuméricos
+        $novoNome = uniqid(time()) . '.'.$extensao;
+
+        $path = getcwd();        
+
+        // Concatena a pasta com o nome
+        $destino = $path."\imagens\\".$tipo ."\\";        
+        if(!file_exists($destino))
+        {
+            mkdir($destino, 0777);
+        }
+
+        $destino = $path."\imagens\\".$tipo ."\\". $novoNome;        
+
+        // tenta mover o arquivo para o destino
+        if (@move_uploaded_file ( $arquivo_tmp, $destino ) ) 
+        {
+            return array('mensagem'=>'Upload realizado com sucesso', 'success'=>true, 'nome'=>$tipo.'/'.$novoNome);
+        }
+        else
+        {
+            return array('mensagem'=>'Ocorreu um erro no envio da imagem. Tente novamente', 'success'=>false);
+        }        
+    }
+    else
+    {
+        return array('mensagem'=>'extensão inválida', 'success'=>false);
+    }
+}
 
 ?>

@@ -31,7 +31,7 @@
 
 
                                 <div class="col-lg-6">
-                                    <form role="form" action="cad_produtos.php" method="post">
+                                    <form role="form" action="cad_produtos.php" method="post" enctype="multipart/form-data">
                                     	<div class="form-group">
                                         <label>Situação:</label>
                                           <select class="form-control" required="required" name="situacao_id">
@@ -272,6 +272,10 @@
                                             <label>Coloque uma imagem desse produto</label>
                                             <input type="file" name="img">
                                        	</div>
+                                        
+                                        <?PHP if($editar){ ?>
+                                          <img src="<?PHP echo $produtos['dados']['Produto']['img']; ?>" width="100" height="75">
+                                        <?PHP } ?>
 
                                         <?PHP if($editar){ ?>
                                             <input type="hidden" name="editar" value="editar">
