@@ -8,7 +8,7 @@
     $listausuario = array(); 
     $usuariocliente=  array();
     $editar = false;
-    $cliente_id= '4';
+    $cliente_id = $_SESSION['UsuarioCliente']['id'];
     $input_busca = '';
     //echo "<pre>";print_r($_POST);exit;
 

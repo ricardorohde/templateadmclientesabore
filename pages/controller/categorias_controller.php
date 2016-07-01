@@ -3,7 +3,7 @@
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = '4';
+    $cliente_id = $_SESSION['UsuarioCliente']['id'];
     $data_registro = date ("Y-m-d H:i:s");
     $listaCategorias = array();    
     $categoria = array();
