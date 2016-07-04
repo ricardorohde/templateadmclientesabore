@@ -135,14 +135,12 @@
 								<input type="hidden" name="id" 
 								value="<?PHP echo $clientes['dados']['Cliente']['id'];?>">
 								<?PHP } ?>
-
-
-			                    <!--
+								
 			                    <div class="form-group">
-                                            <label>Coloque uma imagem para a página quem somos</label>
-                                            <input type="file" required name="img">
+                                    <label>Coloque uma imagem para a página quem somos</label>
+                                    <input type="file" required name="img">
                                 </div>
-                            -->
+
                             <br><br>
                             <diV align="center">
                             	<button type="submit" class="btn btn-success" name="btn_cadastrar_textos" value="cadastrar" ><?PHP if($editar){ ?>

@@ -1,3 +1,4 @@
+ <?php require_once('pages/controller/login_controller.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,22 +30,33 @@
 
     <div id="wrapper">
       <div id="login" class="animate form">
+
         <section class="login_content">
-          <form>
+          
+          <form method="post" id="formLogin">
             <h1>Login do admin</h1>
+            <?php 
+            if($error)
+            {
+              echo '<div class="alert alert-danger">
+               Dados incorretos, Tente novamente.
+            </div>';            
+            }
+            ?>
             <div>
-              <input type="text" class="form-control" placeholder="Usuário" required="" />
+              <input type="text" class="form-control" placeholder="Usuário" required name="usuario" id="usuario" />
             </div>
             <div>
-              <input type="password" class="form-control" placeholder="Senha" required="" />
+              <input type="password" class="form-control" placeholder="Senha" required name="senha" id="senha" />
             </div>
             <div>
-              <a class="btn btn-default submit" href="pages/index.php">Entrar</a>
+            <input type="submit" class="btn btn-default submit" name="submit" value="Entrar" />
               <a class="reset_pass" href="#toregister">Esqueceu sua senha ?</a>
             </div>
+         
             <div class="clearfix"></div>
             <div class="separator">
-
+          </form>
 
               <div class="clearfix"></div>
               <br />
@@ -59,7 +71,7 @@
           </form>
         </section>
       </div>
-      <div id="register" class="animate form">
+      <div id="register" class="animate form"> 
         <section class="login_content">
           <form>
             <h1>Recupere sua conta</h1>
@@ -84,7 +96,7 @@
                
               </div>
             </div>
-          </form>
+          
           <!-- form -->
         </section>
         <!-- content -->

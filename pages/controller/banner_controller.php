@@ -3,7 +3,7 @@
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = '4';
+    $cliente_id = $_SESSION['UsuarioCliente']['id'];
     $data_registro = date ("Y-m-d H:i:s");
     $listaBanners = array();
     $arrayDados = array();    
@@ -40,6 +40,7 @@
                 'botao'=>$_POST['botao'],
                 'link_botao'=>$_POST['link_botao'],
                 'id_cliente'=>$cliente_id,
+                'img'=>$_POST['img'],
                 'id'=>$_POST['id']
             );            
                                           
@@ -76,6 +77,7 @@
                     'palavra_vermelho'=>$_POST['palavra_vermelho'],
                     'botao'=>$_POST['botao'],
                     'link_botao'=>$_POST['link_botao'],
+                    'img'=>$_POST['img'],
                     'id_cliente'=>$cliente_id
                 );            
                
