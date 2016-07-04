@@ -4,6 +4,15 @@
 ?>
 <script src="../js/busca.js"></script>
 <script>
+    $(document).ready(function() {
+
+        $('.atualizar_status').click(function() {
+
+            $("#pedidoID").val($(this).attr('id_pedido'));            
+            $("#status option[value="+$(this).attr('id_status')+"]").attr('selected', 'selected');            
+        });
+    });
+
     function jsVer(pedido)
     {        
         document.formVisualizar.action = "ped_detalhes_andamento.php";
@@ -11,11 +20,18 @@
         document.getElementById("formVisualizar").submit();
     }
 
-      function jsSubmitBusca()
+  function jsSubmitBusca()
   {
     document.formVisualizar.action = "ped_andamento.php";        
     document.getElementById("formularioBusca").submit();   
   }
+
+  function jsEditar(atualizarStatus)
+    {           
+        document.formAtualizarSituacao.action = "ped_andamento.php";
+        document.getElementById("pedidoID").value = atualizarStatus;
+        document.getElementById("formAtualizarSituacao").submit(); 
+    }
 
 </script>
         <div id="page-wrapper">
@@ -61,11 +77,12 @@
                                             <td><?php echo $pedidos['Usuario']['email'];?></td>
                                             <td><?php echo $pedidos['SituacaoPedido']['descricao'];?></td>
                                             <td>R$ <?php echo $pedidos['Pedido']['valor_total'];?></td>
-                                            <td><a href="#" data-toggle="modal" data-target="#status">Atualizar Status</a></td>
+                                            <td><a href="#" data-toggle="modal"  class="atualizar_status"
+                                                    id_status="<?PHP echo $pedidos['SituacaoPedido']['id'] ?>" id_pedido="<?PHP echo $pedidos['Pedido']['id']; ?>" data-target="#status">Atualizar Status</a></td>
                                         </tr>
                                         <?php } ?>
-                                        <input type="hidden" name="pedidoID" value="" id="pedidoID">  
-        
+                                         
+                                        
                                     
                                 </table>
                             </div>
@@ -86,18 +103,28 @@
                         </div>
                         <div class="modal-body">
                             <label> Selecione o status atual do pedido</label>
-                            <form method="post" action="">
+                            <form id="formAtualizarSituacao" name="formAtualizarSituacao" method="post" action="ped_andamento.php">
+
                              <div class="form-group">
-                                <select class="form-control" name="status">
-                                <?php foreach($situacao['dados'] as $status){?>
-                                    <option value="<?php echo $status['SituacaoPedido']['id'];?>" <?php if ($status['SituacaoPedido']['id'] == 2){ echo "selected";}?>>
-                                    <?php echo $status['SituacaoPedido']['descricao'];?>                                                
-                                    </option>
-                                    <?php echo $status['SituacaoPedido']['descricao'];?>
-                                <?php }?>
+                                <select class="form-control" name="status" id="status">
+
+                                    <?php foreach($situacao['dados'] as $status){?>
+
+                                        <option value="<?php echo $status['SituacaoPedido']['id'];?>">
+                                            
+                                        <?php echo $status['SituacaoPedido']['descricao'];?> 
+                                        </option>
+
+                                    <?php }?>                                                                                        
                                 </select>
                             </div>
-                            <div align="right"><button class="btn btn-success"> Atualizar </button></div>
+                            <div align="right">
+                                <a href="javascript:void(0);">
+                                    <button class="btn btn-success" onclick="jsEditar('');"> Atualizar</button>
+                                </a>
+                            </div>
+                            <input type="hidden" name="pedidoID" value="" id="pedidoID">  
+                            <input type="hidden" name="AtualizacaoStatus" value="" id="AtualizacaoStatus"> 
                             </form>
                         </div>
                     </div>

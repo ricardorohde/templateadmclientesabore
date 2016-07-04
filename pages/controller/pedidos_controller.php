@@ -12,8 +12,7 @@
     $input_busca = '';
 
      if($pagina == 'ped_andamento')
-    {           
-        
+    {            
 
         if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
         {                        
@@ -28,7 +27,9 @@
         {
             $arrayDados = array('cliente_id'=>$cliente_id);
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
-        $situacao = GoCURL($arrayDados, 'pedidos/situacao');          
+        $situacao = GoCURL($arrayDados, 'pedidos/situacao');  
+
+        //echo '<pre>'; print_r($listaPedidos);exit;        
         }    
     }
 

@@ -14,7 +14,7 @@
                    </div>
 
                     <?PHP if($error){ ?>
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger"> 
                         	<?PHP echo $mensagem; ?>
     				        </div>
                     <?PHP } ?>
