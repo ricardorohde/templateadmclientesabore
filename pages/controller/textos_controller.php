@@ -1,11 +1,12 @@
 <?php
+session_start();
 require_once('function\function.php');
 $error = false;
 $success= false;
 $mensagem = '';
 $usuario_id = '1';
 $data_registro = date ("Y-m-d H:i:s");
-$cliente_id = $_SESSION['UsuarioCliente']['id'];
+$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
 $id = '4';
 $clientes = array();
 $editar = false;

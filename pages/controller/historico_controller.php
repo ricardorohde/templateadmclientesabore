@@ -1,16 +1,14 @@
 <?php 
+session_start();
 require_once('function\function.php');
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = $_SESSION['UsuarioCliente']['id'];
+    $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
     $data_registro = date ("Y-m-d H:i:s");
     $listaPedidos = array();   
     $pagina = RetornaURL();
     $input_busca = '';
-
-
-    
     if($pagina == 'historico')
     {
         if(!empty($_POST['busca']) && !empty($_POST['input_busca']))
