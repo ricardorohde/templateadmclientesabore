@@ -3,7 +3,7 @@
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = $_SESSION['UsuarioCliente']['id'];
+    $cliente_id = '4';
     $data_registro = date ("Y-m-d H:i:s");
     $listaPedidos = array();
     $pedidos = array();
@@ -25,11 +25,11 @@
         }
         else
         {
-            $arrayDados = array('cliente_id'=>$cliente_id);
+        $arrayDados = array('cliente_id'=>$cliente_id);
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
         $situacao = GoCURL($arrayDados, 'pedidos/situacao');  
 
-        //echo '<pre>'; print_r($listaPedidos);exit;        
+        echo '<pre>'; print_r($listaPedidos);exit;        
         }    
     }
 
