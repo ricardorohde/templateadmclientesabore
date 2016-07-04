@@ -1,9 +1,10 @@
 <?php
+session_start();
     require_once('function\function.php');
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = '4';
+    $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
     $data_registro = date ("Y-m-d H:i:s");
     $listaPedidos = array();
     $pedidos = array();

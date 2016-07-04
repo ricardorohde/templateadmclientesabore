@@ -1,4 +1,5 @@
 <?PHP 	
+session_start();
 require_once('pages/function/function.php');
 	$error = false;
 	$success = false;
@@ -19,19 +20,20 @@ require_once('pages/function/function.php');
 		else
 		{			
 			$_SESSION['UsuarioCliente'] = $login['dados']['UsuarioCliente'];	
-			$_SESSION['UsuarioCliente']['logado']	= true;
+			$_SESSION['UsuarioCliente']['logado'] = true;
 			header('Location:'.'pages/index.php');
+
 		}
 
 		
 	}
-/*
-	if($part_url[2] == 'sair')
-	{
-		unset($_SESSION['Usuario']);
-		header('Location:'.$host.'/login');
-	}
-*/		
+
+		if(!empty($_POST['deslogar']))
+		{
+			unset($_SESSION['UsuarioCliente']);
+			header('Location:'.$host.'/login');
+		}
+			
 	
 
 ?>

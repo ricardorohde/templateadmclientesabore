@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once('function\function.php');
     $error = false;
     $success= false;
@@ -8,7 +9,7 @@
     $listausuario = array(); 
     $usuariocliente=  array();
     $editar = false;
-    $cliente_id = $_SESSION['UsuarioCliente']['id'];
+    $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
     $input_busca = '';
     //echo "<pre>";print_r($_POST);exit;
 
