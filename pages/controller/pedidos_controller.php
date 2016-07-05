@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(empty($_SESSION['UsuarioCliente']))
+{
+  header("Location:http://localhost/templateadmclientesabore/index.php");
+}
     require_once('function\function.php');
     $error = false;
     $success= false;
@@ -30,7 +34,6 @@ session_start();
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
         $situacao = GoCURL($arrayDados, 'pedidos/situacao');  
 
-        echo '<pre>'; print_r($listaPedidos);exit;        
         }    
     }
 

@@ -1,11 +1,14 @@
 <?php
 session_start();
+if(empty($_SESSION['UsuarioCliente']))
+{
+  header("Location:http://localhost/templateadmclientesabore/index.php");
+}
     require_once('function\function.php');
     $error = false;
     $success= false;
     $mensagem = '';
-    //$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
-    $cliente_id = 4;
+    $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
     $data_registro = date ("Y-m-d H:i:s");
     $listaBanners = array();
     $arrayDados = array();    

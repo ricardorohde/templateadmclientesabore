@@ -1,4 +1,6 @@
+<?php require_once('controller/index_controller.php'); ?>
 <?php require_once('header.php'); ?>
+
 <script src="../js/index.js"></script>
 
 <div id="page-wrapper">
