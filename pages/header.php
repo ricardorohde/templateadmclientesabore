@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -41,7 +40,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+    <script type="text/javascript">
+    function JsDeslogar(deslogar)
+    {           
+        document.formDeslogar.action = "http://localhost/templateadmclientesabore/index.php";
+        document.getElementById("Deslogando").value = deslogar;
+        document.getElementById("formDeslogar").submit(); 
+    }
+    </script>
     </head>
 
     <body>
@@ -69,11 +75,6 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
                         </a>
-
-
-
-
-
 
                         <ul class="dropdown-menu dropdown-messages">
                             <li>
@@ -183,27 +184,29 @@
                         </li>
 
 
-
-                        <!-- /.dropdown -->
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil</a>
-                                </li>
-                                <li><a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li><a href="http://localhost/templateadmclientesabore/login.html"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
-                                </li>
-                            </ul>
-                            <!-- /.dropdown-user -->
-                        </li>
-                        <!-- /.dropdown -->
-                    </ul>
-                    <!-- /.navbar-top-links -->
-
+                         
+                            <!-- /.dropdown -->
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                                    </li>
+                                    <li><a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a>
+                                    </li>
+                                    <form  id="formDeslogar" name="formDeslogar" method="post">
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:void(0);" onclick="JsDeslogar();"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
+                                        <input type="hidden" name="Deslogando" value="" id="Deslogando">
+                                    </li>
+                                </ul></form>
+                                <!-- /.dropdown-user -->
+                            </li>
+                            <!-- /.dropdown -->
+                        </ul>
+                        <!-- /.navbar-top-links -->
+                    
 
 
                     <div class="navbar-default sidebar" role="navigation">
