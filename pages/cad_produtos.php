@@ -1,6 +1,13 @@
 <?php require_once('controller/produtos_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <script src="../js/cad_campos.js"></script> 
+<script>
+    $(function(){
+        $("#valor, #desconto, #valor_mini, #valor_metade, #valor_mini_metade").maskMoney({symbol:'R$ ', 
+          showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
+      });
+
+</script>
 
 <div id="page-wrapper"><br>
     <h1 class="page-header"> <i class="fa fa-edit fa-fw"></i> Cadastrar Produtos
@@ -110,26 +117,20 @@
                                             <textarea class="form-control" rows="3" placeholder="Descreva esse produto" name="descricao" required><?PHP if($editar){?><?PHP echo $produtos['dados']['Produto']['descricao']; ?><?PHP } ?></textarea>
                                         </div>
 
-
-
                                         <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Valor desse produto (EX :58.40) " name="valor" required <?PHP if($editar){ ?>
+	                                            <input type="text" class="form-control" id="valor" placeholder="Valor desse produto (EX :58.40) " name="valor" required <?PHP if($editar){ ?>
                                                   value="<?PHP echo $produtos['dados']['Produto']['valor']; ?>"
                                                 <?PHP } ?>>
 	                                    </div>
 
-
-
 	                                    <div class="form-group input-group">
 	                                            <span class="input-group-addon">R$</span>
-	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" name="desconto" required value= <?PHP if($editar){ ?>
+	                                            <input type="text" class="form-control" placeholder="Este produto terá desconto? Digite aqui (EX :05.40)" name="desconto" id="desconto" value= <?PHP if($editar){ ?>
                                                   "<?PHP echo $produtos['dados']['Produto']['desconto']; ?>"
-                                                <?PHP } else {echo "00.00";}  ?> >
+                                                <?PHP } ?> >
                                                 
 	                                    </div>
-
-
 
 	                                	<div class="form-group">
 	                                        <label>Destaque?</label>
@@ -195,10 +196,10 @@
 
 	                                   	<div class="form-group input-group" style="display: <?PHP echo $style; ?>" id="input_valor_broto_produto">
 	                                        <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_mini" value =
+	                                        <input type="text" class="form-control" name="valor_mini" id="valor_mini" value =
                                                 <?PHP if($editar){ ?>
                                                   <?PHP echo  $produtos["dados"]["Produto"]["valor_mini"]; ?>
-                                                <?PHP } else {echo " 00.00 ";} ?>>
+                                                <?PHP } ?>>
 	                                    </div>
 
 
@@ -235,15 +236,12 @@
 
 	                                    <div class="form-group input-group" id="input_valor_metade_produto" style="display: <?PHP echo $style; ?>">
 	                                        <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_metade" value =
+	                                        <input type="text" class="form-control" name="valor_metade" id="valor_metade" value =
                                                 <?PHP if($editar){ ?>
                                                   <?PHP echo  $produtos["dados"]["Produto"]["valor_metade"]; ?>
-                                                <?PHP } else {echo " 00.00 ";} ?>>
+                                                <?PHP } ?>>
 	                                    </div>
-
-
-                                      
-
+                                    
 	                                    <div class="form-group">
 	                                        <label>Meia no broto?</label>
 	                                        <label class="radio-inline">
@@ -262,7 +260,7 @@
                                        	</div> 
 	                                    <div class="form-group input-group" id="input_valor_metade_broto_produto" style="display: <?PHP echo $style; ?>">
 	                                       <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_mini_metade" value="00.00" >
+	                                        <input type="text" class="form-control" name="valor_mini_metade" id="valor_mini_metade" value="" >
 	                                    </div>
 
                                      

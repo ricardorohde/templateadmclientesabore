@@ -4,7 +4,8 @@ session_start();
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
+   // $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];    
+    $cliente_id = 4;
     $data_registro = date ("Y-m-d H:i:s");
     $pagina = RetornaURL();
     $produtos = array();
@@ -18,7 +19,7 @@ session_start();
     $nomeIMG = '';
     $upload = array('success'=>false, 'mensagem'=>'');
 
-       if($pagina == 'produtos')
+    if($pagina == 'produtos')
     {           
         
         if(!empty($_POST['produtoID']))
@@ -53,7 +54,7 @@ session_start();
 
             if(!empty($_FILES['img']['size']))
             {
-                $upload = GoUploadImg($_FILES['img'], 'produtos', '750', '615');  
+                $upload = GoUploadImg($_FILES['img'], 'produtos', 750, 615);  
 
                 if($upload['success'] === true)                                            
                 {                        
@@ -63,16 +64,23 @@ session_start();
 
            if(empty($_FILES['img']['size']) || $upload['success'] === true)
            {             
+               $_POST['valor']               = FormataValorEUA($_POST['valor']);
+               $_POST['desconto']            = FormataValorEUA($_POST['desconto']);
+               $_POST['valor_mini']          = FormataValorEUA($_POST['valor_mini']);
+               $_POST['valor_metade']        = FormataValorEUA($_POST['valor_metade']);
+               $_POST['valor_mini_metade']   = FormataValorEUA($_POST['valor_mini_metade']);
+
                $arrayDados = array('nome'=>$_POST['nome'], 'descricao'=>$_POST['descricao'],
-                                    'valor'=>$_POST['valor'],'desconto'=>$_POST['desconto'],
+                                    'valor'=>$_POST['valor'], 'desconto'=>$_POST['desconto'],
                                     'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                                     'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                     'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
                                     'situacao_id'=>$_POST['situacao_id'], 'cliente_id'=>$cliente_id, 'id'=>$_POST['id'],
                                     'valor_mini_metade'=>$_POST['valor_mini_metade'], 'metade_mini'=>$_POST['metade_mini'],
-                                    //VALOR METADE MINI E IMAGEM E METADE_MINI = S
+                                    
                                     'placeholder'=>$placeholder, 'img'=>$nomeIMG);
-                                              
+
+               
                 $EditarProduto = GoCURL($arrayDados, 'produtos/editar');                                                      
                 if(!$EditarProduto['success'])
                   {            
@@ -116,7 +124,7 @@ session_start();
                 
                 if(!empty($_FILES['img']['size']))
                 {
-                    $upload = GoUploadImg($_FILES['img'], 'produtos', '750', '615');  
+                    $upload = GoUploadImg($_FILES['img'], 'produtos', 750, 615);  
 
                     if($upload['success'] === true)                                            
                     {                        
@@ -130,16 +138,21 @@ session_start();
                 
                 if(empty($_FILES['img']['size']) || $upload['success'] === true)
                 {                    
+
+                   $_POST['valor']               = FormataValorEUA($_POST['valor']);
+                   $_POST['desconto']            = FormataValorEUA($_POST['desconto']);
+                   $_POST['valor_mini']          = FormataValorEUA($_POST['valor_mini']);
+                   $_POST['valor_metade']        = FormataValorEUA($_POST['valor_metade']);
+                   $_POST['valor_mini_metade']   = FormataValorEUA($_POST['valor_mini_metade']);
+
                     $arrayDados = array('nome'=>$_POST['nome'], 'descricao'=>$_POST['descricao'],
-                                'valor'=>$_POST['valor'],'desconto'=>$_POST['desconto'],
+                                'valor'=>$_POST['valor'], 'desconto'=>$_POST['desconto'],
                                 'metade'=>$_POST['metade'], 'mini'=>$_POST['mini'],
                                 'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                 'categoria_id'=>$_POST['categoria_id'],'placeholder'=>$placeholder,
                                 'situacao_id'=>$_POST['situacao_id'],'destaque'=>$_POST['destaque'], 'data_cadastro'=>$data_registro,
-                                'metade_mini'=>$_POST['metade_mini'],'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$nomeIMG);
-                                //VALOR METADE MINI E IMAGEM E METADE_MINI = S
-                
-
+                                'metade_mini'=>$_POST['metade_mini'],'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$nomeIMG);                                
+                                        
                      $insert = GoCURL($arrayDados, 'produtos/cadastrar');    
                       if(!$insert['success'])
                       {
@@ -152,6 +165,7 @@ session_start();
                             $mensagem = $insert['message'];
                             $mensagemArray = $insert['message_array'];
                             $success = true;
+                            $_POST['produtoID'] = $insert['dados']['ID'];
                        }  
                 }
                 else
@@ -164,27 +178,28 @@ session_start();
                 }                
             }
         }
-        if(!empty($_POST['produtoID'])){
+
+        if(!empty($_POST['produtoID']))
+        {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['produtoID']);
             $produtos = GoCURL($arrayDados, 'produtos/search');
             $editar = true;    
             
             if($produtos['dados']['Produto']['mini'] == 'S')
             {   
-                    $style = 'table';
+                $style = 'table';
             }     
             if($produtos['dados']['Produto']['metade'] == 'S')
             {   
-                    $style = 'table';
+                $style = 'table';
             } 
 
-
-       } /*
-            if($produtos['dados']['Produto']['meiabroto'] == 'S')
-                {   
-                    $style = 'block';
-                } 
-            */
+            $produtos['dados']['Produto']['valor']              = number_format($produtos['dados']['Produto']['valor'], 2, ',', '.');        
+            $produtos['dados']['Produto']['desconto']           = number_format($produtos['dados']['Produto']['desconto'], 2, ',', '.');
+            $produtos['dados']['Produto']['valor_mini']         = number_format($produtos['dados']['Produto']['valor_mini'], 2, ',', '.');
+            $produtos['dados']['Produto']['valor_metade']       = number_format($produtos['dados']['Produto']['valor_metade'], 2, ',', '.');
+            $produtos['dados']['Produto']['valor_mini_metade']  = number_format($produtos['dados']['Produto']['valor_mini_metade'], 2, ',', '.');            
+       } 
 }       
 
        

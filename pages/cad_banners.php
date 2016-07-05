@@ -28,7 +28,7 @@
           <div class="row">
 
             <div class="col-lg-6">
-              <form role="form" action="cad_banners.php" method="post">
+              <form role="form" action="cad_banners.php" method="post" enctype="multipart/form-data">
                <div class="form-group">
                 <input class="form-control" <?PHP if($editar){ ?> value="<?PHP echo $banner['dados']['ClienteBanner']['titulo']; ?>" <?PHP } ?> placeholder="Titulo que será exibido em seu banner." name="titulo" required><br>
 
@@ -44,12 +44,16 @@
 
                 <div class="form-group">
                 <label>Imagem do Banner</label>
-                  <input type="file" name="img">
+                  <input type="file" name="img" id="img">
                 </div>
 
                 <?PHP if($editar){ ?>
-                <input type="hidden" name="editar" value="editar"> 
-                <input type="hidden" name="id" value="<?PHP echo $banner['dados']['ClienteBanner']['id']; ?>"> 
+                  <input type="hidden" name="editar" value="editar"> 
+                  <input type="hidden" name="id" value="<?PHP echo $banner['dados']['ClienteBanner']['id']; ?>"> 
+                  <img src="<?PHP echo $banner['dados']['img_banner']; ?>" width="200" height="100">
+                <?PHP }else{ ?>
+                  <img src="<?PHP echo $bannerIMG['dados']['img_banner']; ?>" width="200" height="100">
+                  
                 <?PHP } ?>
 
               </div>                               	

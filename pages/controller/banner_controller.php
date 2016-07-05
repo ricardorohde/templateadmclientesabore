@@ -4,7 +4,8 @@ session_start();
     $error = false;
     $success= false;
     $mensagem = '';
-    $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
+    //$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
+    $cliente_id = 4;
     $data_registro = date ("Y-m-d H:i:s");
     $listaBanners = array();
     $arrayDados = array();    
@@ -12,6 +13,7 @@ session_start();
     $banner= array();
     $editar = false; 
     $EditarBanner = array();
+    $BannerImgSave = array();
 
     if($pagina == 'banners'){
 
@@ -28,7 +30,12 @@ session_start();
 
 
 
-    if($pagina == 'cad_banners'){
+    if($pagina == 'cad_banners')
+    {
+
+        ##buscar imagem de banner
+        $arrayDados = array('cliente_id'=>$cliente_id);
+        $bannerIMG = GoCURL($arrayDados, 'cliente/banner-buscar-img');                                   
 
         if(!empty($_POST['editar']) && !empty($_POST['id'])){
             
@@ -40,11 +47,10 @@ session_start();
                 'palavra_vermelho'=>$_POST['palavra_vermelho'],
                 'botao'=>$_POST['botao'],
                 'link_botao'=>$_POST['link_botao'],
-                'id_cliente'=>$cliente_id,
-                'img'=>$_POST['img'],
+                'id_cliente'=>$cliente_id,                
                 'id'=>$_POST['id']
             );            
-                                          
+            
             $EditarBanner = GoCURL($arrayDados, 'cliente/banner-editar');
 
             $_POST['bannerID'] = $_POST['id'];
@@ -56,8 +62,40 @@ session_start();
             
             }else{
                 
-                $mensagem = $EditarBanner['message'];                    
-                $success = true;
+                ##atualizar imagem do banner
+                if(!empty($_FILES))
+                {
+                    $upload = GoUploadImg($_FILES['img'], 'banners', 750, 615);  
+
+                    if($upload['success'] == true)                                            
+                    {                        
+                        $nomeIMG = $upload['nome'];                                    
+                        $BannerImgSave = 
+                            GoCURL(array('banner1'=>$nomeIMG, 'cliente_id'=>$cliente_id), 'cliente/banner-img-editar');                        
+
+                        if(!$BannerImgSave['success'])
+                        {
+
+                            $mensagem = 'Ocorreu um erro na atualização do banner';
+                            $error = true;
+                        }
+                        else
+                        {
+                            $mensagem = 'Dados atualizados com sucesso';
+                            $success = true; 
+                        }
+                    }
+                    else
+                    {
+                        $mensagem = $upload['mensagem'];
+                        $success = false;                                                
+                    }
+                }
+                else
+                {
+                    $mensagem = $EditarBanner['message'];                    
+                    $success = true;    
+                }                
             }
         }
 
@@ -77,22 +115,54 @@ session_start();
                     'palavra_negrito'=>$_POST['palavra_negrito'],
                     'palavra_vermelho'=>$_POST['palavra_vermelho'],
                     'botao'=>$_POST['botao'],
-                    'link_botao'=>$_POST['link_botao'],
-                    'img'=>$_POST['img'],
+                    'link_botao'=>$_POST['link_botao'],                    
                     'id_cliente'=>$cliente_id
                 );            
                
                 $insert = GoCURL($arrayDados, 'cliente/banner-cadastrar');
-
-                if(!$insert['success']){
-                        $mensagem = $insert['message'];
-                        $mensagemArray = $insert['message_array'];
-                        $insertError = true;
                 
-                }else{
-                        $mensagem = $insert['message'];
-                        $mensagemArray = $insert['message_array'];
-                        $success = true;
+                if(!$insert['success'])
+                {
+                    $mensagem = $insert['message'];
+                    $mensagemArray = $insert['message_array'];
+                    $insertError = true;
+                
+                }
+                else
+                {
+                    ##atualizar imagem do banner
+                    if(!empty($_FILES))
+                    {
+                        $upload = GoUploadImg($_FILES['img'], 'banners', 750, 615);  
+
+                        if($upload['success'] == true)                                            
+                        {                        
+                            $nomeIMG = $upload['nome'];                                    
+                            $BannerImgSave = 
+                                GoCURL(array('banner1'=>$nomeIMG, 'cliente_id'=>$cliente_id), 'cliente/banner-img-editar');                        
+
+                            if(!$BannerImgSave['success'])
+                            {
+                                $mensagem = 'Ocorreu um erro na atualização do banner';
+                                $error = true;
+                            }
+                            else
+                            {
+                                $mensagem = 'Dados atualizados com sucesso';
+                                $success = true; 
+                            }
+                        }
+                        else
+                        {
+                            $mensagem = $upload['mensagem'];
+                            $success = false;                                                
+                        }
+                    }
+                    else
+                    {
+                        $mensagem = $insert['message'];                    
+                        $success = true;    
+                    }
                 }                   
             }            
         }
@@ -101,7 +171,7 @@ session_start();
         if(!empty($_POST['bannerID'])){
 
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['bannerID']);
-            $banner = GoCURL($arrayDados, 'cliente/banner-buscar');       
+            $banner = GoCURL($arrayDados, 'cliente/banner-buscar');                   
             $editar = true;
         
         }
