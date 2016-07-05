@@ -27,13 +27,13 @@ require_once('pages/function/function.php');
 
 		
 	}
-/*
-	if($part_url[2] == 'sair')
-	{
-		unset($_SESSION['Usuario']);
-		header('Location:'.$host.'/login');
-	}
-*/		
+
+		if(!empty($_POST['deslogar']))
+		{
+			unset($_SESSION['UsuarioCliente']);
+			header('Location:'.$host.'/login');
+		}
+			
 	
 
 ?>

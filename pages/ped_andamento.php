@@ -1,6 +1,6 @@
 <?php 
     require_once('controller/pedidos_controller.php'); 
-    require_once('header.php');
+    require_once('header.php'); 
 ?>
 <script src="../js/busca.js"></script>
 <script>

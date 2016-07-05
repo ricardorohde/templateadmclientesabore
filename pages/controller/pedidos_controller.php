@@ -26,11 +26,11 @@ session_start();
         }
         else
         {
-            $arrayDados = array('cliente_id'=>$cliente_id);
+        $arrayDados = array('cliente_id'=>$cliente_id);
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
         $situacao = GoCURL($arrayDados, 'pedidos/situacao');  
 
-        //echo '<pre>'; print_r($listaPedidos);exit;        
+        echo '<pre>'; print_r($listaPedidos);exit;        
         }    
     }
 
