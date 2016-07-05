@@ -113,11 +113,10 @@ function GenerateToken()
         return $TokenRequest;
     }
 
-function GoUploadImg($FILE, $tipo)
+function GoUploadImg($FILE, $tipo, $largura=false, $altura=false)
 {
     $arquivo_tmp = $FILE[ 'tmp_name' ];
-    $nome        = $FILE[ 'name' ];
-    
+    $nome        = $FILE[ 'name' ];    
     // Pega a extensão
     $extensao = pathinfo ( $nome, PATHINFO_EXTENSION );
  
@@ -126,6 +125,21 @@ function GoUploadImg($FILE, $tipo)
 
     if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) 
     {
+        if($largura > 0 || $altura > 0)
+        {
+            $tamanhos = getimagesize($arquivo_tmp);
+            
+            if($tamanhos[0] != $largura) 
+            { 
+                return array('mensagem'=>'Largura precisa ser de '.$largura, 'success'=>false, 'nome'=>'');
+            }
+
+            if($tamanhos[1] != $altura) 
+            { 
+                return array('mensagem'=>'Altura precisa ser de '.$altura, 'success'=>false, 'nome'=>'');
+            }
+        }
+
         // Cria um nome único para esta imagem
         // Evita que duplique as imagens no servidor.
         // Evita nomes com acentos, espaços e caracteres não alfanuméricos
@@ -156,6 +170,22 @@ function GoUploadImg($FILE, $tipo)
     {
         return array('mensagem'=>'extensão inválida', 'success'=>false);
     }
+
+}
+
+function FormataValorEUA($valor)
+{
+    if(!empty($valor))
+    {
+        $valor = str_replace('.', '', $valor);
+        $valor = str_replace(',', '.', $valor);
+    }
+    else
+    {
+        $valor = '0.00';
+    }
+
+    return $valor;
 }
 
 ?>
