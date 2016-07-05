@@ -21,7 +21,13 @@ if(empty($_SESSION['UsuarioCliente']))
         if(!empty($_POST['categoriaID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['categoriaID']);            
-            $excluir = GoCURL($arrayDados, 'categoria/excluir');                            
+            $excluir = GoCURL($arrayDados, 'categoria/excluir');   
+
+            if(!$excluir['success'])                         
+            {
+                $mensagem = $excluir['message'];
+                $error = true;
+            }
         }                     
 
         $arrayDados = array('cliente_id'=>$cliente_id);
