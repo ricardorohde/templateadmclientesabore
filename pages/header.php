@@ -1,3 +1,6 @@
+<?php 
+$permissao = $_SESSION['UsuarioCliente']['permissao'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -207,38 +210,81 @@
                         </ul>
                         <!-- /.navbar-top-links -->
                     
-
+                       
 
                     <div class="navbar-default sidebar" role="navigation">
                         <div class="sidebar-nav navbar-collapse">
                             <ul class="nav" id="side-menu">
-                             
                                 <li>
                                     <a href="index.php"><i class="fa  fa-home fa-fw"></i> Home</a>
                                 </li>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'CATEGORIAS');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="categorias.php"><i class="fa fa-list-ul fa-fw"></i> Categorias</a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'PRODUTOS');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="produtos.php"><i class="fa fa-edit fa-fw"></i> Produtos</a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'TEXTOS');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="textos.php"><i class="fa fa-font fa-fw"></i> Textos </a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'USUARIOS');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="usuarios.php"><i class="fa fa-user fa-fw"></i> Usuarios </a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'CLIENTES');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="clientes.php"><i class="fa fa-group fa-fw"></i> Clientes </a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'BANNERS');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'PEDANDAMENTO');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="ped_andamento.php"><i class="fa fa-clock-o fa-fw"></i> Pedidos em andamento</a>
+                                        </li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'HISTORICO');
+                                if(!empty($permissaoClienteMarcado))
+                                 echo   '<li>
+                                            <a href="historico.php"><i class="fa fa-history fa-fw"></i> Historico de pedidos</a>
+                                        </li>'
+                                ?>
+                                <!--
+                                    <?php
+                                    $permissaoClienteMarcado = strstr($permissao, 'SMS');
+                                    if(!empty($permissaoClienteMarcado))
+                                     echo   '<li>
+                                                <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
+                                            </li>'
+                                    ?>
+                                -->
                                 <li>
-                                    <a href="categorias.php"><i class="fa fa-list-ul fa-fw"></i> Categorias</a>
-                                </li>
-                                <li>
-                                    <a href="produtos.php"><i class="fa fa-edit fa-fw"></i> Produtos</a>
-                                </li>
-                                <li>
-                                    <a href="textos.php"><i class="fa fa-font fa-fw"></i> Textos </a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.php"><i class="fa fa-user fa-fw"></i> Usuarios </a>
-                                </li>
-                                <li>
-                                    <a href="clientes.php"><i class="fa fa-group fa-fw"></i> Clientes </a>
-                                </li>
-                                <li>
-                                    <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>
-                                </li>
-                                <li>
-                                    <a href="ped_andamento.php"><i class="fa fa-clock-o fa-fw"></i> Pedidos em andamento</a>
-                                </li>
-                                <li>
-                                    <a href="historico.php"><i class="fa fa-history fa-fw"></i> Historico de pedidos</a>
+                                    <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
                                 </li>
                                 <li>
                                     <a href="rankings.php"><i class="fa fa-bar-chart-o fa-fw"></i> Rankings</a>
@@ -249,9 +295,7 @@
                                 <li>
                                     <a href="creditos.php"><i class="fa fa-credit-card fa-fw"></i> Créditos</a>
                                 </li>
-                                <li>
-                                    <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
-                                </li>
+
                             </div>
                             
                             <!-- /.navbar-static-side -->

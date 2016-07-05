@@ -196,6 +196,21 @@
                                                     ?>> Histórico
                                                 </label>
                                             </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="PEDANDAMENTO" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'PEDANDAMENTO');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Andamento de pedidos
+                                                </label>
+                                            </div>
                                         </div>
 	                                    
                                         <?PHP if($editar){ ?>
