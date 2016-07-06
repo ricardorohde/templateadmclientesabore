@@ -31,7 +31,13 @@ if(empty($permissaoClienteMarcado))
         if(!empty($_POST['produtoID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['produtoID']);            
-            $excluir = GoCURL($arrayDados, 'produtos/remover');                            
+            $excluir = GoCURL($arrayDados, 'produtos/remover');          
+
+            if(!$excluir['success'])                         
+            {
+                $mensagem = $excluir['message'];
+                $error = true;
+            }
         }   
 
         if(!empty($_POST['busca']) && !empty($_POST['input_busca']))

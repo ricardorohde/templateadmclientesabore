@@ -21,7 +21,11 @@
   </h1>
   <div class="row">
     <div class="col-lg-6">
-
+        <?PHP if($error) { ?>
+            <div class="alert alert-danger"> 
+               <?PHP echo $mensagem; ?>
+            </div>
+        <?PHP } ?>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
              

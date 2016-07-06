@@ -66,14 +66,14 @@ if(empty($permissaoClienteMarcado))
             if(!$EditarBanner['success']){
 
                 $mensagem = $EditarBanner['message'];                    
-                $error = true;
+                $error = true;                
             
             }else{
                 
                 ##atualizar imagem do banner
-                if(!empty($_FILES))
+                if(!empty($_FILES['img']['size']))
                 {
-                    $upload = GoUploadImg($_FILES['img'], 'banners', 750, 615);  
+                    $upload = GoUploadImg($_FILES['img'], 'banners');  
 
                     if($upload['success'] == true)                                            
                     {                        
@@ -96,7 +96,8 @@ if(empty($permissaoClienteMarcado))
                     else
                     {
                         $mensagem = $upload['mensagem'];
-                        $success = false;                                                
+                        $success = false;    
+                        $error = true;                                            
                     }
                 }
                 else
@@ -108,8 +109,7 @@ if(empty($permissaoClienteMarcado))
         }
 
         else if(!empty($_POST['btn_cadastrar_banner']))
-        {
-
+        {            
             if(empty($_POST['titulo']) || empty($_POST['subtitulo']) || empty($_POST['botao']) || empty($_POST['link_botao'])){
                 $error = true;
                 $mensagem = 'Informar campos obrigatórios';            
@@ -131,15 +131,14 @@ if(empty($permissaoClienteMarcado))
                 
                 if(!$insert['success'])
                 {
-                    $mensagem = $insert['message'];
-                    $mensagemArray = $insert['message_array'];
-                    $insertError = true;
+                    $mensagem = $insert['message'];                    
+                    $error = true;
                 
                 }
                 else
                 {
                     ##atualizar imagem do banner
-                    if(!empty($_FILES))
+                    if(!empty($_FILES['img']['size']))
                     {
                         $upload = GoUploadImg($_FILES['img'], 'banners', 750, 615);  
 
@@ -158,6 +157,7 @@ if(empty($permissaoClienteMarcado))
                             {
                                 $mensagem = 'Dados atualizados com sucesso';
                                 $success = true; 
+                                $_POST['bannerID'] = $insert['dados']['ID'];                                
                             }
                         }
                         else
@@ -170,6 +170,7 @@ if(empty($permissaoClienteMarcado))
                     {
                         $mensagem = $insert['message'];                    
                         $success = true;    
+                        $_POST['bannerID'] = $insert['dados']['ID'];                                
                     }
                 }                   
             }            

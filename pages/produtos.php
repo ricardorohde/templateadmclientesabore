@@ -44,8 +44,13 @@
                     <button id="buscar" class="btn btn-error" onclick="jsSubmitBusca();">Buscar</button>
                 </div>  
             </form>
-
             <br>
+            <?PHP if($error) { ?>
+                <div class="alert alert-danger"> 
+                   <?PHP echo $mensagem; ?>
+                </div>
+            <?PHP } ?>
+            
             <table class="table table-striped table-bordered table-hover">
                 <tr style="background-color: #2c3e50; color: white;">
                     <th>Cat.</th>

@@ -13,15 +13,15 @@
         </div>
 
         <?PHP if($error){ ?>
-        <div class="alert alert-danger">
-          <?PHP echo $mensagem; ?>
-        </div>
+          <div class="alert alert-danger">
+            <?PHP echo $mensagem; ?>
+          </div>
         <?PHP } ?>
 
         <?PHP if($success){ ?>
-        <div class="alert alert-success">
-          <?PHP echo $mensagem; ?>
-        </div>
+          <div class="alert alert-success">
+            <?PHP echo $mensagem; ?>
+          </div>
         <?PHP } ?>
 
         <div class="panel-body">
