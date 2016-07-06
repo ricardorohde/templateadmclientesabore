@@ -2,7 +2,21 @@
 <?php require_once('header.php'); ?>
 
 <script src="../js/index.js"></script>
+<script>
+    function jsSituacaoAtiva(situacao)
+    {        
+        document.formdesaativa.action = "index.php";
+        document.getElementById("S").value = situacao;
+        document.getElementById("formdesaativa").submit();
+    }
 
+    function jsSituacaoDesativa(situacao2)
+    {           
+        document.formativa.action = "index.php";
+        document.getElementById("N").value = situacao2;
+        document.getElementById("formativa").submit(); 
+    }
+</script>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -37,7 +51,16 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-            <a href="historico.php">
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'HISTORICO');
+                if(!empty($permissaoClienteMarcado))
+                    echo   ' <a href="historico.php">'
+            ?>
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'HISTORICO');
+                if(empty($permissaoClienteMarcado))
+                    echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
+            ?>
                 <div class="panel panel-green">
                     <div class="panel-heading">
                         <div class="row">
@@ -62,7 +85,15 @@
         </div>
 
         <div class="col-lg-3 col-md-6">
-            <a href="creditos.php">
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
+                if(!empty($permissaoClienteMarcado))
+                    echo   ' <a href="creditos.php">'
+            ?>
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
+                if(empty($permissaoClienteMarcado))
+                    echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'?>
                 <div class="panel panel-yellow">
                     <div class="panel-heading">
                         <div class="row">
@@ -85,10 +116,20 @@
                 </div> 
             </a>
         </div>
+        <form method="post" name="formativa">
+            <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
+                <div class="panel panel-red"> 
+                    <?php
+                    $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+                    if(!empty($permissaoClienteMarcado))
+                        echo '<a href="javascript:void(0);" id="vendas_habilitar" onclick="jsSituacaoAtiva();"><input type="hidden" name="S" value="S" id="S" > '
+                    ?>
+                    <?php
+                    $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+                    if(empty($permissaoClienteMarcado))
+                        echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
+                    ?>
 
-        <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
-            <div class="panel panel-red"> 
-                <a   id="vendas_habilitar" href="#">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -109,37 +150,44 @@
                     
                 </div>
             </a>
-        </div>
-
+        </div> 
+        </form>
+        <form method="post"  name="formdesativa">
         <div class="col-lg-3 col-md-6" style="display: none " id="vendas_habilitado">
-            <a href="#"  id="vendas_desabilitar">
-                <div class="panel panel-green">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-credit-card fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">Vendas</div>
-                                <div>Desabilite vendas no site</div>
-                            </div>
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+            if(!empty($permissaoClienteMarcado))
+                echo  '<a href="javascript:void(0);" id="vendas_desabilitar" onclick="jsSituacaoDesativa();"><input type="hidden" name="N" value="N" >'
+            ?>
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+            if(empty($permissaoClienteMarcado))
+                echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
+            ?>
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">Vendas</div>
+                            <div>Desabilite vendas no site</div>
                         </div>
                     </div>
-                    
-                    <div class="panel-footer">
-                        <span class="pull-left">Clique para desabilitar (on)</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                    
                 </div>
+
+                <div class="panel-footer">
+                    <span class="pull-left">Clique para desabilitar (on)</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
             </a>
         </div>
-
+    </form>
     </div>
-
-
-
 
     <div class="row">
         <div class="col-lg-8">
@@ -361,7 +409,24 @@
 </div>
 
 
-
+<div class="modal fade" id="permissao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #2c3e50; color: white;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" align="center">Desculpe, <?php echo $_SESSION['UsuarioCliente']['nome']?></h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div align="center">
+                        <em>
+                            Ops! Parece que você não tem permissão para acessar esta página ! Para ter a permissão, fale com seu superior ou responsavel pela administração dos usuarios.</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>
@@ -374,4 +439,9 @@
 <!-- /#page-wrapper -->
 
 </div>
+
+<!--Modal permissao usuario-->
+
+
+
 <?php require_once('footer.php'); ?>

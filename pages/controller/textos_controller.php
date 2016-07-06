@@ -1,10 +1,13 @@
 <?php
-session_start();
-if(empty($_SESSION['UsuarioCliente']))
+require_once('config_adm.php');
+
+
+$permissao = $_SESSION['UsuarioCliente']['permissao'];
+$permissaoClienteMarcado = strstr($permissao, 'TEXTOS');
+if(empty($permissaoClienteMarcado))
 {
-  header("Location:http://localhost/templateadmclientesabore/index.php");
+    header("Location: $home");
 }
-require_once('function\function.php');
 $error = false;
 $success= false;
 $mensagem = '';

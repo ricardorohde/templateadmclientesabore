@@ -1,7 +1,13 @@
 <?php require_once('controller/categorias_controller.php'); ?>  
 <?php require_once('header.php'); ?>
 <script src="../js/cad_campos.js"></script> 
+<script>
+    $(function(){
+        $("#borda_valor").maskMoney({symbol:'R$ ', 
+          showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
+      });
 
+</script>
 <div id="page-wrapper"><br>
     <h1 class="page-header"><i class="fa fa-list-ul fa-fw"></i> Cadastro de categorias
 	         <a href="categorias.php"><span class="pull-right text-muted small"><button class="btn btn-success">Exibir categorias</button></span></a>
@@ -157,7 +163,9 @@
 
   	                                   	<div class="form-group input-group" style="display: <?PHP echo $style; ?>" id="input_valor">
   	                                        <span class="input-group-addon">R$</span>
-  	                                        <input type="text" class="form-control" name="valor_borda" value="00.00" >
+  	                                        <input type="text" class="form-control" id="borda_valor" name="valor_borda" value ="<?php if ($editar) {
+                                              echo $categoria['dados']['Categoria']['valor_borda'];
+                                            } else {echo '00.00';} ?>" >
   	                                    </div>
 
   	                                    
@@ -171,8 +179,8 @@
                                         
                                         <div align="center">
   	                                       <br><br>
-                                           <button type="submit" class="btn btn-success" name="btn_cadastrar_categoria" value="cadastrar">Cadastrar categoria</button>
-  	                                       <button type="reset" class="btn btn-danger">Limpar campos</button>
+                                           <button type="submit" class="btn btn-success" name="btn_cadastrar_categoria" value="cadastrar"><?PHP if($editar){ echo 'Editar'; ?><?PHP } else {echo 'Cadastrar';} ?></button>
+  	                                       <button type="reset" class="btn btn-danger">Limpar</button>
   	                                    </div>                                    
                                		</form>
                             </div>		

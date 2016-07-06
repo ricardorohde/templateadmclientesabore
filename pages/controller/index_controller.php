@@ -1,11 +1,7 @@
 <?php
-session_start();
-if(empty($_SESSION['UsuarioCliente']))
-{
-  header("Location:http://localhost/templateadmclientesabore/index.php");
-}
-require_once('function\function.php');
-        
+require_once('config_adm.php');
+ 
+print_r($_POST);	
 ?>
 
 

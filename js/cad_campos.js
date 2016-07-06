@@ -39,16 +39,35 @@ $('#metade1_produto').click(function(){
 
 
 
-$('#metade_broto_produto').click(function(){
-        if($(this).attr("value")=="S"){
-            $("#input_valor_metade_broto_produto").show();
-        } 
-    });
-$('#metade1_broto_produto').click(function(){
-        if($(this).attr("value")=="N"){
-            $("#input_valor_metade_broto_produto").hide();
-        } 
-    });
+// metade broto 
+$('#metade_produto').click(function(){
+    if($(this).attr("value")=="S"){
+        $('#broto_produto').click(function(){
+            if($(this).attr("value")=="S"){
+                $("#input_valor_metade_broto_produto").show();
+            } 
+        });
+    } 
+});
+$('#broto_produto').click(function(){
+    if($(this).attr("value")=="S"){
+        $('#metade_produto').click(function(){
+            if($(this).attr("value")=="S"){
+                $("#input_valor_metade_broto_produto").show();
+            } 
+        });
+    } 
+});
+$('#metade1_produto').click(function(){
+    if($(this).attr("value")=="N"){
+        $("#input_valor_metade_broto_produto").hide();
+    } 
+});
+$('#broto1_produto').click(function(){
+    if($(this).attr("value")=="N"){
+        $("#input_valor_metade_broto_produto").hide();
+    } 
+});
 
 
 //banner
