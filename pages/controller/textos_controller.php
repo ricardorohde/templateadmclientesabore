@@ -14,7 +14,7 @@ $mensagem = '';
 $usuario_id = '1';
 $data_registro = date ("Y-m-d H:i:s");
 $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
-$id = '4';
+$id = $_SESSION['UsuarioCliente']['cliente_id'];
 $clientes = array();
 $editar = false;
     //echo "<pre>";print_r($_POST);exit;

@@ -1,10 +1,12 @@
 <?php require_once('controller/index_controller.php'); ?>
+<?php require_once('controller/perfil_controller.php'); ?>
 <?php require_once('header.php'); ?>
 
 <script src="../js/index.js"></script>
 <script>
     function jsSituacaoAtiva(situacao)
     {        
+        alert ('habilita');
         document.formdesaativa.action = "index.php";
         document.getElementById("S").value = situacao;
         document.getElementById("formdesaativa").submit();
@@ -12,6 +14,7 @@
 
     function jsSituacaoDesativa(situacao2)
     {           
+        alert ('desabilita');
         document.formativa.action = "index.php";
         document.getElementById("N").value = situacao2;
         document.getElementById("formativa").submit(); 
@@ -116,6 +119,7 @@
                 </div> 
             </a>
         </div>
+        <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'N'){?>
         <form method="post" name="formativa">
             <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
                 <div class="panel panel-red"> 
@@ -152,8 +156,11 @@
             </a>
         </div> 
         </form>
+        <?PHP } ?> 
+        <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'S'){?>
+ 
         <form method="post"  name="formdesativa">
-        <div class="col-lg-3 col-md-6" style="display: none " id="vendas_habilitado">
+        <div class="col-lg-3 col-md-6" id="vendas_habilitado">
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
             if(!empty($permissaoClienteMarcado))
@@ -187,7 +194,8 @@
             </a>
         </div>
     </form>
-    </div>
+    <?PHP } ?>
+
 
     <div class="row">
         <div class="col-lg-8">

@@ -70,7 +70,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">Admin Pizzaria Becco</a><img src="..\img\banner.png" width="50" height="40" 
+                    <a class="navbar-brand" href="index.php"><em>Admin</em> <?php echo $clientes['dados']['Cliente']['nome_fantasia'] ?></a><img src="..\img\banner.png" width="50" height="40" 
                     style=" margin-top: 5px;" class="img img-responsive">
                 </div>
                 <!-- /.navbar-header -->

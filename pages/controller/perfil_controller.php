@@ -11,7 +11,6 @@ if(empty($permissaoClienteMarcado))
 $error = false;
 $success= false;
 $mensagem = '';
-$usuario_id = '1';
 $data_registro = date ("Y-m-d H:i:s");
 $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
 $id= $_SESSION['UsuarioCliente']['cliente_id'];
@@ -27,6 +26,12 @@ if(!empty($id)){
     $editar = true;    
 }
 
+if ($pagina == 'index' or 'header') {
+    if(!empty($id)){
+        $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
+        $clientes = GoCURL($arrayDados, 'cliente/find_first');  
+    }
+}
 if ($pagina == 'perfil_user') {
    if ($editar = false) {
     if (!empty($_POST['btn_cadastrar_perfil']))
@@ -74,7 +79,7 @@ if ($pagina == 'perfil_user') {
     }
 }
 if ($editar = true) {
-    if(!empty($_POST['editar']) && !empty($_POST['id']))
+    if(!empty($_POST['editar']))
     {
         $arrayDados = array('documento'=>$_POST['documento'], 'razao_social'=>$_POST['razao_social'],
             'email_responsavel'=>$_POST['email_responsavel'],'responsavel'=>$_POST['responsavel'],
@@ -109,7 +114,7 @@ if ($editar = true) {
 }}
 if ($pagina == 'configuracoes') {
 if ($editar = false) {
-   if(!empty($_POST['editar']) && !empty($_POST['id']))
+   if(!empty($_POST['editar']))
     {
         $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id,'cor'=>$_POST['cor']  //'id'=>$_POST['id'],
                 );
