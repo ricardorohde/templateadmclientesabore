@@ -1,10 +1,15 @@
-<?php
-session_start();
-if(empty($_SESSION['UsuarioCliente']))
+<?php    
+require_once('config_adm.php');
+
+
+$permissao = $_SESSION['UsuarioCliente']['permissao'];
+$permissaoClienteMarcado = strstr($permissao, 'BANNERS');
+if(empty($permissaoClienteMarcado))
 {
-  header("Location:http://localhost/templateadmclientesabore/index.php");
+    header("Location: $home");
 }
-    require_once('function\function.php');
+
+
     $error = false;
     $success= false;
     $mensagem = '';
@@ -61,14 +66,14 @@ if(empty($_SESSION['UsuarioCliente']))
             if(!$EditarBanner['success']){
 
                 $mensagem = $EditarBanner['message'];                    
-                $error = true;
+                $error = true;                
             
             }else{
                 
                 ##atualizar imagem do banner
-                if(!empty($_FILES))
+                if(!empty($_FILES['img']['size']))
                 {
-                    $upload = GoUploadImg($_FILES['img'], 'banners', 750, 615);  
+                    $upload = GoUploadImg($_FILES['img'], 'banners');  
 
                     if($upload['success'] == true)                                            
                     {                        
@@ -91,7 +96,8 @@ if(empty($_SESSION['UsuarioCliente']))
                     else
                     {
                         $mensagem = $upload['mensagem'];
-                        $success = false;                                                
+                        $success = false;    
+                        $error = true;                                            
                     }
                 }
                 else
@@ -103,8 +109,7 @@ if(empty($_SESSION['UsuarioCliente']))
         }
 
         else if(!empty($_POST['btn_cadastrar_banner']))
-        {
-
+        {            
             if(empty($_POST['titulo']) || empty($_POST['subtitulo']) || empty($_POST['botao']) || empty($_POST['link_botao'])){
                 $error = true;
                 $mensagem = 'Informar campos obrigatórios';            
@@ -126,15 +131,14 @@ if(empty($_SESSION['UsuarioCliente']))
                 
                 if(!$insert['success'])
                 {
-                    $mensagem = $insert['message'];
-                    $mensagemArray = $insert['message_array'];
-                    $insertError = true;
+                    $mensagem = $insert['message'];                    
+                    $error = true;
                 
                 }
                 else
                 {
                     ##atualizar imagem do banner
-                    if(!empty($_FILES))
+                    if(!empty($_FILES['img']['size']))
                     {
                         $upload = GoUploadImg($_FILES['img'], 'banners', 750, 615);  
 
@@ -153,6 +157,7 @@ if(empty($_SESSION['UsuarioCliente']))
                             {
                                 $mensagem = 'Dados atualizados com sucesso';
                                 $success = true; 
+                                $_POST['bannerID'] = $insert['dados']['ID'];                                
                             }
                         }
                         else
@@ -165,6 +170,7 @@ if(empty($_SESSION['UsuarioCliente']))
                     {
                         $mensagem = $insert['message'];                    
                         $success = true;    
+                        $_POST['bannerID'] = $insert['dados']['ID'];                                
                     }
                 }                   
             }            

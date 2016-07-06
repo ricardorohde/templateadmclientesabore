@@ -1,6 +1,17 @@
 <?php require_once('controller/perfil_controller.php'); ?>
 <?php require_once('header.php'); ?>
-
+<script>
+    $(function(){
+        $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
+          showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
+            //Inicio Mascara Telefone
+        $("#celular").mask("(99) 9999-99999");
+        $("#fax").mask("(99) 9999-9999");
+        $("#telefone2").mask("(99) 9999-9999");
+        $("#telefone1").mask("(99) 9999-9999");
+        $("#documento").mask("99.999.999/9999-99");
+      });
+</script>
 <div id="page-wrapper"><br>
   <h1 class="page-header"> <i class="fa fa-user fa-fw"></i>Perfil Empresa
   </h1>
@@ -31,7 +42,7 @@
                   <?PHP if($editar){ ?>
                   <em> Documento </em>
                   <?PHP }?>
-                  <input class="form-control" placeholder="Documento" required name="documento" value= <?PHP if($editar){ ?>
+                  <input class="form-control" placeholder="Documento" required name="documento" id="documento" value= <?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['documento']; ?>">
                   <?PHP }?>
                 </div>
@@ -47,7 +58,7 @@
                   <?PHP if($editar){ ?>
                   <em> Email Responsável </em>
                   <?PHP }?>
-                  <input class="form-control" placeholder="Email Responsavel" required name="email_responsavel" value= <?PHP if($editar){ ?>
+                  <input type="email" class="form-control" id = "email" placeholder="Email Responsavel" required name="email_responsavel" value= <?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['email_responsavel']; ?>"
                   <?PHP }?>>
                 </div>
@@ -71,7 +82,7 @@
                   <?PHP if($editar){ ?>
                   <em> Celular do responsável </em>
                   <?PHP }?>
-                  <input class="form-control" placeholder="Telefone Celular" required name="celular" value= <?PHP if($editar){ ?>
+                  <input class="form-control" placeholder="Telefone Celular" id="celular" required name="celular" value= <?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['celular']; ?>"
                   <?PHP }?>>
                 </div>
@@ -79,7 +90,7 @@
                   <?PHP if($editar){ ?>
                   <em> Telefone Comercial </em>
                   <?PHP }?>
-                  <input class="form-control" placeholder="Telefone Comercial" required name="telefone1" value= <?PHP if($editar){ ?>
+                  <input class="form-control" placeholder="Telefone Comercial" required id="telefone1" name="telefone1" value= <?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['telefone1']; ?>"
                   <?PHP }?>>
                 </div>
@@ -87,7 +98,7 @@
                   <?PHP if($editar){ ?>
                   <em> Telefone Alternativo </em>
                   <?PHP }?>
-                  <input class="form-control" placeholder="Telefone Alternativo"  name="telefone2" value= <?PHP if($editar){ ?>
+                  <input class="form-control" placeholder="Telefone Alternativo" id="telefone2"  name="telefone2" value= <?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['telefone2']; ?>"
                   <?PHP }?>>
                 </div>
@@ -95,7 +106,7 @@
                   <?PHP if($editar){ ?>
                   <em> Fax </em>
                   <?PHP }?>
-                  <input class="form-control" placeholder="Fax" required name="fax" value= <?PHP if($editar){ ?>
+                  <input class="form-control" placeholder="Fax" id ="fax" required name="fax" value= <?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['fax']; ?>"
                   <?PHP }?>>
                 </div>
@@ -115,7 +126,7 @@
                 <?PHP }?>
                 <div class="form-group input-group">
                   <span class="input-group-addon">R$</span>
-                  <input type="text" class="form-control" placeholder="Valor Cobrado por KM (EX :58.40 " name="valor_km_entrega" value=<?PHP if($editar){ ?>
+                  <input type="text" class="form-control" placeholder="Valor Cobrado por KM (EX :58.40 " name="valor_km_entrega" id="valor_km_entrega" value=<?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['valor_km_entrega']; ?>"
                   <?PHP }?>>
                   <!-- Aqui só da required se a opção de taxa fixa estiver como Não -->
@@ -125,7 +136,7 @@
                 <?PHP }?>  
                 <div class="form-group input-group">
                   <span class="input-group-addon">R$</span>
-                  <input type="text" class="form-control" placeholder="Valor taxa Fixa (EX :10.00) " name="valor_km_entrega_2" value=<?PHP if($editar){ ?>
+                  <input type="text" class="form-control" placeholder="Valor taxa Fixa (EX :10.00) " name="valor_km_entrega_2" id="valor_km_entrega_2" value=<?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['valor_km_entrega_2']; ?>"
                   <?PHP }?>>
                   <!-- Aqui só da required se a opção de taxa fixa estiver como Sim --> 

@@ -1,10 +1,13 @@
 <?php
-session_start();
-if(empty($_SESSION['UsuarioCliente']))
+require_once('config_adm.php');
+
+
+$permissao = $_SESSION['UsuarioCliente']['permissao'];
+$permissaoClienteMarcado = strstr($permissao, 'USUARIOS');
+if(empty($permissaoClienteMarcado))
 {
-  header("Location:http://localhost/templateadmclientesabore/index.php");
+    header("Location: $home");
 }
-    require_once('function\function.php');
     $error = false;
     $success= false;
     $mensagem = '';
@@ -57,7 +60,7 @@ if(empty($_SESSION['UsuarioCliente']))
             $permissao = $_POST['permissao'];
             $permissao = implode(';', $permissao);
             $arrayDados = array('nome'=>$_POST['nome'], 'login'=>$_POST['login'],
-                            'senha'=>$_POST['senha'],'email'=>$_POST['email'],
+                            'email'=>$_POST['email'],
                             'funcao'=>$_POST['funcao'],'data_cadastro'=>$data_cadastro,
                             'permissao'=> $permissao,'cliente_id'=>$cliente_id, 'id'=>$_POST['id'], 
                             'email'=>$_POST['email'], 'permissao'=> $permissao);// 

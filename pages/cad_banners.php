@@ -13,15 +13,15 @@
         </div>
 
         <?PHP if($error){ ?>
-        <div class="alert alert-danger">
-          <?PHP echo $mensagem; ?>
-        </div>
+          <div class="alert alert-danger">
+            <?PHP echo $mensagem; ?>
+          </div>
         <?PHP } ?>
 
         <?PHP if($success){ ?>
-        <div class="alert alert-success">
-          <?PHP echo $mensagem; ?>
-        </div>
+          <div class="alert alert-success">
+            <?PHP echo $mensagem; ?>
+          </div>
         <?PHP } ?>
 
         <div class="panel-body">
@@ -59,7 +59,7 @@
               </div>                               	
               <br>
               <div>
-                <button type="submit" class="btn btn-success" name="btn_cadastrar_banner" value="cadastrar">Cadastrar</button>
+                <button type="submit" class="btn btn-success" name="btn_cadastrar_banner" value="cadastrar"><?PHP if($editar){ echo 'Editar'; ?><?PHP } else {echo 'Cadastrar';} ?></button>
                 <button type="reset" class="btn btn-danger">Limpar</button>
               </div>										
             </form>  		

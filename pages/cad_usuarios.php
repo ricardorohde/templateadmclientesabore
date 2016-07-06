@@ -41,11 +41,13 @@
                                                   value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['login']; ?>"
                                                 <?PHP } ?>>
                                         </div>
+                                        <?php if (!$editar) {?>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Senha do usuario" name="senha" required id="senha" <?PHP if($editar){ ?>
-                                                  value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['senha']; ?>"
-                                                <?PHP } ?>>
+                                            <input type="password" class="form-control" placeholder="Senha do usuario" name="senha" required id="senha">
                                         </div>
+                                        <?PHP } else {
+                                        } ?>
+
                                         <div class="form-group">
                                             <input class="form-control" placeholder="Email do funcionário" name="email"  id="email" <?PHP if($editar){ ?>
                                                   value="<?PHP echo $usuariocliente['dados']['UsuarioCliente']['email']; ?>"
@@ -211,7 +213,69 @@
                                                     ?>> Andamento de pedidos
                                                 </label>
                                             </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="CREDITOS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Créditos
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="LOJVIRTUAL" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Administrar loja virtual (Ligar e desligar)
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="PERFEMPRES" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Acessar e editar perfil de empresa
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="CONFIGSITE" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Configurar site (Aparencia e SMS)
+                                                </label>
+                                            </div>
+                                        
                                         </div>
+                                        
 	                                    
                                         <?PHP if($editar){ ?>
                                             <input type="hidden" name="editar" value="editar">
@@ -224,7 +288,7 @@
                                         <?PHP if($editar){ ?>
                                           <?PHP echo 'Editar'; ?>
                                         <?PHP } else { echo 'Registrar';} ?></button>
-	                                    <button type="reset" class="btn btn-danger">Limpar  </button>
+	                                    <button type="reset" class="btn btn-danger">Limpar</button>
 	                                    </div>
 										
                                		</form>

@@ -196,7 +196,7 @@
 
 	                                   	<div class="form-group input-group" style="display: <?PHP echo $style; ?>" id="input_valor_broto_produto">
 	                                        <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_mini" id="valor_mini" value =
+	                                        <input type="text" class="form-control" name="valor_mini" id="valor_mini" placeholder="Valor do broto" value =
                                                 <?PHP if($editar){ ?>
                                                   <?PHP echo  $produtos["dados"]["Produto"]["valor_mini"]; ?>
                                                 <?PHP } ?>>
@@ -234,38 +234,23 @@
 
 
 
-	                                    <div class="form-group input-group" id="input_valor_metade_produto" style="display: <?PHP echo $style; ?>">
+	                                    <div class="form-group input-group" id="input_valor_metade_produto"  style="display: <?PHP echo $style; ?>">
 	                                        <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_metade" id="valor_metade" value =
+	                                        <input type="text" class="form-control" name="valor_metade" id="valor_metade" placeholder="Valor da meia" value =
                                                 <?PHP if($editar){ ?>
                                                   <?PHP echo  $produtos["dados"]["Produto"]["valor_metade"]; ?>
                                                 <?PHP } ?>>
 	                                    </div>
                                     
-	                                    <div class="form-group">
-	                                        <label>Meia no broto?</label>
-	                                        <label class="radio-inline">
-	                                           <input type="radio" name="metade_mini" id="metade_broto_produto" value="S" 
-                                              <?PHP 
-                                                if($editar)
-                                                { 
-                                                    if($produtos['dados']['Produto']['metade_mini'] == 'S') 
-                                                      echo "checked"; 
-                                                }                                          
-                                                ?>>Sim
-                                          </label>
-	                                        <label class="radio-inline">
-	                                            <input type="radio" name="metade_mini" id="metade1_broto_produto" value="N" checked>Não
-	                                        </label>
-                                       	</div> 
+
 	                                    <div class="form-group input-group" id="input_valor_metade_broto_produto" style="display: <?PHP echo $style; ?>">
 	                                       <span class="input-group-addon">R$</span>
-	                                        <input type="text" class="form-control" name="valor_mini_metade" id="valor_mini_metade" value="" >
+	                                        <input type="text" class="form-control" name="valor_mini_metade" placeholder="Valor da meia no broto" id="valor_mini_metade" value =
+                                                <?PHP if($editar){ ?>
+                                                  <?PHP echo  $produtos["dados"]["Produto"]["valor_mini_metade"]; ?>
+                                                <?PHP } ?>> 
 	                                    </div>
-
-                                     
 	                                    <br>
-
 	                                    <div class="form-group">
                                             <label>Coloque uma imagem desse produto</label>
                                             <input type="file" name="img">
@@ -283,8 +268,8 @@
 
                                        	<div align="center">
 	                                    	<br><br>
-                                        <button type="submit" class="btn btn-success"  name="btn_cadastrar_produtos" value="cadastrar">Registrar produto</button>
-	                                    <button type="reset" class="btn btn-danger">Limpar campos</button>
+                                        <button type="submit" class="btn btn-success"  name="btn_cadastrar_produtos" value="cadastrar"><?PHP if($editar){ echo 'Editar'; ?><?PHP } else {echo 'Cadastrar';} ?></button>
+	                                    <button type="reset" class="btn btn-danger">Limpar</button>
 	                                    </div>
 										
                                		</form>

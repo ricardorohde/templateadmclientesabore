@@ -45,7 +45,9 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+    
     <script src="../js/jquery.maskMoney.js"></script>
+    <script src="../js/jquery.mask.js"></script>
     <script type="text/javascript">
     function JsDeslogar(deslogar)
     {           
@@ -76,130 +78,35 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
 
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-messages">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>Ler todos emails</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        
-
-
+                        <em> Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?>  </em> 
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-alerts">
+                            <ul class="dropdown-menu dropdown-user">
                                 <li>
-                                    <a href="#">
-                                        <div>
-                                            <i class="fa fa-comment fa-fw"></i> New Comment
-                                            <span class="pull-right text-muted small">4 minutes ago</span>
-                                        </div>
-                                    </a>
+                                    <?php
+                                    $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                    if(!empty($permissaoClienteMarcado))
+                                        echo   ' <a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil Empresa</a>'
+                                    ?>
+                                    <?php
+                                    $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                    if(empty($permissaoClienteMarcado))
+                                        echo   ' <a href="perfil_user_2.php"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>'
+                                    ?>
                                 </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                            <span class="pull-right text-muted small">12 minutes ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                            <span class="pull-right text-muted small">4 minutes ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <i class="fa fa-tasks fa-fw"></i> New Task
-                                            <span class="pull-right text-muted small">4 minutes ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">
-                                        <div>
-                                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                            <span class="pull-right text-muted small">4 minutes ago</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a class="text-center" href="#">
-                                        <strong>See All Alerts</strong>
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- /.dropdown-alerts -->
-                        </li>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
+                                if(!empty($permissaoClienteMarcado))
+                                    echo   '<li> <a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a></li>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
+                                if(empty($permissaoClienteMarcado))
 
-
-                         
-                            <!-- /.dropdown -->
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil</a>
-                                    </li>
-                                    <li><a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a>
-                                    </li>
-                                    <form  id="formDeslogar" name="formDeslogar" method="post">
+                                    ?>
+                                <form  id="formDeslogar" name="formDeslogar" method="post">
                                     <li class="divider"></li>
                                     <li><a href="javascript:void(0);" onclick="JsDeslogar();"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
                                         <input type="hidden" name="Deslogando" value="" id="Deslogando">
@@ -210,7 +117,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                             <!-- /.dropdown -->
                         </ul>
                         <!-- /.navbar-top-links -->
-                    
+                        
                        
 
                     <div class="navbar-default sidebar" role="navigation">
