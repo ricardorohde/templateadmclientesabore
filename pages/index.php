@@ -3,20 +3,18 @@
 
 <script src="../js/index.js"></script>
 <script>
-    function jsAtiva(situacao)
+    function jsSituacaoAtiva(situacao)
     {        
-        alert ('Ativou');
-        document.formativa.action = "index.php";
-        document.getElementById("categoriaID").value = situacao;
-        document.getElementById("formativa").submit();
+        document.formdesaativa.action = "index.php";
+        document.getElementById("S").value = situacao;
+        document.getElementById("formdesaativa").submit();
     }
 
-    function jsDesativa(situacao)
+    function jsSituacaoDesativa(situacao2)
     {           
-        alert('Desativou');
-        document.formdesativa.action = "index.php";
-        document.getElementById("categoriaID2").value = situacao;
-        document.getElementById("formdesativa").submit(); 
+        document.formativa.action = "index.php";
+        document.getElementById("N").value = situacao2;
+        document.getElementById("formativa").submit(); 
     }
 </script>
 <div id="page-wrapper">
@@ -118,52 +116,13 @@
                 </div> 
             </a>
         </div>
-
-        <?PHP if($clientes['dados']['Cliente']['site_no_ar'] = 'S'){?>
-            <form method="post"  name="formdesativa">
-                <div class="col-lg-3 col-md-6"  id="vendas_habilitado">
-                    <?php
-                    $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
-                    if(!empty($permissaoClienteMarcado))
-                        echo  '<a href="javascript:void(0);" id="vendas_desabilitar" onclick="jsDesativa();";"><input type="hidden" name="situacao" value="N" id="situacao">'
-                    ?>
-                    <?php
-                    $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
-                    if(empty($permissaoClienteMarcado))
-                        echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
-                    ?>
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-credit-card fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">Vendas</div>
-                                    <div>Desabilite vendas no site</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel-footer">
-                            <span class="pull-left">Clique para desabilitar (on)</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-
-                    </div>
-                    </a>
-                </div>
-            </form>
-        <?PHP } ?> 
-        <?php if ($clientes['dados']['Cliente']['site_no_ar']== 'N'){?> 
         <form method="post" name="formativa">
             <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
                 <div class="panel panel-red"> 
                     <?php
                     $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
                     if(!empty($permissaoClienteMarcado))
-                        echo '<a  href="javascript:void(0);" id="vendas_habilitar" onclick="jsAtiva();"><input type="hidden" name="situacao" value="S" id="situacao">'
+                        echo '<a href="javascript:void(0);" id="vendas_habilitar" onclick="jsSituacaoAtiva();"><input type="hidden" name="S" value="S" id="S" > '
                     ?>
                     <?php
                     $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
@@ -192,8 +151,43 @@
                 </div>
             </a>
         </div> 
+        </form>
+        <form method="post"  name="formdesativa">
+        <div class="col-lg-3 col-md-6" style="display: none " id="vendas_habilitado">
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+            if(!empty($permissaoClienteMarcado))
+                echo  '<a href="javascript:void(0);" id="vendas_desabilitar" onclick="jsSituacaoDesativa();"><input type="hidden" name="N" value="N" >'
+            ?>
+            <?php
+            $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
+            if(empty($permissaoClienteMarcado))
+                echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
+            ?>
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">Vendas</div>
+                            <div>Desabilite vendas no site</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <span class="pull-left">Clique para desabilitar (on)</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            </a>
+        </div>
     </form>
-    <?PHP } ?> 
+    </div>
 
     <div class="row">
         <div class="col-lg-8">
@@ -239,6 +233,7 @@
                <!-- /.list-group -->
            </div>
            <!-- /.panel-body -->
+
 
 
 

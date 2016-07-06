@@ -13,13 +13,13 @@
 
         <?PHP if($error){ ?>
         <div class="alert alert-danger">
-          <?PHP echo $mensagem;?>
+          <?PHP echo $mensagem; ?>
         </div>
         <?PHP } ?>
 
         <?PHP if($success){ ?>
         <div class="alert alert-success">
-          <?PHP echo $mensagem;?>
+          <?PHP echo $mensagem; ?>
         </div>
         <?PHP } ?>
         
@@ -28,14 +28,11 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form" action="configuracoes.php" method="post">
-              <em>Escolha a cor de seu site </em>
                 <div class="form-group">
-                 <select class="form-control" required="required" id="cor" name="cor">
+                 <select class="form-control" required="required" id="busca">
                    <option value="" style="display:none">Escolha a cor de seu site</option>
-                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'green') echo 'selected';?> value="green">Verde</option>
-                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'red') echo 'selected';?> value="red">Vermelho</option>
-                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'orange') echo 'selected';?> value="orange">Laranja</option>
-                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'blue') echo 'selected';?> value="blue">Azul</option>
+                   <option value="vermelho" id="">Vermelho</option>
+                   <option value="padrao" id="">Padrão</option>
                  </select>
                </div><br>
 
@@ -89,7 +86,7 @@
                   >Não
                 </label>
               </div>             
-              <!--
+
               <div class="form-group">
                 <label> Exibir site, ao inicializar ? </label>
                 <label class="radio-inline">
@@ -109,7 +106,7 @@
                   <input type="radio" name="taxa_fixa" value="tx_fixa2" checked>Não
                 </label>
               </div>
-              -->
+
               
               <?PHP if($editar){ ?>
               <input type="hidden" name="editar" value="editar">
@@ -120,8 +117,8 @@
               
               
               <div align="center">
-               
-                <button type="submit" name="btn_cadastrar_config" id="btn_cadastrar_config" class="btn btn-success">Alterar</button>
+                <br><br>
+                <button type="submit" class="btn btn-success">Alterar</button>
                 <button type="reset" class="btn btn-danger">Limpar  </button>
               </div>
               
