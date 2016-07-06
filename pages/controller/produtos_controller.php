@@ -88,7 +88,7 @@ if(empty($permissaoClienteMarcado))
                                     'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                     'categoria_id'=>$_POST['categoria_id'],'destaque'=>$_POST['destaque'], 
                                     'situacao_id'=>$_POST['situacao_id'], 'cliente_id'=>$cliente_id, 'id'=>$_POST['id'],
-                                    'valor_mini_metade'=>$_POST['valor_mini_metade'], 'metade_mini'=>$_POST['metade_mini'],
+                                    'valor_mini_metade'=>$_POST['valor_mini_metade'],
                                     
                                     'placeholder'=>$placeholder, 'img'=>$nomeIMG);
 

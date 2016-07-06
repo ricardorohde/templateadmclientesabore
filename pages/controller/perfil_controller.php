@@ -14,7 +14,7 @@ $mensagem = '';
 $usuario_id = '1';
 $data_registro = date ("Y-m-d H:i:s");
 $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
-$id= '4';
+$id= $_SESSION['UsuarioCliente']['cliente_id'];
 $clientes = array();
 $editar = false;
 $pagina = RetornaURL();
@@ -111,7 +111,7 @@ if ($pagina == 'configuracoes') {
 if ($editar = false) {
    if(!empty($_POST['editar']) && !empty($_POST['id']))
     {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id   //'id'=>$_POST['id'],
+        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id,'cor'=>$_POST['cor']  //'id'=>$_POST['id'],
                 );
                             //'delivery'=>$_POST['delivery'],
                             //Testar array
@@ -119,7 +119,7 @@ if ($editar = false) {
                             //echo "chamar API aqui";exit;  
 
 
-        $insert = GoCURL($arrayDados, 'cliente/editar');    
+        $insert = GoCURL($arrayDados, 'cliente/cadstrar');    
         if(!$insert['success'])
         {
             $mensagem = $insert['message'];
@@ -137,9 +137,9 @@ if ($editar = false) {
 
 
 if ($editar = true) {
-    if (!empty($_POST['btn_cadastrar_config']))
+    if(!empty($_POST['cor']))
     {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id   //'id'=>$_POST['id'],
+        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id,'cor'=>$_POST['cor']   ,'id'=>$id,'cliente_id'=>$cliente_id
                 );
                             //'delivery'=>$_POST['delivery'],
                             //Testar array
@@ -147,7 +147,7 @@ if ($editar = true) {
                             //echo "chamar API aqui";exit;  
 
 
-        $insert = GoCURL($arrayDados, 'cliente/cadastrar');    
+        $insert = GoCURL($arrayDados, 'cliente/editar');    
         if(!$insert['success'])
         {
             $mensagem = $insert['message'];

@@ -28,11 +28,14 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form" action="configuracoes.php" method="post">
+              <em>Escolha a cor de seu site </em>
                 <div class="form-group">
-                 <select class="form-control" required="required" id="busca">
+                 <select class="form-control" required="required" id="cor" name="cor">
                    <option value="" style="display:none">Escolha a cor de seu site</option>
-                   <option value="vermelho" id="">Vermelho</option>
-                   <option value="padrao" id="">Padrão</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'green') echo 'selected';?> value="green">Verde</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'red') echo 'selected';?> value="red">Vermelho</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'orange') echo 'selected';?> value="orange">Laranja</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'blue') echo 'selected';?> value="blue">Azul</option>
                  </select>
                </div><br>
 
