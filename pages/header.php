@@ -1,3 +1,4 @@
+<?php require_once('controller/perfil_controller.php'); ?>
 <?php 
 $permissao = $_SESSION['UsuarioCliente']['permissao'];
 ?>
@@ -70,7 +71,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">Admin Pizzaria Becco</a><img src="..\img\banner.png" width="50" height="40" 
+                    <a class="navbar-brand" href="index.php">Admin <?php echo $clientes['dados']['Cliente']['nome_fantasia']?></a><img src="..\img\banner.png" width="50" height="40" 
                     style=" margin-top: 5px;" class="img img-responsive">
                 </div>
                 <!-- /.navbar-header -->

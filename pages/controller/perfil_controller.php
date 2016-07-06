@@ -1,20 +1,21 @@
 <?php
 require_once('config_adm.php');
 
-
 $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
 if(empty($permissaoClienteMarcado))
 {
     header("Location: $home");
 }
+
+
 $error = false;
 $success= false;
 $mensagem = '';
 $usuario_id = '1';
 $data_registro = date ("Y-m-d H:i:s");
 $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
-$id= '4';
+$id= $_SESSION['UsuarioCliente']['cliente_id'];
 $clientes = array();
 $editar = false;
 $pagina = RetornaURL();
@@ -27,8 +28,17 @@ if(!empty($id)){
     $editar = true;    
 }
 
+
+if ($pagina == 'index') {
+    if(!empty($id)){
+        $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
+        $clientes = GoCURL($arrayDados, 'cliente/find_first');   
+    }
+}
+
+
 if ($pagina == 'perfil_user') {
-   if ($editar = false) {
+ if ($editar = false) {
     if (!empty($_POST['btn_cadastrar_perfil']))
     {
         ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
@@ -108,39 +118,11 @@ if ($editar = true) {
 
 }}
 if ($pagina == 'configuracoes') {
-if ($editar = false) {
-   if(!empty($_POST['editar']) && !empty($_POST['id']))
-    {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id   //'id'=>$_POST['id'],
-                );
-                            //'delivery'=>$_POST['delivery'],
-                            //Testar array
-                            //echo "<pre>"; print_r($arrayDados); exit;    
-                            //echo "chamar API aqui";exit;  
-
-
-        $insert = GoCURL($arrayDados, 'cliente/editar');    
-        if(!$insert['success'])
-        {
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $error = true;
-        }   
-        else{
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $success = true;
-        }
-
-    }
-}
-
-
-if ($editar = true) {
-    if (!empty($_POST['btn_cadastrar_config']))
-    {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id   //'id'=>$_POST['id'],
-                );
+    if ($editar = false) {
+     if(!empty($_POST['editar']) && !empty($_POST['id']))
+     {
+        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id,'cor'=>$_POST['cor']   //'id'=>$_POST['id'],
+            );
                             //'delivery'=>$_POST['delivery'],
                             //Testar array
                             //echo "<pre>"; print_r($arrayDados); exit;    
@@ -150,13 +132,37 @@ if ($editar = true) {
         $insert = GoCURL($arrayDados, 'cliente/cadastrar');    
         if(!$insert['success'])
         {
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
+            $mensagem = 'Ops ocorreu um erro na edição';
             $error = true;
         }   
         else{
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
+            $mensagem = 'Dados editados corretamente';
+            $success = true;
+        }
+
+    }
+}
+
+
+if ($editar = true) {
+    if (!empty($_POST['cor']))
+    {
+        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id,'id'=>$id,'cor'=>$_POST['cor']  //'id'=>$_POST['id'],
+            );
+                            //'delivery'=>$_POST['delivery'],
+                            //Testar array
+                            //echo "<pre>"; print_r($arrayDados); exit;    
+                            //echo "chamar API aqui";exit;  
+
+
+        $insert = GoCURL($arrayDados, 'cliente/editar');    
+        if(!$insert['success'])
+        {
+            $mensagem = 'Ops ! ocorreu um erro na edição';
+            $error = true;
+        }   
+        else{
+           $mensagem = 'Edição concluída com sucesso';
             $success = true;
         }
 

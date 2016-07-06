@@ -1,5 +1,6 @@
 <?php require_once('controller/perfil_controller.php'); ?>
 <?php require_once('header.php'); ?>
+<script src="../js/cad_campos.js"></script> 
 <script>
     $(function(){
         $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
