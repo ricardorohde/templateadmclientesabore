@@ -1,22 +1,21 @@
 <?php
 require_once('config_adm.php');
 
-
 $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
 if(empty($permissaoClienteMarcado))
 {
     header("Location: $home");
-}
+}$pagina = RetornaURL();
+$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
+$id= $_SESSION['UsuarioCliente']['cliente_id'];
 $error = false;
 $success= false;
 $mensagem = '';
 $data_registro = date ("Y-m-d H:i:s");
-$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
-$id= $_SESSION['UsuarioCliente']['cliente_id'];
 $clientes = array();
 $editar = false;
-$pagina = RetornaURL();
+
     //echo "<pre>";print_r($_POST);exit;
     ##recebe o post
         ###PERGUNTAR COMO PEGAR ID ASSIM QUE ENTRA NA PÀGINA ####
@@ -26,10 +25,7 @@ if(!empty($id)){
     $editar = true;    
 }
 
-if ($pagina == 'index') {
-    $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
-    $clientes = GoCURL($arrayDados, 'cliente/find_first');
-}
+
 
 if ($pagina == 'perfil_user') {
    if ($editar = false) {
