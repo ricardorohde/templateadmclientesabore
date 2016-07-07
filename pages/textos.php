@@ -2,9 +2,9 @@
 <?php require_once('header.php'); ?>
 <script src="../js/cad_campos.js"></script> 
 <script>
-    $(function(){
-        $("#cep").mask("99999-999");
-      });
+	$(function(){
+		$("#cep").mask("99999-999");
+	});
 </script>
 
 <div id="page-wrapper"><br>
@@ -71,7 +71,7 @@
 								</div>
 								<div class="form-group">
 									<label><i class="fa fa-slack fa-fw"></i> Número</label>
-									<input class="form-control" placeholder="Digite aqui o Número" name="numero" id="numero" type="number" required 
+									<input class="form-control" placeholder="Digite aqui o Número" min="1" name="numero" id="numero" type="number" required 
 									<?PHP if($editar){ ?>
 									value = '<?PHP echo  $clientes["dados"]["Cliente"]["numero"]; ?>'>
 									<?PHP } ?>
