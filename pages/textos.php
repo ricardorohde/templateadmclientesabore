@@ -1,6 +1,11 @@
 <?php require_once('controller/textos_controller.php'); ?>
 <?php require_once('header.php'); ?>
-
+<script src="../js/cad_campos.js"></script> 
+<script>
+    $(function(){
+        $("#cep").mask("99999-999");
+      });
+</script>
 
 <div id="page-wrapper"><br>
 	<h1 class="page-header"><i class="fa fa-font fa-fw"></i> Textos</h1>

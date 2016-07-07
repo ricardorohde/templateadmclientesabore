@@ -189,20 +189,19 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                                                 <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
                                             </li>'
                                     ?>
+                                    <li>
+                                        <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
+                                    </li>
+                                    <li>
+                                        <a href="rankings.php"><i class="fa fa-bar-chart-o fa-fw"></i> Rankings</a>
+                                    </li>
+                                    <li>
+                                        <a href="despesa.php"><i class="fa fa-money fa-fw"></i> Despesas</a>
+                                    </li>
+                                    <li>
+                                        <a href="creditos.php"><i class="fa fa-credit-card fa-fw"></i> Créditos</a>
+                                    </li>
                                 -->
-                                <li>
-                                    <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
-                                </li>
-                                <li>
-                                    <a href="rankings.php"><i class="fa fa-bar-chart-o fa-fw"></i> Rankings</a>
-                                </li>
-                                <li>
-                                    <a href="despesa.php"><i class="fa fa-money fa-fw"></i> Despesas</a>
-                                </li>
-                                <li>
-                                    <a href="creditos.php"><i class="fa fa-credit-card fa-fw"></i> Créditos</a>
-                                </li>
-
                             </div>
                             
                             <!-- /.navbar-static-side -->
