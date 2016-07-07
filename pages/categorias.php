@@ -1,4 +1,5 @@
 <?php require_once('controller/categorias_controller.php'); ?>
+
 <?php require_once('header.php'); ?>
 <script>
     function jsExcluir(categoria)

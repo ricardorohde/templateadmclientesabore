@@ -26,12 +26,11 @@ if(!empty($id)){
     $editar = true;    
 }
 
-if ($pagina == 'index' or 'header') {
-    if(!empty($id)){
-        $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
-        $clientes = GoCURL($arrayDados, 'cliente/find_first');  
-    }
+if ($pagina == 'index') {
+    $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
+    $clientes = GoCURL($arrayDados, 'cliente/find_first');
 }
+
 if ($pagina == 'perfil_user') {
    if ($editar = false) {
     if (!empty($_POST['btn_cadastrar_perfil']))

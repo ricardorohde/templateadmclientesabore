@@ -90,25 +90,6 @@
                 </label>
               </div>             
 
-              <div class="form-group">
-                <label> Exibir site, ao inicializar ? </label>
-                <label class="radio-inline">
-                  <input type="radio" value="site_sim" name="site">Sim
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="site" value="site_nao" checked>Não
-                </label>
-              </div>
-
-              <div class="form-group">
-                <label>Taxa de entrega fixa ?</label>
-                <label class="radio-inline">
-                  <input type="radio" value="tx_fixa1" name="taxa_fixa">Sim
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="taxa_fixa" value="tx_fixa2" checked>Não
-                </label>
-              </div>
 
               
               <?PHP if($editar){ ?>
@@ -120,7 +101,6 @@
               
               
               <div align="center">
-                <br><br>
                 <button type="submit" class="btn btn-success">Alterar</button>
                 <button type="reset" class="btn btn-danger">Limpar  </button>
               </div>

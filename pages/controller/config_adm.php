@@ -7,7 +7,8 @@ if(empty($_SESSION['UsuarioCliente']))
   header("Location: $host");
 }
 require_once('function\function.php');
-        
+
+
 ?>
 
 

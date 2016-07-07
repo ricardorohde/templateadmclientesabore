@@ -115,7 +115,7 @@
                 <em> Km de entrega Máxima </em>
                 <?PHP }?>
                 <div class="form-group">
-                  <input type="number" class="form-control" placeholder="Km de entrega Máxima" name="km" value =<?PHP if($editar){ ?>
+                  <input type="number" class="form-control" placeholder="Km de entrega Máxima" min="0" name="km" value =<?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['km']; ?>"
                   <?PHP }?>>
                   <!-- Aqui só da required se a opção de taxa fixa estiver como Não -->
