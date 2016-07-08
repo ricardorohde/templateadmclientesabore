@@ -104,13 +104,13 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">Créditos</div>
-                                <div>Confira seus créditos</div>
+                                <div>Créditos: R$ <?php echo $clientes['dados']['Cliente']['credito'];?></div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="panel-footer">
-                        <span class="pull-left">Veja seus créditos</span>
+                        <span class="pull-left">Créditos: R$ <?php echo $clientes['dados']['Cliente']['credito'];?></span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>

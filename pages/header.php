@@ -60,8 +60,6 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
     <body>
 
         <div class="wrapper">
-
-            <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -73,49 +71,41 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                     <a class="navbar-brand" href="index.php"><em>Admin</em> <?php echo $clientes['dados']['Cliente']['nome_fantasia'] ?></a><img src="..\img\banner.png" width="50" height="40" 
                     style=" margin-top: 5px;" class="img img-responsive">
                 </div>
-                <!-- /.navbar-header -->
 
                 <ul class="nav navbar-top-links navbar-right">
+                    <em> Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?>   </em> 
                     <li class="dropdown">
-                        <em> Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?>  </em> 
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li>
-                                    <?php
-                                    $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
-                                    if(!empty($permissaoClienteMarcado))
-                                        echo   ' <a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil Empresa</a>'
-                                    ?>
-                                    <?php
-                                    $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
-                                    if(empty($permissaoClienteMarcado))
-                                        echo   ' <a href="perfil_user_2.php"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>'
-                                    ?>
-                                </li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                if(!empty($permissaoClienteMarcado))
+                                    echo   ' <a href="perfil_user.php"><i class="fa fa-user fa-fw"></i> Perfil Empresa</a>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                if(empty($permissaoClienteMarcado))
+                                    echo   ' <a href="perfil_user_2.php"><i class="fa fa-user fa-fw"></i> Perfil Usuario</a>'
+                                ?>
+                            </li>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
                                 if(!empty($permissaoClienteMarcado))
-                                    echo   '<li> <a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a></li>'
+                                    echo   '<li> <a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i> Configurações</a></li>'
                                 ?>
-                                <?php
-                                $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
-                                if(empty($permissaoClienteMarcado))
 
-                                    ?>
-                                <form  id="formDeslogar" name="formDeslogar" method="post">
-                                    <li class="divider"></li>
-                                    <li><a href="javascript:void(0);" onclick="JsDeslogar();"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
-                                        <input type="hidden" name="Deslogando" value="" id="Deslogando">
-                                    </li>
-                                </ul></form>
-                                <!-- /.dropdown-user -->
-                            </li>
-                            <!-- /.dropdown -->
+                            <form  id="formDeslogar" name="formDeslogar" method="post">
+                                <li class="divider"></li>
+                                <li><a href="javascript:void(0);" onclick="JsDeslogar();"><i class="fa fa-sign-out fa-fw"></i> Deslogar</a>
+                                    <input type="hidden" name="Deslogando" value="" id="Deslogando">
+                                </li> 
+                            </form>
                         </ul>
-                        <!-- /.navbar-top-links -->
+                    </li>
+                </ul>
                         
                        
 
