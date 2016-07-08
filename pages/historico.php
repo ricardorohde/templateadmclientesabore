@@ -65,9 +65,6 @@
           </table>
         </div>
       </div>
-      <div align="right">
-        <button class="btn btn-success" >Exibir mais</button>
-      </div>
     </div>
   </div>
 </div>

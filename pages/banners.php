@@ -3,6 +3,9 @@
 <script>
     function jsExcluir(banner)
     {        
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formBannerListar.action = "banners.php";
         document.getElementById("bannerID").value = banner;
         document.getElementById("formBannerListar").submit();

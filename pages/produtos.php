@@ -4,7 +4,9 @@
 <script>
     function jsExcluir(produto)
     {             
-
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formProdutoListar.action = "produtos.php";
         document.getElementById("produtoID").value = produto;
         document.getElementById("formProdutoListar").submit();

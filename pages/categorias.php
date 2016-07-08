@@ -4,6 +4,9 @@
 <script>
     function jsExcluir(categoria)
     {        
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formCategoriaListar.action = "categorias.php";
         document.getElementById("categoriaID").value = categoria;
         document.getElementById("formCategoriaListar").submit();

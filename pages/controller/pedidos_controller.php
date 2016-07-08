@@ -36,8 +36,23 @@ if(empty($permissaoClienteMarcado))
         $arrayDados = array('cliente_id'=>$cliente_id);
         $listaPedidos = GoCURL($arrayDados, 'pedidos/em-andamento');
         $situacao = GoCURL($arrayDados, 'pedidos/situacao');  
-
-        }    
+        }
+        ############ ATUALIZANDO STATUS DE PEDIDO #############
+        if (!empty($_POST['btn_btn_situacao']))  
+        {
+            $arrayDados = array('id'=>$_POST['pedidoID'], 'situacao_pedido_id'=>$_POST['situacao_pedido_id'],'cliente_id'=>$cliente_id);
+            $EditarPedido = GoCURL($arrayDados, 'pedidos/situacao-atualizar');                                                      
+            if(!$EditarPedido['success'])
+              {            
+                $mensagem = 'Ocorreu um erro na atualização de Status';                    
+                $error = true;
+              }   
+              else
+              {
+                $mensagem = 'Situação atualizada com sucesso';                    
+                $success = true;
+              }
+        }
     }
 
 

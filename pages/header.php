@@ -193,6 +193,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                                                 <a href="despesa.php"><i class="fa fa-money fa-fw"></i> Despesas</a>
                                             </li>'
                                     ?>
+                                -->
                                     <?php
                                     $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
                                     if(!empty($permissaoClienteMarcado))
@@ -201,7 +202,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                                             </li>'
                                     ?>
 
-                                -->
+                                
                             </div>
                             
                             <!-- /.navbar-static-side -->

@@ -5,6 +5,9 @@
 <script>
     function jsExcluir(usuario)
     {        
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formUsuarioListar.action = "usuarios.php";
         document.getElementById("usuarioID").value = usuario;
         document.getElementById("formUsuarioListar").submit();

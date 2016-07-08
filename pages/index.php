@@ -158,7 +158,7 @@
         <?PHP } ?> 
         <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'S'){?>
  
-        <form method="post"  name="formdesativa">
+        <form method="post" action="index.php" name="formdesativa">
         <div class="col-lg-3 col-md-6" id="vendas_habilitado">
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');

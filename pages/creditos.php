@@ -1,3 +1,4 @@
+<?php require_once('controller/perfil_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <script src="../js/busca.js"></script>
 
@@ -8,7 +9,6 @@
 		</h1><br>
 		<div class="row">
 			<div class="table-responsive">
-
 				<div class="col-lg-3"> 
 					<div class="form-group">
 						<select class="form-control" required="required" id="credito_buscar">
@@ -24,7 +24,6 @@
 					<input class="form-control" placeholder="Email" id="inputemail" style="display:none">
 					<input class="form-control" placeholder="Código do Pedido" id="inputcodigo" style="display:none">
 				</div>  
-
 
 				<br>
 				<table class="table table-striped table-bordered table-hover">
