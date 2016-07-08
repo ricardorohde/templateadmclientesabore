@@ -1,15 +1,15 @@
 <?php require_once('controller/perfil_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <script>
-  $(function(){
-    $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
-      showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
-    $("#celular").mask("(99) 9999-99999");
-    $("#fax").mask("(99) 9999-9999");
-    $("#telefone2").mask("(99) 9999-9999");
-    $("#telefone1").mask("(99) 9999-9999");
-    $("#documento").mask("99.999.999/9999-99");
-  });
+    $(function(){
+        $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
+          showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
+        $("#celular").mask("(99) 9999-99999");
+        $("#fax").mask("(99) 9999-9999");
+        $("#telefone2").mask("(99) 9999-9999");
+        $("#telefone1").mask("(99) 9999-9999");
+        $("#documento").mask("99.999.999/9999-99");
+      });
 </script>
 <div id="page-wrapper"><br>
   <h1 class="page-header"> <i class="fa fa-user fa-fw"></i>Perfil Empresa
