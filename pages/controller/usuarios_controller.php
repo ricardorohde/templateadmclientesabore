@@ -36,7 +36,17 @@ if(empty($permissaoClienteMarcado))
         if(!empty($_POST['usuarioID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['usuarioID']);            
-            $excluir = GoCURL($arrayDados, 'usuario_clientes/deletar');                            
+            $excluir = GoCURL($arrayDados, 'usuario_clientes/deletar');      
+           if(!$excluir['success'])                         
+            {
+                $mensagem = 'Ops, ocorreu um erro durante a exclusão!';
+                $error = true;
+            }
+            if($excluir['success'])                         
+            {
+                $mensagem = 'Exclusão efetuada com sucesso.';
+                $success = true;
+            }                 
         }   
 
         if(!empty($_POST['busca']) && !empty($_POST['input_busca']))

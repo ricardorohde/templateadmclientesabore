@@ -35,8 +35,13 @@ if(empty($permissaoClienteMarcado))
 
             if(!$excluir['success'])                         
             {
-                $mensagem = $excluir['message'];
+                $mensagem = 'Ops, ocorreu um erro durante sua exclusão!';
                 $error = true;
+            }
+            if($excluir['success'])                         
+            {
+                $mensagem = 'Exclusão efetuada com sucesso.';
+                $success = true;
             }
         }   
 
@@ -163,7 +168,7 @@ if(empty($permissaoClienteMarcado))
                                 'valor_mini'=>$_POST['valor_mini'], 'valor_metade'=>$_POST['valor_metade'],
                                 'categoria_id'=>$_POST['categoria_id'],'placeholder'=>$placeholder,
                                 'situacao_id'=>$_POST['situacao_id'],'destaque'=>$_POST['destaque'], 'data_cadastro'=>$data_registro,
-                                'metade_mini'=>$_POST['metade_mini'],'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$nomeIMG);                                
+                                'valor_mini_metade'=>$_POST['valor_mini_metade'],'img'=>$nomeIMG);                                
                                         
                      $insert = GoCURL($arrayDados, 'produtos/cadastrar');    
                       if(!$insert['success'])

@@ -30,6 +30,11 @@
                <?PHP echo $mensagem; ?>
             </div>
         <?PHP } ?>
+        <?PHP if($success) { ?>
+            <div class="alert alert-success"> 
+               <?PHP echo $mensagem; ?>
+            </div>
+        <?PHP } ?>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
              

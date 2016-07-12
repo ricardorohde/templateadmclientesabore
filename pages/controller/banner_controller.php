@@ -28,7 +28,17 @@ if(empty($permissaoClienteMarcado))
         if(!empty($_POST['bannerID']))
         {
             $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$_POST['bannerID']); 
-            $excluir = GoCURL($arrayDados, 'cliente/banner-deletar');                            
+            $excluir = GoCURL($arrayDados, 'cliente/banner-deletar');      
+            if(!$excluir['success'])                         
+            {
+                $mensagem = 'Ops, ocorreu um erro durante a exclusão!';
+                $error = true;
+            }
+            if($excluir['success'])                         
+            {
+                $mensagem = 'Exclusão efetuada com sucesso.';
+                $success = true;
+            }                       
         }                              
 
         $arrayDados = array('cliente_id'=>$cliente_id);
