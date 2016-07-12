@@ -40,10 +40,10 @@ if ($pagina == 'cad_creditos')
             }
             else 
             {
-            $credito = $clientes['dados']['Cliente']['credito'] + $_POST['credito'];
-            $arrayDados = array('credito'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
+                $credito = $clientes['dados']['Cliente']['credito'] + $_POST['credito'];
+                $arrayDados = array('credito'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
             }
-           
+            
         }
         $insert = GoCURL($arrayDados, 'cliente/editar');    
         if(!$insert['success'])
@@ -60,7 +60,7 @@ if ($pagina == 'cad_creditos')
 
 
 if ($pagina == 'perfil_user') {
- if ($editar = false) {
+   if ($editar = false) {
     if (!empty($_POST['btn_cadastrar_perfil']))
     {
         ##verifica se usuario esta esquecendo nome ou descricao (dados obrigatorios)
@@ -143,8 +143,8 @@ if ($editar = true) {
 }}
 if ($pagina == 'configuracoes') {
     if ($editar = false) {
-     if(!empty($_POST['editar']))
-     {
+       if(!empty($_POST['editar']))
+       {
         $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id,'cor'=>$_POST['cor']  //'id'=>$_POST['id'],
             );
                             //'delivery'=>$_POST['delivery'],
