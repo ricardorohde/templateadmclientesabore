@@ -25,7 +25,8 @@ if (!empty($_POST['site_no_ar']))
 			$mensagem = "Ops! Algo deu errado na atualização de seu site";
 			$error = true;
 		}   
-		else{
+		else
+		{
 			$mensagem="Atualização efetuada com sucesso ";
 			$success = true;
 		}

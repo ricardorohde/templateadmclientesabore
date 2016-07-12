@@ -23,9 +23,7 @@ if(empty($permissaoClienteMarcado))
             
             $arrayDados = array('cliente_id'=>$cliente_id, 'search'=>$_POST['input_busca']);                
             $listaPedidos = GoCURL($arrayDados, 'pedidos/listar');                
-            $input_busca = $_POST['input_busca'];
-            
-            
+            $input_busca = $_POST['input_busca'];   
         }
         else
         {

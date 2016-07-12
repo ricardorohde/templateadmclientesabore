@@ -16,7 +16,8 @@ $data_registro = date ("Y-m-d H:i:s");
 $clientes = array();
 $editar = false;
 
-if(!empty($id)){
+if(!empty($id))
+{
     $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
     $clientes = GoCURL($arrayDados, 'cliente/find_first');
     $editar = true;    
