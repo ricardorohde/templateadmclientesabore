@@ -29,7 +29,7 @@
                     
                     <?php 
                     $situacao = $pedidos['dados']['SituacaoPedido']['id'];
-
+                    ###se abrir form aqui, e dar um action, da pau em tudo. e como vai passar os values ?
                     if($situacao  == 1){
                         echo '<button class="btn btn-default">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
                     }else if($situacao  == 2){
