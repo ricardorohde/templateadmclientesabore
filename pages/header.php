@@ -12,7 +12,6 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
     <meta name="author" content="">
 
     <title>Admin</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>    
 
     <!-- Bootstrap Core CSS -->
@@ -61,8 +60,6 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
     <body>
 
         <div class="wrapper">
-
-            <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -71,12 +68,12 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><span>ADMIN</span><br/>Pizzaria Becco</a>
-                    <img src="..\img\user-background.png" style="position: absolute; top: 5px; left: 50px;" class="img img-responsive">
+                    <a class="navbar-brand" href="index.php"><em>Admin</em> <?php echo $clientes['dados']['Cliente']['nome_fantasia'] ?></a><img src="..\img\banner.png" width="50" height="40" 
+                    style=" margin-top: 5px;" class="img img-responsive">
                 </div>
-                <!-- /.navbar-header -->
 
                 <ul class="nav navbar-top-links navbar-right">
+                    <em> Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?>   </em> 
                     <li class="dropdown">
                         <span class="welcome">Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?></span>  
                         <li class="dropdown">
@@ -96,27 +93,37 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                                         echo   ' <a href="perfil_user_2.php"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>'
                                     ?>
                                 </li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                if(!empty($permissaoClienteMarcado))
+                                    echo   ' <a href="perfil_user.php"><i class="fa fa-user fa-fw"></i> Perfil Empresa</a>'
+                                ?>
+                                <?php
+                                $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
+                                if(empty($permissaoClienteMarcado))
+                                    echo   ' <a href="perfil_user_2.php"><i class="fa fa-user fa-fw"></i> Perfil Usuario</a>'
+                                ?>
+                            </li>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
                                 if(!empty($permissaoClienteMarcado))
-                                    echo   '<li> <a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i>Configurações</a></li>'
+                                    echo   '<li> <a href="configuracoes.php"><i class="fa fa-gear fa-fw"></i> Configurações</a></li>'
                                 ?>
-                                <?php
-                                $permissaoClienteMarcado = strstr($permissao, 'CONFIGSITE');
-                                if(empty($permissaoClienteMarcado))
 
-                                    ?>
-                                <form  id="formDeslogar" name="formDeslogar" method="post">
-                                    <li class="divider"></li>
-                                    <li><a href="javascript:void(0);" onclick="JsDeslogar();"><i class="fa fa-sign-out fa-fw"></i>Deslogar</a>
-                                        <input type="hidden" name="Deslogando" value="" id="Deslogando">
-                                    </li>
-                                </ul></form>
-                                <!-- /.dropdown-user -->
-                            </li>
-                            <!-- /.dropdown -->
+                            <form  id="formDeslogar" name="formDeslogar" method="post">
+                                <li class="divider"></li>
+                                <li><a href="javascript:void(0);" onclick="JsDeslogar();"><i class="fa fa-sign-out fa-fw"></i> Deslogar</a>
+                                    <input type="hidden" name="Deslogando" value="" id="Deslogando">
+                                </li> 
+                            </form>
                         </ul>
-                        <!-- /.navbar-top-links -->
+                    </li>
+                </ul>
                         
                        
 
@@ -124,62 +131,62 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                         <div class="sidebar-nav navbar-collapse">
                             <ul class="nav" id="side-menu">
                                 <li>
-                                    <a href="index.php" class="active"><span class="icon-menu letter-color-d">D</span>Dashboard</a>
+                                    <a href="index.php"><i class="fa  fa-home fa-fw"></i> Home</a>
                                 </li>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'CATEGORIAS');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="categorias.php"><span class="icon-menu letter-color-c">C</span>Categorias</a>
+                                            <a href="categorias.php"><i class="fa fa-list-ul fa-fw"></i> Categorias</a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'PRODUTOS');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="produtos.php"><span class="icon-menu letter-color-p">P</span>Produtos</a>
+                                            <a href="produtos.php"><i class="fa fa-edit fa-fw"></i> Produtos</a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'TEXTOS');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="textos.php"><span class="icon-menu letter-color-t">T</span>Textos </a>
+                                            <a href="textos.php"><i class="fa fa-font fa-fw"></i> Textos </a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'USUARIOS');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="usuarios.php"><span class="icon-menu letter-color-u">U</span>Usuarios </a>
+                                            <a href="usuarios.php"><i class="fa fa-user fa-fw"></i> Usuarios </a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'CLIENTES');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="clientes.php"><span class="icon-menu letter-color-c">C</span>Clientes </a>
+                                            <a href="clientes.php"><i class="fa fa-group fa-fw"></i> Clientes </a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'BANNERS');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="banners.php"><span class="icon-menu letter-color-b">B</span>Banner</a>
+                                            <a href="banners.php"><i class="fa fa-camera fa-fw"></i> Banner</a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'PEDANDAMENTO');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="ped_andamento.php"><span class="icon-menu letter-color-p">P</span>Pedidos em andamento</a>
+                                            <a href="ped_andamento.php"><i class="fa fa-clock-o fa-fw"></i> Pedidos em andamento</a>
                                         </li>'
                                 ?>
                                 <?php
                                 $permissaoClienteMarcado = strstr($permissao, 'HISTORICO');
                                 if(!empty($permissaoClienteMarcado))
                                  echo   '<li>
-                                            <a href="historico.php"><span class="icon-menu letter-color-h">H</span>Historico de pedidos</a>
+                                            <a href="historico.php"><i class="fa fa-history fa-fw"></i> Historico de pedidos</a>
                                         </li>'
                                 ?>
                                 <!--
@@ -187,23 +194,33 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                                     $permissaoClienteMarcado = strstr($permissao, 'SMS');
                                     if(!empty($permissaoClienteMarcado))
                                      echo   '<li>
-                                                <a href="sms.php"><span class="icon-menu letter-color-s">S</span>SMS</a>
+                                                <a href="sms.php"><i class="fa fa-envelope fa-fw"></i> SMS</a>
+                                            </li>'
+                                    ?>
+                                    <?php
+                                    $permissaoClienteMarcado = strstr($permissao, 'RANKINGS');
+                                    if(!empty($permissaoClienteMarcado))
+                                     echo   '<li>
+                                                <a href="rankings.php"><i class="fa fa-bar-chart-o fa-fw"></i> Rankings</a>
+                                            </li>'
+                                    ?>
+                                    <?php
+                                    $permissaoClienteMarcado = strstr($permissao, 'DESPESAS');
+                                    if(!empty($permissaoClienteMarcado))
+                                     echo   '<li>
+                                                <a href="despesa.php"><i class="fa fa-money fa-fw"></i> Despesas</a>
                                             </li>'
                                     ?>
                                 -->
-                                <li>
-                                    <a href="sms.php"><span class="icon-menu letter-color-s">S</span>SMS</a>
-                                </li>
-                                <li>
-                                    <a href="rankings.php"><span class="icon-menu letter-color-r">R</span>Rankings</a>
-                                </li>
-                                <li>
-                                    <a href="despesa.php"><span class="icon-menu letter-color-d">D</span>Despesas</a>
-                                </li>
-                                <li>
-                                    <a href="creditos.php"><span class="icon-menu letter-color-c">C</span>Créditos</a>
-                                </li>
+                                    <?php
+                                    $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
+                                    if(!empty($permissaoClienteMarcado))
+                                     echo   '<li>
+                                                <a href="creditos.php"><i class="fa fa-credit-card fa-fw"></i> Créditos</a>
+                                            </li>'
+                                    ?>
 
+                                
                             </div>
                             
                             <!-- /.navbar-static-side -->

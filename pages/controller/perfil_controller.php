@@ -1,31 +1,64 @@
 <?php
 require_once('config_adm.php');
-
-
 $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
 if(empty($permissaoClienteMarcado))
 {
     header("Location: $home");
 }
+$pagina = RetornaURL();
+$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
+$id= $_SESSION['UsuarioCliente']['cliente_id'];
 $error = false;
 $success= false;
 $mensagem = '';
-$usuario_id = '1';
 $data_registro = date ("Y-m-d H:i:s");
-$cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
-$id= '4';
 $clientes = array();
 $editar = false;
-$pagina = RetornaURL();
-    //echo "<pre>";print_r($_POST);exit;
-    ##recebe o post
-        ###PERGUNTAR COMO PEGAR ID ASSIM QUE ENTRA NA PÀGINA ####
-if(!empty($id)){
+
+if(!empty($id))
+{
     $arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
     $clientes = GoCURL($arrayDados, 'cliente/find_first');
     $editar = true;    
 }
+
+
+if ($pagina == 'cad_creditos') 
+{
+    if (!empty($_POST['btn_cadastrar_creditos']))
+    {
+        if (empty($_POST['credito'])) 
+        {
+            $error = true;
+            $mensagem = 'Informar campo obrigatório';
+        }
+        else
+        {
+            if ($_POST['credito'] > $clientes['dados']['Cliente']['credito']) {
+                $credito = $_POST['credito'] + $clientes['dados']['Cliente']['credito'];
+                $arrayDados = array('credito'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
+            }
+            else 
+            {
+                $credito = $clientes['dados']['Cliente']['credito'] + $_POST['credito'];
+                $arrayDados = array('credito'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
+            }
+            
+        }
+        $insert = GoCURL($arrayDados, 'cliente/editar');    
+        if(!$insert['success'])
+        {
+            $mensagem = 'Ocorreu um erro no cadastro de créditos';
+            $error = true;
+        }   
+        else{
+            $mensagem = 'Cadastro efetuado com sucesso';
+            $success = true;
+        }
+    }
+}
+
 
 if ($pagina == 'perfil_user') {
    if ($editar = false) {
@@ -73,8 +106,10 @@ if ($pagina == 'perfil_user') {
         
     }
 }
+
+
 if ($editar = true) {
-    if(!empty($_POST['editar']) && !empty($_POST['id']))
+    if(!empty($_POST['editar']))
     {
         $arrayDados = array('documento'=>$_POST['documento'], 'razao_social'=>$_POST['razao_social'],
             'email_responsavel'=>$_POST['email_responsavel'],'responsavel'=>$_POST['responsavel'],
@@ -108,18 +143,18 @@ if ($editar = true) {
 
 }}
 if ($pagina == 'configuracoes') {
-if ($editar = false) {
-   if(!empty($_POST['editar']) && !empty($_POST['id']))
-    {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id   //'id'=>$_POST['id'],
-                );
+    if ($editar = false) {
+       if(!empty($_POST['editar']))
+       {
+        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id,'cor'=>$_POST['cor']  //'id'=>$_POST['id'],
+            );
                             //'delivery'=>$_POST['delivery'],
                             //Testar array
                             //echo "<pre>"; print_r($arrayDados); exit;    
                             //echo "chamar API aqui";exit;  
 
 
-        $insert = GoCURL($arrayDados, 'cliente/editar');    
+        $insert = GoCURL($arrayDados, 'cliente/cadstrar');    
         if(!$insert['success'])
         {
             $mensagem = $insert['message'];
@@ -137,17 +172,12 @@ if ($editar = false) {
 
 
 if ($editar = true) {
-    if (!empty($_POST['btn_cadastrar_config']))
+    if(!empty($_POST['cor']))
     {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id   //'id'=>$_POST['id'],
-                );
-                            //'delivery'=>$_POST['delivery'],
-                            //Testar array
-                            //echo "<pre>"; print_r($arrayDados); exit;    
-                            //echo "chamar API aqui";exit;  
+        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id,'cor'=>$_POST['cor']   ,'id'=>$id,'cliente_id'=>$cliente_id
+            );
 
-
-        $insert = GoCURL($arrayDados, 'cliente/cadastrar');    
+        $insert = GoCURL($arrayDados, 'cliente/editar');    
         if(!$insert['success'])
         {
             $mensagem = $insert['message'];

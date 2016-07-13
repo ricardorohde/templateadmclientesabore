@@ -4,7 +4,9 @@
 <script>
     function jsExcluir(produto)
     {             
-
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formProdutoListar.action = "produtos.php";
         document.getElementById("produtoID").value = produto;
         document.getElementById("formProdutoListar").submit();
@@ -47,6 +49,11 @@
             <br>
             <?PHP if($error) { ?>
                 <div class="alert alert-danger"> 
+                   <?PHP echo $mensagem; ?>
+                </div>
+            <?PHP } ?>
+            <?PHP if($success) { ?>
+                <div class="alert alert-success"> 
                    <?PHP echo $mensagem; ?>
                 </div>
             <?PHP } ?>

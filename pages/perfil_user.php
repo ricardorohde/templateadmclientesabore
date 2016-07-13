@@ -4,7 +4,6 @@
     $(function(){
         $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
           showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
-            //Inicio Mascara Telefone
         $("#celular").mask("(99) 9999-99999");
         $("#fax").mask("(99) 9999-9999");
         $("#telefone2").mask("(99) 9999-9999");
@@ -115,7 +114,7 @@
                 <em> Km de entrega Máxima </em>
                 <?PHP }?>
                 <div class="form-group">
-                  <input type="number" class="form-control" placeholder="Km de entrega Máxima" name="km" value =<?PHP if($editar){ ?>
+                  <input type="number" class="form-control" placeholder="Km de entrega Máxima" min="0" name="km" value =<?PHP if($editar){ ?>
                   "<?PHP echo $clientes['dados']['Cliente']['km']; ?>"
                   <?PHP }?>>
                   <!-- Aqui só da required se a opção de taxa fixa estiver como Não -->

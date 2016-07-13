@@ -1,6 +1,11 @@
 <?php require_once('controller/textos_controller.php'); ?>
 <?php require_once('header.php'); ?>
-
+<script src="../js/cad_campos.js"></script> 
+<script>
+	$(function(){
+		$("#cep").mask("99999-999");
+	});
+</script>
 
 <div id="page-wrapper"><br>
 	<h1 class="page-header"><i class="fa fa-font fa-fw"></i> Textos</h1>
@@ -66,7 +71,7 @@
 								</div>
 								<div class="form-group">
 									<label><i class="fa fa-slack fa-fw"></i> Número</label>
-									<input class="form-control" placeholder="Digite aqui o Número" name="numero" id="numero" type="number" required 
+									<input class="form-control" placeholder="Digite aqui o Número" min="1" name="numero" id="numero" type="number" required 
 									<?PHP if($editar){ ?>
 									value = '<?PHP echo  $clientes["dados"]["Cliente"]["numero"]; ?>'>
 									<?PHP } ?>
@@ -136,12 +141,9 @@
 								value="<?PHP echo $clientes['dados']['Cliente']['id'];?>">
 								<?PHP } ?>
 								
-			                    <div class="form-group">
-                                    <label>Coloque uma imagem para a página quem somos</label>
-                                    <input type="file" required name="img">
-                                </div>
 
-                            <br><br>
+
+                            <br>
                             <diV align="center">
                             	<button type="submit" class="btn btn-success" name="btn_cadastrar_textos" value="cadastrar" ><?PHP if($editar){ ?>
                             		<?PHP echo 'Editar'; ?>

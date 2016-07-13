@@ -58,8 +58,6 @@
                                             <textarea class="form-control" rows="3" placeholder="Funções desse usuário" name="funcao"><?PHP if($editar){ ?><?PHP echo $usuariocliente['dados']['UsuarioCliente']['funcao']; ?><?PHP }?></textarea>
                                         </div>
                                         
-                                        
-                                        
                                         <div class="form-group">
                                             <label><i class="fa fa-lock fa-fw"></i> Permissões do usuário</label>
                                             <div class="checkbox">
@@ -271,6 +269,36 @@
                                                     }
 
                                                     ?>> Configurar site (Aparencia e SMS)
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="RANKINGS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'RANKINGS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Rankings 
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="DESPESAS" name="permissao[]"<?php if ($editar)
+                                                    {
+                                                        $permissao = $usuariocliente['dados']['UsuarioCliente']['permissao'];
+                                                        $permissaoClienteMarcado = strstr($permissao, 'DESPESAS');
+                                                        if(!empty($permissaoClienteMarcado))
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+
+                                                    ?>> Despesas
                                                 </label>
                                             </div>
                                         

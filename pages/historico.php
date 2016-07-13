@@ -57,16 +57,13 @@
               <td><?php echo $pedidos['Usuario']['nome']; ?></td>
               <td><?php echo $pedidos['Usuario']['email']; ?></td>
               <td><?php echo $pedidos['FormaPagamento']['descricao']; ?></td>
-              <td><?php echo $pedidos['Pedido']['data_pedido']; ?></td>
+              <td><?php echo date('d/m/y', strtotime($pedidos['Pedido']['data_pedido'])); ?></td>
               <td>R$ <?php echo $pedidos['Pedido']['valor_total']; ?></td>
             </tr>
             <?php } ?>
             <input type="hidden" name="pedidoID" value="" id="pedidoID">
           </table>
         </div>
-      </div>
-      <div align="right">
-        <button class="btn btn-success" >Exibir mais</button>
       </div>
     </div>
   </div>

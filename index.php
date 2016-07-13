@@ -62,11 +62,10 @@
               <div class="clearfix"></div>
               <br />
               <div>
-                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> <div class="col-md-4">
-          <img src="img/banner.png" class="img-responsive img-circle" alt="Imagem Circular">
-        </div> Becco da pizza</h1>
+                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> <div class="">
+        </div> <span>Administração</span></h1>
 
-                <p>©Becco da pizza, a melhor pizza da região você encontra aqui</p>
+                <p>©Adm Site, aqui você pode editar todos os fatores do site de seu empreendimento</p>
               </div>
             </div>
           </form>
@@ -108,4 +107,4 @@
 </body>
 
 </html>
-e
+

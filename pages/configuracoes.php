@@ -28,11 +28,14 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form" action="configuracoes.php" method="post">
+              <em>Escolha a cor de seu site </em>
                 <div class="form-group">
-                 <select class="form-control" required="required" id="busca">
+                 <select class="form-control" required="required" id="cor" name="cor">
                    <option value="" style="display:none">Escolha a cor de seu site</option>
-                   <option value="vermelho" id="">Vermelho</option>
-                   <option value="padrao" id="">Padrão</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'green') echo 'selected';?> value="green">Verde</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'red') echo 'selected';?> value="red">Vermelho</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'orange') echo 'selected';?> value="orange">Laranja</option>
+                   <option <?php if ($clientes['dados']['Cliente']['cor'] == 'blue') echo 'selected';?> value="blue">Azul</option>
                  </select>
                </div><br>
 
@@ -87,25 +90,6 @@
                 </label>
               </div>             
 
-              <div class="form-group">
-                <label> Exibir site, ao inicializar ? </label>
-                <label class="radio-inline">
-                  <input type="radio" value="site_sim" name="site">Sim
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="site" value="site_nao" checked>Não
-                </label>
-              </div>
-
-              <div class="form-group">
-                <label>Taxa de entrega fixa ?</label>
-                <label class="radio-inline">
-                  <input type="radio" value="tx_fixa1" name="taxa_fixa">Sim
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="taxa_fixa" value="tx_fixa2" checked>Não
-                </label>
-              </div>
 
               
               <?PHP if($editar){ ?>
@@ -117,7 +101,6 @@
               
               
               <div align="center">
-                <br><br>
                 <button type="submit" class="btn btn-success">Alterar</button>
                 <button type="reset" class="btn btn-danger">Limpar  </button>
               </div>
