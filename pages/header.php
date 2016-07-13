@@ -78,10 +78,10 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
 
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
-                        <em> Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?>  </em> 
+                        <span class="welcome">Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?></span>  
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                                <i class="fa fa-cog"></i>  
                             </a>
                             <ul class="dropdown-menu dropdown-user">
                                 <li>
