@@ -1,4 +1,5 @@
 <?PHP 
+error_reporting(0);
 ##PLUGIN DE FUNCOES PARA CONEXAO COM API
 
 function RetornaURL()
