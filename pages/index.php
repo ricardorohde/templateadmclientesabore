@@ -5,7 +5,6 @@
 <script>
     function jsSituacaoAtiva(situacao)
     {        
-        alert ('habilita');
         document.formdesaativa.action = "index.php";
         document.getElementById("S").value = situacao;
         document.getElementById("formdesaativa").submit();
@@ -13,7 +12,6 @@
 
     function jsSituacaoDesativa(situacao2)
     {           
-        alert ('desabilita');
         document.formativa.action = "index.php";
         document.getElementById("N").value = situacao2;
         document.getElementById("formativa").submit(); 
@@ -26,11 +24,24 @@
         </div>
     </div>
 
+    <?PHP if($error){ ?>
+    <div class="alert alert-danger"> 
+        <?PHP echo $mensagem; ?>
+    </div>
+    <?PHP } ?>
+
+    <?PHP if($success){ ?>
+    <div class="alert alert-success">
+      <?PHP echo $mensagem; ?>
+  </div>
+  <?PHP } ?>
+
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <a href="#" data-toggle="modal" data-target="#myModal">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
+
                         <div class="row">
                             <div class="col-xs-3">
                                 <i class="fa fa-shopping-cart fa-5x"></i>
@@ -51,7 +62,7 @@
                 </div>
             </a>
         </div>
-
+        
         <div class="col-lg-3 col-md-6">
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'HISTORICO');
@@ -104,13 +115,13 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">Créditos</div>
-                                <div>Confira seus créditos</div>
+                                <div>Créditos: R$ <?php echo $clientes['dados']['Cliente']['credito'];?></div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="panel-footer">
-                        <span class="pull-left">Veja seus créditos</span>
+                        <span class="pull-left">Créditos: R$ <?php echo $clientes['dados']['Cliente']['credito'];?></span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -125,14 +136,12 @@
                     <?php
                     $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
                     if(!empty($permissaoClienteMarcado))
-                        echo '<a href="javascript:void(0);" id="vendas_habilitar" onclick="jsSituacaoAtiva();"><input type="hidden" name="S" value="S" id="S" > '
-                    ?>
+                        echo '<button type="submit" href="javascript:void(0);" id="vendas_habilitar" name="site_no_ar" value="S" onclick="jsSituacaoAtiva();">'?>
                     <?php
                     $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
                     if(empty($permissaoClienteMarcado))
                         echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
                     ?>
-
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -158,12 +167,12 @@
         <?PHP } ?> 
         <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'S'){?>
  
-        <form method="post"  name="formdesativa">
+        <form method="post" action="index.php" name="formdesativa">
         <div class="col-lg-3 col-md-6" id="vendas_habilitado">
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
             if(!empty($permissaoClienteMarcado))
-                echo  '<a href="javascript:void(0);" id="vendas_desabilitar" onclick="jsSituacaoDesativa();"><input type="hidden" name="N" value="N" >'
+                echo  '<button type="submit" href="javascript:void(0);" id="vendas_desabilitar" name="site_no_ar" value="N" onclick="jsSituacaoDesativa();">'
             ?>
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');

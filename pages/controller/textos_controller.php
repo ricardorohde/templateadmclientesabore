@@ -22,7 +22,8 @@ $editar = false;
 
 
     ###PERGUNTAR COMO PEGAR ID ASSIM QUE ENTRA NA PÀGINA ####
-if(!empty($id)){
+if(!empty($id))
+{
 	$arrayDados = array('cliente_id'=>$cliente_id, 'id'=>$id);
 	$clientes = GoCURL($arrayDados, 'cliente/find_first');	
 	$editar = true;    
@@ -94,7 +95,7 @@ if ($editar = true){
 				'funcionamento'=>$funcionamento, 
 				'usuario_id'=>$usuario_id,'data_cadastro'=>$data_registro,
 				'cliente_id'=>$cliente_id, 'id'=>$id,'delivery'=>$_POST['delivery'],'facebook'=>$_POST['facebook'],
-				'instagram'=>$_POST['instagram'],'twitter'=>$_POST['twitter'], 'img'=>$_POST['img']);
+				'instagram'=>$_POST['instagram'],'twitter'=>$_POST['twitter']);
 
 
 			$insert = GoCURL($arrayDados, 'cliente/editar');    

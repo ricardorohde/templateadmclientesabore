@@ -19,12 +19,17 @@
             
                 
                  <div align="center">
-                     Dados do cliente
+                 <h4> <b>   Dados do cliente </b></h4>
+            <?php echo $pedidos['dados']['Usuario']['nome']; ?> <br>
+            <?php echo $pedidos['dados']['Usuario']['email']; ?><br>
+            <?php echo $pedidos['dados']['Usuario']['endereco']; ?>, 
+            <?php echo $pedidos['dados']['Usuario']['numero']; ?>, 
+            <?php echo $pedidos['dados']['Usuario']['bairro']; ?> <br>
+            <?php echo $pedidos['dados']['Usuario']['complemento']; ?><br>
                     
-                    <br>
                     <?php 
                     $situacao = $pedidos['dados']['SituacaoPedido']['id'];
-
+                    ###se abrir form aqui, e dar um action, da pau em tudo. e como vai passar os values ?
                     if($situacao  == 1){
                         echo '<button class="btn btn-default">'.$pedidos['dados']['SituacaoPedido']['descricao'].'</button><br>';
                     }else if($situacao  == 2){
@@ -52,22 +57,26 @@
                     <th>Produto</th>
                     <th>Valor</th>
                 </tr>
-                
                 <?PHP foreach($pedidos['dados']['PedidoProduto'] as $row){ ?>
                     <tr>
                         <td>
-                            <input type="checkbox" checked disabled>Meia</input><br>
-                            <input type="checkbox" checked disabled>Broto</input>
+                            <input type="checkbox" <?php if ($row['metade'] == 'S')  
+                               echo 'checked';
+                             ?> disabled>Meia</input><br>
+                            <input type="checkbox" <?php if ($row['mini'] == 'S')  
+                               echo 'checked';
+                             ?> disabled>Broto</input>
                         </td>
                         <td><?PHP echo $row['dados_produto']['Produto']['nome']; ?></td>
                         <td>R$ <?PHP echo number_format($row['valor'], 2, ',', '.'); ?></td>
                     </tr>
                 <?PHP } ?>
                 
-
                 <tr style="background-color: #2c3e50; color: white;">
                     <td>
-                        <input type="checkbox" checked disabled>Borda recheada</input>
+                        <input type="checkbox" <?php if ($pedidos['dados']['Pedido']['valor_borda'] <> '0.00') {
+                            echo 'checked';
+                        }?> disabled>Borda recheada</input>
                     </td>
                     <td>Pagamento : <?php echo $pedidos['dados']['FormaPagamento']['descricao'];?></td>
                     <td>Total  : R$ <?php echo $pedidos['dados']['Pedido']['valor_total'];?> <br>  Troco : R$<?php echo $pedidos['dados']['Pedido']['troco'];?></td>
@@ -89,15 +98,6 @@
         <a href="ped_andamento.php">
             <button class="btn btn-success" >Retornar a acompanhamento</button>
         </a>
-                    
-        <br><br><br>
-                   <h4> Botão de status (Cores) </h4><br>
-                    <label>Desenvolvimento <button class="btn btn-default"></button></label> <br>
-                    <label>Aguardando Confirmação <button class="btn btn-danger"></button></label><br> 
-                    <label>Confirmado <button class="btn btn-warning"></button></label> <br>
-                    <label>Sendo Feito <button class="btn btn-info"></button></label> <br>
-                    <label>Saiu para Entrega <button class="btn btn-primary"></button></label><br> 
-                    <label>Entregue <button class="btn btn-success"></button></label> <br>
     </div>  
   
 </div>

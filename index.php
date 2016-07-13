@@ -62,11 +62,11 @@
               <div class="clearfix"></div>
               <br />
               <div>
-                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> <div class="col-md-4">
-          
-        </div>SaboreWeb</h1>
+                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> <div class="">
+        </div> <span>Administração</span></h1>
 
-                <p>©SaboreWeb. Todos os direitos reservados</p>
+                <p>©Adm Site, aqui você pode editar todos os fatores do site de seu empreendimento</p>
+
               </div>
             </div>
           </form>
@@ -108,4 +108,4 @@
 </body>
 
 </html>
-e
+

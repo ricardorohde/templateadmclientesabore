@@ -3,6 +3,9 @@
 <script>
     function jsExcluir(banner)
     {        
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formBannerListar.action = "banners.php";
         document.getElementById("bannerID").value = banner;
         document.getElementById("formBannerListar").submit();
@@ -21,6 +24,16 @@
    </h1>
    <div class="row"><br>
     <div class="col-lg-12">
+    <?PHP if($error) { ?>
+        <div class="alert alert-danger"> 
+         <?PHP echo $mensagem; ?>
+     </div>
+     <?PHP } ?>
+     <?PHP if($success) { ?>
+     <div class="alert alert-success"> 
+         <?PHP echo $mensagem; ?>
+     </div>
+     <?PHP } ?>
         <div class="panel panel-default">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">

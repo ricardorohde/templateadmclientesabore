@@ -5,6 +5,9 @@
 <script>
     function jsExcluir(usuario)
     {        
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formUsuarioListar.action = "usuarios.php";
         document.getElementById("usuarioID").value = usuario;
         document.getElementById("formUsuarioListar").submit();
@@ -41,7 +44,18 @@
     </form>
     <br>
     
+    
     <div class="col-lg-12">
+        <?PHP if($error) { ?>
+        <div class="alert alert-danger"> 
+         <?PHP echo $mensagem; ?>
+     </div>
+     <?PHP } ?>
+     <?PHP if($success) { ?>
+     <div class="alert alert-success"> 
+         <?PHP echo $mensagem; ?>
+     </div>
+     <?PHP } ?>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
                 <tr style="background-color: #2c3e50; color: white;">

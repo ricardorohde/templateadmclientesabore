@@ -31,6 +31,10 @@ if(empty($permissaoClienteMarcado))
                 $mensagem = $excluir['message'];
                 $error = true;
             }
+            if ($excluir['success']) {
+            	$mensagem = 'Exclusão efetuada com sucesso !';
+                $success = true;
+            }
         }                     
 
         $arrayDados = array('cliente_id'=>$cliente_id);

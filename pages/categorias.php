@@ -4,6 +4,9 @@
 <script>
     function jsExcluir(categoria)
     {        
+        if (!confirm ("Você tem certeza dessa exclusão?"))
+        return false;
+        else
         document.formCategoriaListar.action = "categorias.php";
         document.getElementById("categoriaID").value = categoria;
         document.getElementById("formCategoriaListar").submit();
@@ -24,6 +27,11 @@
     <div class="col-lg-6">
         <?PHP if($error) { ?>
             <div class="alert alert-danger"> 
+               <?PHP echo $mensagem; ?>
+            </div>
+        <?PHP } ?>
+        <?PHP if($success) { ?>
+            <div class="alert alert-success"> 
                <?PHP echo $mensagem; ?>
             </div>
         <?PHP } ?>

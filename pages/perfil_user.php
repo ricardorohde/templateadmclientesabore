@@ -4,7 +4,6 @@
     $(function(){
         $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
           showSymbol:true, thousands:'.', decimal:',', symbolStay: false});
-            //Inicio Mascara Telefone
         $("#celular").mask("(99) 9999-99999");
         $("#fax").mask("(99) 9999-9999");
         $("#telefone2").mask("(99) 9999-9999");

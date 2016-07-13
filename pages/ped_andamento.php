@@ -15,9 +15,9 @@
 
     function jsVer(pedido)
     {        
-        document.formVisualizar.action = "ped_detalhes_andamento.php";
+        document.formAtualizarSituacao.action = "ped_detalhes_andamento.php";
         document.getElementById("pedidoID").value = pedido;
-        document.getElementById("formVisualizar").submit();
+        document.getElementById("formAtualizarSituacao").submit();
     }
 
   function jsSubmitBusca()
@@ -26,12 +26,7 @@
     document.getElementById("formularioBusca").submit();   
   }
 
-  function jsEditar(atualizarStatus)
-    {           
-        document.formAtualizarSituacao.action = "ped_andamento.php";
-        document.getElementById("pedidoID").value = atualizarStatus;
-        document.getElementById("formAtualizarSituacao").submit(); 
-    }
+
 
 </script>
         <div id="page-wrapper">
@@ -39,10 +34,13 @@
                 <div class="col-lg-12">
                     <h1 class="page-header"><i class="fa fa-clock-o fa-fw"></i> Acompanhe os pedidos</h1>
                 </div>
+            
+    
                 <!-- /.col-lg-12 -->
-            </div>
+            </div>        
             <!-- /.row -->
             <div class="row"> 
+
                 <form name="formularioBusca" method="post">
                   <div class="col-lg-3">
                     <input class="form-control" placeholder="Pesquise Aqui" id="input_busca" name="input_busca"
@@ -57,22 +55,34 @@
 
                         <br>
                 <div class="col-lg-12">
+                <?PHP if($error){ ?>
+                    <div class="alert alert-danger">
+                            <?PHP echo $mensagem; ?>
+                            </div>
+                    <?PHP } ?>
+
+                    <?PHP if($success){ ?>
+                      <div class="alert alert-success">
+                          <?PHP echo $mensagem; ?>
+                      </div>
+                    <?PHP } ?>
                     <div class="panel panel-default">
+
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                    
                                         <tr  style="background-color: #2c3e50; color: white;">
-                                            <th></th>
+                                            <th> ID </th>
                                             <th>Nome</th>
                                             <th>Email</th>
                                             <th>Status</th>
                                             <th>Valor</th>
                                             <th></th>
                                         </tr>
-                                         <form id="formVisualizar" name="formVisualizar" action="ped_detalhes_andamento.php" method="post">
+                                         <form id="formAtualizarSituacao" name="formAtualizarSituacao" method="post">
                                         <?php foreach($listaPedidos['dados'] as $pedidos){?>
                                         <tr>
-                                            <td align="center"><a href="javascript:void(0);" onclick="jsVer('<?PHP echo $pedidos['Pedido']['id'] ?>');">Ver detalhes</a></td>
+                                            <td align="center"><a href="javascript:void(0);" onclick="jsVer('<?PHP echo $pedidos['Pedido']['id'] ?>');"><?php echo $pedidos['Pedido']['id'];?></a></td>
                                             <td><?php echo $pedidos['Usuario']['nome'];?></td>
                                             <td><?php echo $pedidos['Usuario']['email'];?></td>
                                             <td><?php echo $pedidos['SituacaoPedido']['descricao'];?></td>
@@ -81,18 +91,11 @@
                                                     id_status="<?PHP echo $pedidos['SituacaoPedido']['id'] ?>" id_pedido="<?PHP echo $pedidos['Pedido']['id']; ?>" data-target="#status">Atualizar Status</a></td>
                                         </tr>
                                         <?php } ?>
-                                         
-                                        
-                                    
                                 </table>
                             </div>
                     </div>
-                    <div align="right">
-                        <button class="btn btn-success" >Exibir mais</button>
-                    </div>
                 </div>
             </div>
-
 
             <div class="modal fade" id="status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
                 <div class="modal-dialog">
@@ -104,28 +107,24 @@
                         <div class="modal-body">
                             <label> Selecione o status atual do pedido</label>
                             <form id="formAtualizarSituacao" name="formAtualizarSituacao" method="post" action="ped_andamento.php">
-
                              <div class="form-group">
-                                <select class="form-control" name="status" id="status">
-
+                                <select class="form-control" name="situacao_pedido_id" id="situacao_pedido_id">
                                     <?php foreach($situacao['dados'] as $status){?>
 
                                         <option value="<?php echo $status['SituacaoPedido']['id'];?>">
                                             
                                         <?php echo $status['SituacaoPedido']['descricao'];?> 
                                         </option>
-
                                     <?php }?>                                                                                        
                                 </select>
                             </div>
                             <div align="right">
-                                <a href="javascript:void(0);">
-                                    <button class="btn btn-success" onclick="jsEditar('');"> Atualizar</button>
-                                </a>
+                                    <button class="btn btn-success" type="submit" value="btn_btn_situacao" name="btn_btn_situacao" id="btn_btn_situacao" > Atualizar</button>
                             </div>
                             <input type="hidden" name="pedidoID" value="" id="pedidoID">  
                             <input type="hidden" name="AtualizacaoStatus" value="" id="AtualizacaoStatus"> 
                             </form>
+
                         </div>
                     </div>
                 </div>
