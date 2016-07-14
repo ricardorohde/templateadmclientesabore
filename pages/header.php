@@ -75,24 +75,6 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
                 <ul class="nav navbar-top-links navbar-right">
                     <em> Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?>   </em> 
                     <li class="dropdown">
-                        <span class="welcome">Olá! Seja bem-vindo <?php echo $_SESSION['UsuarioCliente']['nome']?></span>  
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-cog"></i>  
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li>
-                                    <?php
-                                    $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
-                                    if(!empty($permissaoClienteMarcado))
-                                        echo   ' <a href="perfil_user.php"><i class="fa fa-user fa-fw"></i>Perfil Empresa</a>'
-                                    ?>
-                                    <?php
-                                    $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
-                                    if(empty($permissaoClienteMarcado))
-                                        echo   ' <a href="perfil_user_2.php"><i class="fa fa-user fa-fw"></i>Perfil Usuario</a>'
-                                    ?>
-                                </li>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                         </a>
