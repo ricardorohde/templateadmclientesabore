@@ -27,6 +27,7 @@
       <?PHP echo 'Situação atualizada com sucesso no seu site!'; ?>
   </div>
   <?PHP } ?>
+
     <!-- /.row -->
     <div class="row"> 
         <div class="col-lg-12"> 

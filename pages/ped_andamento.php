@@ -66,6 +66,11 @@
                           <?PHP echo 'Situação do pedido de ID '.$ped_n.' atualizada com sucesso'; ?>
                       </div>
                     <?PHP } ?>
+                    <?PHP if($_GET['error']==true) { ?>
+                      <div class="alert alert-danger">
+                          <?PHP echo 'Ops! Algo aconteceu de errado, verifique se você tem créditos suficientes. '; ?>
+                      </div>
+                    <?PHP } ?>
                     <div class="panel panel-default">
 
                             <div class="table-responsive">

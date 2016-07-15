@@ -45,8 +45,7 @@ if(empty($permissaoClienteMarcado))
             $EditarPedido = GoCURL($arrayDados, 'pedidos/situacao-atualizar');                                                      
             if(!$EditarPedido['success'])
               {            
-                $mensagem = 'Ocorreu um erro na atualização de Status';                    
-                $error = true;
+               header("Location: $host/pages/ped_andamento.php?error=true");
               }   
               else
               {

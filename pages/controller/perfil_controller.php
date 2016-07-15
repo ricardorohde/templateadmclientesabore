@@ -24,7 +24,7 @@ if(!empty($id))
 }
 
 
-if ($pagina == 'cad_creditos') 
+if ($pagina == 'creditos') 
 {
     if (!empty($_POST['btn_cadastrar_creditos']))
     {
@@ -35,16 +35,8 @@ if ($pagina == 'cad_creditos')
         }
         else
         {
-            if ($_POST['credito'] > $clientes['dados']['Cliente']['credito']) {
-                $credito = $_POST['credito'] + $clientes['dados']['Cliente']['credito'];
-                $arrayDados = array('credito'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
-            }
-            else 
-            {
-                $credito = $clientes['dados']['Cliente']['credito'] + $_POST['credito'];
-                $arrayDados = array('credito'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
-            }
-            
+            $credito = $_POST['credito'] + $clientes['dados']['Cliente']['credito_confirmar'];
+            $arrayDados = array('credito_confirmar'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
         }
         $insert = GoCURL($arrayDados, 'cliente/editar');    
         if(!$insert['success'])
@@ -53,8 +45,7 @@ if ($pagina == 'cad_creditos')
             $error = true;
         }   
         else{
-            $mensagem = 'Cadastro efetuado com sucesso';
-            $success = true;
+            header("Location: $host/pages/cad_creditos.php?success=true");
         }
     }
 }
