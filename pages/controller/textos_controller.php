@@ -6,7 +6,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'TEXTOS');
 if(empty($permissaoClienteMarcado))
 {
-    header("Location: $home");
+    header("Location: $host/pages");
 }
 $error = false;
 $success= false;
@@ -63,9 +63,7 @@ if ($editar = false) {
 				$error = true;
 			}   
 			else{
-				$mensagem = $insert['message'];
-				$mensagemArray = $insert['message_array'];
-				$success = true;
+			header("Location: $host/pages/textos.php?registro=true&success=true");
 			}
 
 		}
@@ -106,9 +104,7 @@ if ($editar = true){
 				$error = true;
 			}   
 			else{
-				$mensagem = $insert['message'];
-				$mensagemArray = $insert['message_array'];
-				$success = true;
+				header("Location: $host/pages/textos.php?edicao=true&success=true");
 			}
 
 		}

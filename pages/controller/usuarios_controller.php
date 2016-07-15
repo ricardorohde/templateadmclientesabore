@@ -6,7 +6,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'USUARIOS');
 if(empty($permissaoClienteMarcado))
 {
-    header("Location: $home");
+    header("Location: $host/pages");
 }
     $error = false;
     $success= false;
@@ -101,10 +101,11 @@ if(empty($permissaoClienteMarcado))
             }
             else
             {
+                $senha = md5($_POST['senha']);
                 $permissao = $_POST['permissao'];
                 $permissao = implode(';', $permissao);
                 $arrayDados = array('nome'=>$_POST['nome'], 'login'=>$_POST['login'],
-                                'senha'=>$_POST['senha'],'email'=>$_POST['email'],
+                                'senha'=>$senha,'email'=>$_POST['email'],
                                 'funcao'=>$_POST['funcao'],'data_cadastro'=>$data_cadastro,
                                 'email'=>$_POST['email'],'cliente_id'=>$cliente_id,'permissao'=>$permissao
                                 );// 

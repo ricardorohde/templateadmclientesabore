@@ -1,5 +1,10 @@
 <?php require_once('controller/perfil_controller.php'); ?>
 <?php require_once('header.php'); ?>
+<?php
+$success = $_GET['success'];
+$edicao = $_GET['edicao'];
+$registro = $_GET['registro'];
+?>
 <script>
     $(function(){
         $("#valor_km_entrega_2, #valor_km_entrega").maskMoney({symbol:'R$ ', 
@@ -27,9 +32,14 @@
         </div>
         <?PHP } ?>
 
-        <?PHP if($success){ ?>
+        <?PHP if($success==true && $edicao==true){ ?>
         <div class="alert alert-success">
-          <?PHP echo $mensagem; ?>
+          <?PHP echo 'Textos editados com sucesso !'; ?>
+        </div>
+        <?PHP } ?>
+        <?PHP if($success==true && $registro==true){ ?>
+        <div class="alert alert-success">
+          <?PHP echo 'Textos cadastrados com sucesso !'; ?>
         </div>
         <?PHP } ?>
 

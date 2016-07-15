@@ -1,7 +1,9 @@
 <?php
 session_start();
-$host = 'http://localhost/templateadmclientesabore/index.php';
-$home = 'http://localhost/templateadmclientesabore/pages/index.php';
+$host = 'http://localhost/templateadmclientesabore';
+
+
+
 if(empty($_SESSION['UsuarioCliente']))
 {
   header("Location: $host");

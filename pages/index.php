@@ -30,9 +30,9 @@
     </div>
     <?PHP } ?>
 
-    <?PHP if($success){ ?>
+    <?PHP if($_GET['success']==true){ ?>
     <div class="alert alert-success">
-      <?PHP echo $mensagem; ?>
+      <?PHP echo 'Situação atualizada com sucesso no seu site!'; ?>
   </div>
   <?PHP } ?>
 
@@ -101,7 +101,7 @@
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
                 if(!empty($permissaoClienteMarcado))
-                    echo   ' <a href="creditos.php">'
+                    echo   ' <a href="creditos.php">'                
             ?>
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
@@ -172,7 +172,7 @@
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
             if(!empty($permissaoClienteMarcado))
-                echo  '<button type="submit" href="javascript:void(0);" id="vendas_desabilitar" name="site_no_ar" value="N" onclick="jsSituacaoDesativa();">'
+                echo  '<button type="submit" href="javascript:void(0);" id="vendas_desabilitar" name="site_no_ar" value="N" onclick="jsSituacaoDesativa();" >'
             ?>
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');

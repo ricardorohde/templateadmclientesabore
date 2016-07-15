@@ -60,10 +60,10 @@
                             <?PHP echo $mensagem; ?>
                             </div>
                     <?PHP } ?>
-
-                    <?PHP if($success){ ?>
+                    <?php $ped_n = $_GET['pedidoID'];?>
+                    <?PHP if($_GET['success']==true) { ?>
                       <div class="alert alert-success">
-                          <?PHP echo $mensagem; ?>
+                          <?PHP echo 'Situação do pedido de ID '.$ped_n.' atualizada com sucesso'; ?>
                       </div>
                     <?PHP } ?>
                     <div class="panel panel-default">

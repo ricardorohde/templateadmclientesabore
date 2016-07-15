@@ -4,7 +4,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'PERFEMPRES');
 if(empty($permissaoClienteMarcado))
 {
-    header("Location: $home");
+    header("Location: $host/pages");
 }
 $pagina = RetornaURL();
 $cliente_id = $_SESSION['UsuarioCliente']['cliente_id'];
@@ -96,9 +96,7 @@ if ($pagina == 'perfil_user') {
                 $error = true;
             }   
             else{
-                $mensagem = $insert['message'];
-                $mensagemArray = $insert['message_array'];
-                $success = true;
+                header("Location: $host/pages/perfil_user.php?registro=true&success=true");
             }
 
         }
@@ -133,9 +131,7 @@ if ($editar = true) {
             $error = true;
         }   
         else{
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $success = true;
+            header("Location: $host/pages/perfil_user.php?edicao=true&success=true");
         }
 
     }
@@ -162,9 +158,7 @@ if ($pagina == 'configuracoes') {
             $error = true;
         }   
         else{
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $success = true;
+            header("Location: $host/pages/configuracoes.php?registro=true&success=true");
         }
 
     }
@@ -185,9 +179,7 @@ if ($editar = true) {
             $error = true;
         }   
         else{
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $success = true;
+            header("Location: $host/pages/configuracoes.php?edicao=true&success=true");
         }
 
     }

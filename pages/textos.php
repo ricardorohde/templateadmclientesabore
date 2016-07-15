@@ -1,5 +1,11 @@
 <?php require_once('controller/textos_controller.php'); ?>
 <?php require_once('header.php'); ?>
+<?php
+$success = $_GET['success'];
+$edicao = $_GET['edicao'];
+$registro = $_GET['registro'];
+
+?>
 <script src="../js/cad_campos.js"></script> 
 <script>
 	$(function(){
@@ -23,9 +29,14 @@
 				</div>
 				<?PHP } ?>
 
-				<?PHP if($success){ ?>
+				<?PHP if($success==true && $edicao==true){ ?>
 				<div class="alert alert-success">
-					<?PHP echo $mensagem; ?>
+					<?PHP echo 'Textos editados com sucesso !'; ?>
+				</div>
+				<?PHP } ?>
+				<?PHP if($success==true && $registro==true){ ?>
+				<div class="alert alert-success">
+					<?PHP echo 'Textos cadastrados com sucesso !'; ?>
 				</div>
 				<?PHP } ?>
 

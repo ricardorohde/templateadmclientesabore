@@ -27,8 +27,7 @@ if (!empty($_POST['site_no_ar']))
 		}   
 		else
 		{
-			$mensagem="Atualização efetuada com sucesso ";
-			$success = true;
+			header("Location: $host/pages/index.php?success=true");
 		}
 	}
 }

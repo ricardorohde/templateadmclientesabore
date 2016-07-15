@@ -6,7 +6,7 @@ $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'BANNERS');
 if(empty($permissaoClienteMarcado))
 {
-    header("Location: $home");
+    header("Location: $host/pages");
 }
 
 
