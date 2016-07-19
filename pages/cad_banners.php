@@ -59,8 +59,11 @@
               </div>                               	
               <br>
               <div>
-                <button type="submit" class="btn btn-success" name="btn_cadastrar_banner" value="cadastrar"><?PHP if($editar){ echo 'Editar'; ?><?PHP } else {echo 'Cadastrar';} ?></button>
-                <button type="reset" class="btn btn-danger">Limpar</button>
+                <button type="submit" class="btn btn-success" name="btn_cadastrar_banner" value="cadastrar"><?PHP if($editar){ echo 'Salvar alterações'; ?><?PHP } else {echo 'Cadastrar';} ?></button>
+                <?php if(!$editar){ ?>
+                  <button type="reset" class="btn btn-danger">Limpar</button>
+                <?php }?>
+                
               </div>										
             </form>  		
           </div>

@@ -1,4 +1,4 @@
-<?php require_once('controller/perfil_controller.php'); ?>
+<?php require_once('controller/configuracoes_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <?php
 $success = $_GET['success'];
@@ -110,8 +110,10 @@ $registro = $_GET['registro'];
               
               
               <div align="center">
-                <button type="submit" class="btn btn-success">Alterar</button>
-                <button type="reset" class="btn btn-danger">Limpar  </button>
+                <button type="submit" class="btn btn-success">Salvar alterações</button>
+                <?php if(!$editar){ ?>
+                  <button type="reset" class="btn btn-danger">Limpar</button>
+                <?php }?>
               </div>
               
             </form>

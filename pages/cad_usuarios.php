@@ -314,9 +314,11 @@
 	                                    	<br><br>
                                         <button type="submit" class="btn btn-success" name="btn_cadastrar_usuarios" value="cadastrar">
                                         <?PHP if($editar){ ?>
-                                          <?PHP echo 'Editar'; ?>
+                                          <?PHP echo 'Salvar alterações'; ?>
                                         <?PHP } else { echo 'Registrar';} ?></button>
-	                                    <button type="reset" class="btn btn-danger">Limpar</button>
+	                                    <?php if(!$editar){ ?>
+                                          <button type="reset" class="btn btn-danger">Limpar</button>
+                                        <?php }?>
 	                                    </div>
 										
                                		</form>

@@ -163,8 +163,10 @@ $registro = $_GET['registro'];
                 
                 <div align="center">
                   <br>
-                  <button type="submit" class="btn btn-success" name="btn_cadastrar_perfil" value="cadastrar"><?PHP if($editar){ echo 'Editar'; ?><?PHP } else {echo 'Salvar';} ?></button>
+                  <button type="submit" class="btn btn-success" name="btn_cadastrar_perfil" value="cadastrar"><?PHP if($editar){ echo 'Salvar alterações'; ?><?PHP } else {echo 'Salvar';} ?></button>
+                  <?php if(!$editar){ ?>
                   <button type="reset" class="btn btn-danger">Limpar</button>
+                 <?php }?>
                 </div>
                 
               </form>

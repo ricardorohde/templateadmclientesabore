@@ -60,8 +60,8 @@
             <table class="table table-striped table-bordered table-hover">
                 <tr style="background-color: #2c3e50; color: white;">
                     <th>Nome</th>
-                    <th>Login</th>
-                    <th>Documento</th>
+                    <th>Usuário</th>
+                    <th>Email para login</th>
                     <th>Editar</th>
                 </tr>
                 <form id="formUsuarioListar" name="formUsuarioListar" method="post">

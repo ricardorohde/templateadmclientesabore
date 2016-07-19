@@ -129,42 +129,43 @@
                 </div> 
             </a>
         </div>
-        <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'N'){?>
+         <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'N'){?>
+ 
         <form method="post" name="formativa">
-            <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
-                <div class="panel panel-red"> 
-                    <?php
+        <div class="col-lg-3 col-md-6" id="vendas_desabilitado">
+           <?php
                     $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
                     if(!empty($permissaoClienteMarcado))
-                        echo '<button type="submit" href="javascript:void(0);" id="vendas_habilitar" name="site_no_ar" value="S" onclick="jsSituacaoAtiva();">'?>
+                        echo '<button type="submit" class="btn btn-link" href="javascript:void(0);" id="vendas_habilitar" name="site_no_ar" value="S" onclick="jsSituacaoAtiva();">'?>
                     <?php
                     $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
                     if(empty($permissaoClienteMarcado))
                         echo   ' <a href="#" data-toggle="modal" data-target="#permissao">'
                     ?>
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-credit-card fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">Vendas</div>
-                                <div>Habilite vendas no site</div>
-                            </div>
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">Vendas</div>
+                             <div>Loja Virtual</div>
                         </div>
                     </div>
-                    
-                    <div class="panel-footer">
-                        <span class="pull-left">Clique para habilitar (off)</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                    
                 </div>
+
+                <div class="panel-footer">
+                    <span class="pull-left">Clique para habilitar (off)</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
             </a>
-        </div> 
-        </form>
-        <?PHP } ?> 
+        </div>
+    </form>
+    <?PHP } ?>
         <?PHP if($clientes['dados']['Cliente']['site_no_ar'] == 'S'){?>
  
         <form method="post" action="index.php" name="formdesativa">
@@ -172,7 +173,7 @@
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
             if(!empty($permissaoClienteMarcado))
-                echo  '<button type="submit" href="javascript:void(0);" id="vendas_desabilitar" name="site_no_ar" value="N" onclick="jsSituacaoDesativa();" >'
+                echo  '<button type="submit" class="btn btn-link" href="javascript:void(0);" id="vendas_desabilitar" name="site_no_ar" value="N" onclick="jsSituacaoDesativa();" >'
             ?>
             <?php
             $permissaoClienteMarcado = strstr($permissao, 'LOJVIRTUAL');
@@ -187,7 +188,7 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">Vendas</div>
-                            <div>Desabilite vendas no site</div>
+                            <div>Loja Virtual</div>
                         </div>
                     </div>
                 </div>
@@ -424,25 +425,24 @@
 </div>
 </div>
 
-
 <div class="modal fade" id="permissao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #2c3e50; color: white;">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel" align="center">Desculpe, <?php echo $_SESSION['UsuarioCliente']['nome']?></h4>
-            </div>
-            <div class="modal-body">
-                <div class="table-responsive">
-                    <div align="center">
-                        <em>
-                            Ops! Parece que você não tem permissão para acessar esta página ! Para ter a permissão, fale com seu superior ou responsavel pela administração dos usuarios.</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="modal-dialog modal-confirma-add" role="document">
+      <div class="modal-content confirmar-add">
+        <div class="modal-header modal-header-admin" >
+          <h3 class="title-modal" >Desculpe, <?php echo $_SESSION['UsuarioCliente']['nome']?></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>        
         </div>
+        <div class="modal-body">
+          <em>
+           	Ops! Parece que você não tem permissão para acessar esta página ! Para ter a permissão, fale com seu superior ou responsavel pela administração dos usuarios.
+           </em>
+        </div>
+        
+      </div>
     </div>
+  </div>
+</div>
+
 
 
 </div>

@@ -24,32 +24,6 @@ if(!empty($id))
 }
 
 
-if ($pagina == 'creditos') 
-{
-    if (!empty($_POST['btn_cadastrar_creditos']))
-    {
-        if (empty($_POST['credito'])) 
-        {
-            $error = true;
-            $mensagem = 'Informar campo obrigatório';
-        }
-        else
-        {
-            $credito = $_POST['credito'] + $clientes['dados']['Cliente']['credito_confirmar'];
-            $arrayDados = array('credito_confirmar'=>$credito,'cliente_id'=>$cliente_id, 'id'=>$id);
-        }
-        $insert = GoCURL($arrayDados, 'cliente/editar');    
-        if(!$insert['success'])
-        {
-            $mensagem = 'Ocorreu um erro no cadastro de créditos';
-            $error = true;
-        }   
-        else{
-            header("Location: $host/pages/cad_creditos.php?success=true");
-        }
-    }
-}
-
 
 if ($pagina == 'perfil_user') {
    if ($editar = false) {
@@ -129,55 +103,7 @@ if ($editar = true) {
 
 
 }}
-if ($pagina == 'configuracoes') {
-    if ($editar = false) {
-       if(!empty($_POST['editar']))
-       {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'id'=>$id,'cor'=>$_POST['cor']  //'id'=>$_POST['id'],
-            );
-                            //'delivery'=>$_POST['delivery'],
-                            //Testar array
-                            //echo "<pre>"; print_r($arrayDados); exit;    
-                            //echo "chamar API aqui";exit;  
 
-
-        $insert = GoCURL($arrayDados, 'cliente/cadstrar');    
-        if(!$insert['success'])
-        {
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $error = true;
-        }   
-        else{
-            header("Location: $host/pages/configuracoes.php?registro=true&success=true");
-        }
-
-    }
-}
-
-
-if ($editar = true) {
-    if(!empty($_POST['cor']))
-    {
-        $arrayDados = array('sms'=>$_POST['sms'], 'bd_compartilhado'=>$_POST['bd_compartilhado'],'cliente_id'=>$cliente_id,'cor'=>$_POST['cor']   ,'id'=>$id,'cliente_id'=>$cliente_id
-            );
-
-        $insert = GoCURL($arrayDados, 'cliente/editar');    
-        if(!$insert['success'])
-        {
-            $mensagem = $insert['message'];
-            $mensagemArray = $insert['message_array'];
-            $error = true;
-        }   
-        else{
-            header("Location: $host/pages/configuracoes.php?edicao=true&success=true");
-        }
-
-    }
-
-
-}
-}
 
 
 
