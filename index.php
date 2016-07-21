@@ -73,19 +73,35 @@
         </section>
       </div>
       <div id="register" class="animate form"> 
+
         <section class="login_content">
-          <form>
+          <form method="post" action="index.php#toregister">
             <h1>Recupere sua conta</h1>
+            <?php 
+      		if($success2)
+            {
+             echo '<div class="alert alert-success">';
+             echo $mensagem;
+             echo '</div>';           
+            }
+      		
+            if($error2)
+            {
+              echo '<div class="alert alert-danger">
+               Ops, algo de errado aconteceu ! 
+            		</div>';            
+            }
+      		 ?>
             <div>
-              <input type="text" class="form-control" placeholder="Informe seu email" required="" />
+              <input type="text" class="form-control" name="email" placeholder="Informe seu email" required="" />
             </div>
                <p>Informe seu email, e enviaremos sua nova senha !</p>
             <div>
-              <a class="btn btn-default submit" href="#">Enviar</a>
+              <button type="submit" id="btn-recuperar-senha" value="logando"  class="btn btn-default submit" name="btn-recuperar-senha" >Enviar</button>
             </div>
+           
             <div class="clearfix"></div>
             <div class="separator">
-
               <p class="change_link">Caiu aqui sem querer?
                 <a href="#tologin" class="to_register">Clique para logar </a>
               </p>
@@ -97,7 +113,7 @@
                
               </div>
             </div>
-          
+          </form>
           <!-- form -->
         </section>
         <!-- content -->

@@ -1,4 +1,4 @@
-<?php require_once('controller/usuarios_controller.php'); ?>
+<?php require_once('controller/usuario_perfil.php'); ?>
 <?php require_once('header.php'); ?>
 
 
