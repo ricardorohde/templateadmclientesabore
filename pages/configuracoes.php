@@ -23,12 +23,12 @@ $registro = $_GET['registro'];
 
         <?PHP if($success==true && $edicao==true){ ?>
         <div class="alert alert-success">
-          <?PHP echo 'Textos editados com sucesso !'; ?>
+          <?PHP echo 'Configurações editadas com sucesso !'; ?>
         </div>
         <?PHP } ?>
         <?PHP if($success==true && $registro==true){ ?>
         <div class="alert alert-success">
-          <?PHP echo 'Textos cadastrados com sucesso !'; ?>
+          <?PHP echo 'Configurações cadastrados com sucesso !'; ?>
         </div>
         <?PHP } ?>
         

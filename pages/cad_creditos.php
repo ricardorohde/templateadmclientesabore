@@ -1,4 +1,4 @@
-<?php require_once('controller/creditos_controller.php'); ?>
+<?php require_once('controller/creditos_confirma_controller.php'); ?>
 <?php require_once('header.php'); ?>
 <?php
 $success = $_GET['success'];

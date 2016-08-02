@@ -1,5 +1,7 @@
 <?php
 require_once('config_adm.php');
+require_once "PagSeguroLibrary/PagSeguroLibrary.php";	
+
 $permissao = $_SESSION['UsuarioCliente']['permissao'];
 $permissaoClienteMarcado = strstr($permissao, 'CREDITOS');
 if(empty($permissaoClienteMarcado))
@@ -52,14 +54,8 @@ if ($pagina == 'creditos')
             header("Location: $host/pages/cad_creditos.php?success=true");
         }
     }
+
 }
-
-
-
-
-
-
-
 
 
 ?>
